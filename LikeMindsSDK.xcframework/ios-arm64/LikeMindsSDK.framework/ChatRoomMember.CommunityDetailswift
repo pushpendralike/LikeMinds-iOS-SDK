@@ -1,0 +1,54 @@
+
+
+/*import Foundation
+
+public struct ChatRoomMembers : Codable {
+	let id : Int?
+	let name : String?
+	let state : Int?
+	let is_owner : Bool?
+	let community_id : Int?
+	let route : String?
+	let created_at : Int?
+	let member_since : String?
+	let image_url : String?
+
+	enum CodingKeys: String, CodingKey {
+
+		case id = "id"
+		case name = "name"
+		case state = "state"
+		case is_owner = "is_owner"
+		case community_id = "community_id"
+		case route = "route"
+		case created_at = "created_at"
+		case member_since = "member_since"
+		case image_url = "image_url"
+	}
+
+    public init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		id = try values.decodeIfPresent(Int.self, forKey: .id)
+		name = try values.decodeIfPresent(String.self, forKey: .name)
+		state = try values.decodeIfPresent(Int.self, forKey: .state)
+		is_owner = try values.decodeIfPresent(Bool.self, forKey: .is_owner)
+		community_id = try values.decodeIfPresent(Int.self, forKey: .community_id)
+		route = try values.decodeIfPresent(String.self, forKey: .route)
+		created_at = try values.decodeIfPresent(Int.self, forKey: .created_at)
+		member_since = try values.decodeIfPresent(String.self, forKey: .member_since)
+		image_url = try values.decodeIfPresent(String.self, forKey: .image_url)
+	}
+    
+    public init() {
+        id = 0
+        name = ""
+        state = 0
+        is_owner = false
+        community_id = 0
+        route = ""
+        created_at = 0
+        member_since = ""
+        image_url = ""
+    }
+
+}*/

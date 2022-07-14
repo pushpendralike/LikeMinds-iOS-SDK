@@ -1,0 +1,2258 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios12.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LikeMindsSDK
+import ALCameraViewController
+import AVFoundation
+import AVKit
+import AWSCognito
+import AWSS3
+import Alamofire
+import Branch
+import CircleProgressBar
+import CoreImage
+import CropViewController
+import FLAnimatedImage
+import Firebase
+import FirebaseDatabase
+import FirebaseMessaging
+import FirebaseStorage
+import Foundation
+import GiphyUISDK
+import GooglePlaces
+import IQKeyboardManagerSwift
+import Kingfisher
+@_exported import LikeMindsSDK
+import Lottie
+import MBProgressHUD
+import MOInApp
+import MaterialShowcase
+import MediaPlayer
+import MoEngage
+import MobileCoreServices
+import Network
+import PDFKit
+import Photos
+import Realm
+import RealmSwift
+import SDWebImage
+import Security
+import Segment
+import Sentry
+import Swift
+import Alamofire.Swift
+import SwiftUI
+import SwiftyGif
+import SwiftyJSON
+import SystemConfiguration
+import Toast
+import UIKit
+import UserNotifications
+import WebKit
+import WootricSDK
+import _Concurrency
+import iCarousel
+@_hasMissingDesignatedInitializers public class DKImageExtensionContext {
+  weak public var imagePickerController: LikeMindsSDK.DKImagePickerController! {
+    get
+  }
+  public var groupDetailVC: LikeMindsSDK.DKAssetGroupDetailVC? {
+    get
+  }
+  @objc deinit
+}
+@objc public enum DKImageExtensionType : Swift.Int {
+  case gallery, camera, inlineCamera, photoEditor
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol DKImageExtensionProtocol {
+  func perform(with extraInfo: [Swift.AnyHashable : Any])
+  func finish()
+}
+@objc open class DKImageBaseExtension : ObjectiveC.NSObject, LikeMindsSDK.DKImageExtensionProtocol {
+  final public let context: LikeMindsSDK.DKImageExtensionContext
+  required public init(context: LikeMindsSDK.DKImageExtensionContext)
+  open func perform(with extraInfo: [Swift.AnyHashable : Any])
+  open func finish()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc open class DKImageExtensionNone : LikeMindsSDK.DKImageBaseExtension {
+  required public init(context: LikeMindsSDK.DKImageExtensionContext)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers open class DKImageExtensionController : ObjectiveC.NSObject {
+  @objc public func perform(extensionType: LikeMindsSDK.DKImageExtensionType, with extraInfo: [Swift.AnyHashable : Any])
+  @objc public func finish(extensionType: LikeMindsSDK.DKImageExtensionType)
+  @objc public func enable(extensionType: LikeMindsSDK.DKImageExtensionType)
+  @objc public func disable(extensionType: LikeMindsSDK.DKImageExtensionType)
+  @objc public func isExtensionTypeAvailable(_ extensionType: LikeMindsSDK.DKImageExtensionType) -> Swift.Bool
+  @objc public class func registerExtension(extensionClass: LikeMindsSDK.DKImageBaseExtension.Type, for type: LikeMindsSDK.DKImageExtensionType)
+  @objc public class func unregisterExtension(for type: LikeMindsSDK.DKImageExtensionType)
+  @objc deinit
+}
+@objc public enum DKImagePickerControllerAssetType : Swift.Int {
+  case allPhotos, allVideos, allAssets
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum DKImagePickerControllerSourceType : Swift.Int {
+  case camera, photo, both
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum DKImagePickerControllerExportStatus : Swift.Int {
+  case none, exporting
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol DKImagePickerControllerAware {
+  @objc weak var imagePickerController: LikeMindsSDK.DKImagePickerController! { get set }
+  @objc func reload()
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKUINavigationController : UIKit.UINavigationController {
+  @available(iOS 5.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKImagePickerController : LikeMindsSDK.DKUINavigationController, UIKit.UIAdaptivePresentationControllerDelegate {
+  @objc @_Concurrency.MainActor(unsafe) public var UIDelegate: LikeMindsSDK.DKImagePickerControllerBaseUIDelegate! {
+    @objc get
+    @objc set
+  }
+  @available(iOS 13.0, *)
+  @objc @_Concurrency.MainActor(unsafe) public var shouldDismissViaUserAction: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var singleSelect: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var autoCloseOnSingleSelect: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var maxSelectableCount: Swift.Int
+  @_Concurrency.MainActor(unsafe) open var containsGPSInMetadata: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var defaultAssetGroup: Photos.PHAssetCollectionSubtype?
+  @objc @_Concurrency.MainActor(unsafe) public var allowSwipeToSelect: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var allowSelectAll: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var inline: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var assetType: LikeMindsSDK.DKImagePickerControllerAssetType
+  @objc @_Concurrency.MainActor(unsafe) public var sourceType: LikeMindsSDK.DKImagePickerControllerSourceType
+  @objc @_Concurrency.MainActor(unsafe) public var allowMultipleTypes: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var allowsLandscape: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var showsEmptyAlbums: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var showsCancelButton: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var fetchLimit: Swift.Int
+  @objc @_Concurrency.MainActor(unsafe) public var didCancel: (() -> Swift.Void)?
+  @objc @_Concurrency.MainActor(unsafe) public var didSelectAssets: ((_ assets: [LikeMindsSDK.DKAsset]) -> Swift.Void)?
+  @objc @_Concurrency.MainActor(unsafe) public var selectedChanged: (() -> Swift.Void)?
+  @objc @_Concurrency.MainActor(unsafe) public var permissionViewColors: LikeMindsSDK.DKPermissionViewColors
+  @objc @_Concurrency.MainActor(unsafe) public var exportsWhenCompleted: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var exporter: LikeMindsSDK.DKImageAssetExporter?
+  @objc @_Concurrency.MainActor(unsafe) public var exportStatus: LikeMindsSDK.DKImagePickerControllerExportStatus {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var exportStatusChanged: ((LikeMindsSDK.DKImagePickerControllerExportStatus) -> Swift.Void)?
+  @objc @_Concurrency.MainActor(unsafe) public var groupDataManager: LikeMindsSDK.DKImageGroupDataManager {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public var selectedAssetIdentifiers: [Swift.String] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var extensionController: LikeMindsSDK.DKImageExtensionController! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) convenience public init(groupDataManager: LikeMindsSDK.DKImageGroupDataManager? = nil)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) open func makeRootVC() -> UIKit.UIViewController & LikeMindsSDK.DKImagePickerControllerAware
+  @objc @_Concurrency.MainActor(unsafe) open func presentCamera()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func present(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) open func dismissCamera()
+  @objc @_Concurrency.MainActor(unsafe) open func dismiss()
+  @objc @_Concurrency.MainActor(unsafe) open func done()
+  @objc @_Concurrency.MainActor(unsafe) open func reload(with dataManager: LikeMindsSDK.DKImageGroupDataManager)
+  @objc @_Concurrency.MainActor(unsafe) open func saveImage(_ image: UIKit.UIImage, _ metadata: [Swift.AnyHashable : Any]?, _ completeBlock: @escaping ((_ asset: LikeMindsSDK.DKAsset) -> Swift.Void))
+  @objc @_Concurrency.MainActor(unsafe) open func saveImageToAlbum(_ image: UIKit.UIImage, _ completeBlock: @escaping ((_ asset: LikeMindsSDK.DKAsset) -> Swift.Void))
+  @objc @_Concurrency.MainActor(unsafe) open func saveImageDataToAlbumForiOS9(_ imageDataWithMetadata: Foundation.Data, _ completeBlock: @escaping ((_ asset: LikeMindsSDK.DKAsset) -> Swift.Void))
+  @objc @_Concurrency.MainActor(unsafe) open func writeMetadata(_ metadata: Swift.Dictionary<Swift.AnyHashable, Any>, into imageData: Foundation.Data) -> Foundation.Data?
+  @objc @_Concurrency.MainActor(unsafe) open func select(asset: LikeMindsSDK.DKAsset)
+  @objc @_Concurrency.MainActor(unsafe) open func select(assets: [LikeMindsSDK.DKAsset])
+  @objc @_Concurrency.MainActor(unsafe) open func handleSelectAll()
+  @objc @_Concurrency.MainActor(unsafe) open func deselect(asset: LikeMindsSDK.DKAsset)
+  @objc @_Concurrency.MainActor(unsafe) open func removeSelection(asset: LikeMindsSDK.DKAsset)
+  @objc @_Concurrency.MainActor(unsafe) open func deselectAll()
+  @objc @_Concurrency.MainActor(unsafe) open func setSelectedAssets(assets: [LikeMindsSDK.DKAsset])
+  @_Concurrency.MainActor(unsafe) open func index(of asset: LikeMindsSDK.DKAsset) -> Swift.Int?
+  @objc @_Concurrency.MainActor(unsafe) open func contains(asset: LikeMindsSDK.DKAsset) -> Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) open func scroll(to indexPath: Foundation.IndexPath, animated: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) open func scrollToLastTappedIndexPath(animated: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) public var selectedAssets: [LikeMindsSDK.DKAsset] {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open func canSelect(asset: LikeMindsSDK.DKAsset, showAlert: Swift.Bool = true) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @available(iOS 13.0, *)
+  @_Concurrency.MainActor(unsafe) @objc public func presentationControllerShouldDismiss(_ presentationController: UIKit.UIPresentationController) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func presentationControllerDidDismiss(_ presentationController: UIKit.UIPresentationController)
+  @_Concurrency.MainActor(unsafe) open func showGallery(with presentationIndex: Swift.Int?, presentingFromImageView: UIKit.UIImageView?, groupId: Swift.String)
+  @available(iOS 5.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+}
+@objc public protocol DKAssetGroupCellItemProtocol {
+  @objc weak var asset: LikeMindsSDK.DKAsset! { get set }
+  @objc var selectedIndex: Swift.Int { get set }
+  @objc var thumbnailImage: UIKit.UIImage? { get set }
+  @objc var thumbnailImageView: UIKit.UIImageView { get }
+}
+public struct ConfigModel : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct UserDetail : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct UserMetrics : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class FactoryBuilder {
+  public var communityFeed: LikeMindsSDK.CommunityFeedFactory {
+    get
+    set
+  }
+  open func makeCommunityFeedFactory() -> LikeMindsSDK.CommunityFeedFactory
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class KPActionSheet : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var menuView: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) public var backdropView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public let menuHeight: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var items: [LikeMindsSDK.KPItem]!
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(items: [LikeMindsSDK.KPItem]?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+extension LikeMindsSDK.KPActionSheet : UIKit.UIViewControllerTransitioningDelegate, UIKit.UIViewControllerAnimatedTransitioning {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+}
+public func ArrowDefaultColor() -> UIKit.UIColor
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKPopoverViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) open class func popoverViewController(_ viewController: UIKit.UIViewController, fromView: UIKit.UIView, arrowColor: UIKit.UIColor = ArrowDefaultColor())
+  @objc @_Concurrency.MainActor(unsafe) open class func dismissPopoverViewController()
+  @objc @_Concurrency.MainActor(unsafe) public var arrowColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @available(iOS, deprecated: 8.0)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didRotate(from fromInterfaceOrientation: UIKit.UIInterfaceOrientation)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) open class DKPlayerView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var url: Foundation.URL? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var asset: AVFoundation.AVAsset? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var playerItem: AVFoundation.AVPlayerItem? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var closeBlock: (() -> Swift.Void)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var beginPlayBlock: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var isControlHidden: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var isPlaying: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var autoHidesControlView: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var tapToToggleControlView: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var isFinishedPlaying: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public let playButton: UIKit.UIButton
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, controlParentView: UIKit.UIView?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @objc @_Concurrency.MainActor(unsafe) public func playAndHidesControlView()
+  @_Concurrency.MainActor(unsafe) public func play()
+  @objc @_Concurrency.MainActor(unsafe) public func pause()
+  @_Concurrency.MainActor(unsafe) public func stop()
+  @_Concurrency.MainActor(unsafe) public func updateContextBackground(alpha: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func reset()
+  @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+public struct PreviewUnreadCountResponse {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ConversationUsers : Swift.Codable {
+  public let id: Swift.Int?
+  public let name: Swift.String?
+  public let image_url: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol AttachmentPickerDelegate : AnyObject {
+  func didSelectImage(image: UIKit.UIImage?, url: Swift.String?, actionType: Swift.String?)
+  func didSelectDocument(uri: Foundation.URL?, url: Swift.String?, actionType: Swift.String?)
+}
+@objc open class AttachmentPicker : ObjectiveC.NSObject {
+  public init(presentationController: UIKit.UIViewController, delegate: LikeMindsSDK.AttachmentPickerDelegate)
+  public func present(documentOption: Swift.Bool = true, imagePickerOption: Swift.Bool = true, audioOption: Swift.Bool = false)
+  @objc deinit
+}
+extension LikeMindsSDK.AttachmentPicker : UIKit.UIImagePickerControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func imagePickerControllerDidCancel(_ picker: UIKit.UIImagePickerController)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [UIKit.UIImagePickerController.InfoKey : Any])
+}
+extension LikeMindsSDK.AttachmentPicker : UIKit.UIDocumentPickerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func documentPicker(_ controller: UIKit.UIDocumentPickerViewController, didPickDocumentsAt urls: [Foundation.URL])
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func documentPickerWasCancelled(_ controller: UIKit.UIDocumentPickerViewController)
+}
+extension LikeMindsSDK.AttachmentPicker : UIKit.UINavigationControllerDelegate {
+}
+public enum DKPhotoIncrementalIndicatorDirection {
+  case left, right
+  public static func == (a: LikeMindsSDK.DKPhotoIncrementalIndicatorDirection, b: LikeMindsSDK.DKPhotoIncrementalIndicatorDirection) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias AttachmentsFileSizeCompletion = (_ success: Swift.Bool, _ oversizedFileCounts: Swift.Int?) -> Swift.Void
+@objc @_hasMissingDesignatedInitializers public class DKAssetGroup : ObjectiveC.NSObject {
+  final public let groupId: Swift.String
+  public var groupName: Swift.String?
+  public var originalCollection: Photos.PHAssetCollection?
+  public var fetchResult: Photos.PHFetchResult<Photos.PHAsset>?
+  public var totalCount: Swift.Int {
+    get
+  }
+  @objc deinit
+}
+public protocol NibLoadable : AnyObject {
+  static var nib: UIKit.UINib { get }
+}
+extension LikeMindsSDK.NibLoadable {
+  public static var nib: UIKit.UINib {
+    get
+  }
+}
+extension LikeMindsSDK.NibLoadable where Self : UIKit.UIView {
+  public static func loadFromNib() -> Self
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class ABTimeView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var timeLabel: UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) public var backgroundView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var marginTop: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var marginBottom: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var marginLeft: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var marginRight: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public init(size: CoreGraphics.CGSize, position: Swift.Int)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct CommunitySettingsRights : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SettingRights : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class CommunityFeedFactory {
+  @objc deinit
+}
+public enum ReportTypeTag : Swift.Int {
+  case chatRoom
+  case member
+  case community
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class SharingPreviewModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @objcMembers public class SharePreview : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public struct ManagementToolsModal : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ManagementTool : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public class CollabCard1 : Swift.Codable {
+  final public let id: Swift.Int?
+  final public let title: Swift.String?
+  final public let about: Swift.String?
+  final public let community_id: Swift.Int?
+  final public let answer_text: Swift.String?
+  final public let share_link: Swift.String?
+  final public let image_count: Swift.Int?
+  final public let attachmentCount: Swift.Int?
+  final public let pdf_count: Swift.Int?
+  final public let type: Swift.Int?
+  final public let date_time: Swift.Int?
+  final public let duration: Swift.Int?
+  final public let answers_count: Swift.Int?
+  final public let attending_count: Swift.Int?
+  final public let polls_count: Swift.Int?
+  final public let card_creation_time: Swift.String?
+  final public let community_name: Swift.String?
+  final public let date: Swift.String?
+  final public let created_at: Swift.String?
+  final public let header: Swift.String?
+  final public let share_url: Swift.String?
+  final public let creator_share_url: Swift.String?
+  final public let link_created_at: Swift.String?
+  final public let chatroom_category: Swift.String?
+  final public let member: LikeMindsSDK.Member1?
+  final public let state: Swift.Int?
+  final public let mute_status: Swift.Bool?
+  final public let follow_status: Swift.Bool?
+  final public let is_guest: Swift.Bool?
+  final public let is_tagged: Swift.Bool?
+  final public let isPending: Swift.Bool?
+  final public let isSecret: Swift.Bool?
+  final public let canAccess: Swift.Bool?
+  final public let images: [LikeMindsSDK.CollabcardImages1]?
+  final public let attachments: [LikeMindsSDK.CollabcardImages1]?
+  final public let videos: [LikeMindsSDK.CollabcardVideo1]?
+  final public let pdf: [LikeMindsSDK.CollabcardPDFs1]?
+  final public let answers: [LikeMindsSDK.CollabcardAnswer1]?
+  final public let polls: [LikeMindsSDK.PollOption1]?
+  final public let remove_state: Swift.Int?
+  final public let has_been_named: Swift.Bool?
+  final public let multiple_select_state: Swift.Int?
+  final public let multiple_select_no: Swift.Int?
+  final public let multiple_select: Swift.Bool?
+  final public let unseen_conversation_count: Swift.Int?
+  final public let lastConversation: LikeMindsSDK.CollabcardAnswer1?
+  final public let secondlastconversation: LikeMindsSDK.CollabcardAnswer1?
+  final public let conversation_users: [LikeMindsSDK.ConversationUsers]?
+  final public let total_response_count: Swift.Int?
+  final public let show_follow_telescope: Swift.Bool?
+  final public let online_link: Swift.String?
+  final public let end_date: Swift.Int?
+  final public let image_url_round: Swift.String?
+  final public let coHosts: [LikeMindsSDK.Member1]?
+  final public let coHosts2: [LikeMindsSDK.Member1]?
+  final public let location_lat: Swift.Float?
+  final public let location_long: Swift.Float?
+  final public let location: Swift.String?
+  final public let members_images: [Swift.String]?
+  final public let poll_type_text: Swift.String?
+  final public let allow_add_option: Swift.Bool?
+  final public let expiry_time: Swift.Int?
+  final public let submit_type_text: Swift.String?
+  final public let is_anonymous: Swift.Bool?
+  final public let members: [LikeMindsSDK.Member1]?
+  final public let og_tags: LikeMindsSDK.OgTags1?
+  final public let lastResponseMembers: [LikeMindsSDK.Member1]?
+  final public let secretChatroomLeft: Swift.Bool?
+  final public let secretChatroomParticipants: [Swift.Int]?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_Concurrency.MainActor(unsafe) open class DKPhotoImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage? = nil, highlightedImage: UIKit.UIImage? = nil)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class DKImageExtensionGallery : LikeMindsSDK.DKImageBaseExtension, LikeMindsSDK.DKPhotoGalleryDelegate {
+  weak open var gallery: LikeMindsSDK.DKPhotoGallery?
+  open var group: LikeMindsSDK.DKAssetGroup!
+  override open func perform(with extraInfo: [Swift.AnyHashable : Any])
+  open func createGallery(with extraInfo: [Swift.AnyHashable : Any], group: LikeMindsSDK.DKAssetGroup) -> LikeMindsSDK.DKPhotoGallery?
+  open var backItem: UIKit.UIBarButtonItem {
+    get
+    set
+  }
+  @objc open func photoGallery(_ gallery: LikeMindsSDK.DKPhotoGallery, didShow index: Swift.Int)
+  @objc open func selectAssetFromGallery(button: UIKit.UIButton)
+  open func updateGalleryAssetSelection()
+  @objc open func dismissGallery()
+  required public init(context: LikeMindsSDK.DKImageExtensionContext)
+  @objc deinit
+}
+extension Foundation.NSMutableAttributedString {
+  public func trimmedAttributedString(set: Foundation.CharacterSet) -> Foundation.NSMutableAttributedString
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKAssetGroupDetailBaseCell : UIKit.UICollectionViewCell, LikeMindsSDK.DKAssetGroupCellItemProtocol {
+  @_Concurrency.MainActor(unsafe) open class func cellReuseIdentifier() -> Swift.String
+  @_Concurrency.MainActor(unsafe) @objc weak open var asset: LikeMindsSDK.DKAsset?
+  @_Concurrency.MainActor(unsafe) weak open var imagePickerController: LikeMindsSDK.DKImagePickerController?
+  @_Concurrency.MainActor(unsafe) @objc open var selectedIndex: Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc open var thumbnailImage: UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) @objc open var thumbnailImageView: UIKit.UIImageView {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc deinit
+}
+public struct SwifterSwift {
+  public static var appDisplayName: Swift.String? {
+    get
+  }
+  public static var appBundleID: Swift.String? {
+    get
+  }
+  public static var statusBarHeight: CoreGraphics.CGFloat {
+    get
+  }
+  public static var appBuild: Swift.String? {
+    get
+  }
+  public static var applicationIconBadgeNumber: Swift.Int {
+    get
+    set
+  }
+  public static var appVersion: Swift.String? {
+    get
+  }
+  public static var batteryLevel: Swift.Float {
+    get
+  }
+  public static var currentDevice: UIKit.UIDevice {
+    get
+  }
+  public static var screenHeight: CoreGraphics.CGFloat {
+    get
+  }
+  public static var deviceModel: Swift.String {
+    get
+  }
+  public static var deviceName: Swift.String {
+    get
+  }
+  public static var deviceOrientation: UIKit.UIDeviceOrientation {
+    get
+  }
+  public static var screenWidth: CoreGraphics.CGFloat {
+    get
+  }
+  public static var isInDebuggingMode: Swift.Bool {
+    get
+  }
+  public static var isInTestFlight: Swift.Bool {
+    get
+  }
+  public static var isMultitaskingSupported: Swift.Bool {
+    get
+  }
+  public static var isNetworkActivityIndicatorVisible: Swift.Bool {
+    get
+    set
+  }
+  public static var isPad: Swift.Bool {
+    get
+  }
+  public static var isPhone: Swift.Bool {
+    get
+  }
+  public static var isRegisteredForRemoteNotifications: Swift.Bool {
+    get
+  }
+  public static var isRunningOnSimulator: Swift.Bool {
+    get
+  }
+  public static var isStatusBarHidden: Swift.Bool {
+    get
+    set
+  }
+  public static var keyWindow: UIKit.UIView? {
+    get
+  }
+  public static var sharedApplication: UIKit.UIApplication {
+    get
+  }
+  public static var statusBarStyle: UIKit.UIStatusBarStyle? {
+    get
+    set
+  }
+  public static var systemVersion: Swift.String {
+    get
+  }
+  public static var userDefaults: Foundation.UserDefaults {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKAssetGroupDetailVC : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate, UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, LikeMindsSDK.DKImagePickerControllerAware {
+  @_Concurrency.MainActor(unsafe) public var selectedGroupId: Swift.String?
+  @_Concurrency.MainActor(unsafe) @objc weak public var imagePickerController: LikeMindsSDK.DKImagePickerController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc open func reload()
+  @_Concurrency.MainActor(unsafe) open func updateTitleView()
+  @_Concurrency.MainActor(unsafe) public func selectAsset(atIndex indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) public func deselectAsset(atIndex indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) public func adjustAssetIndex(_ index: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) public func scroll(to indexPath: Foundation.IndexPath, animted: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public func scrollToLastIndexPath(animated: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public func thumbnailImageView(for indexPath: Foundation.IndexPath) -> UIKit.UIImageView?
+  @_Concurrency.MainActor(unsafe) @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, shouldSelectItemAt indexPath: Foundation.IndexPath) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didDeselectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) open func enableCaching() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public typealias DKImageRequestID = Swift.Int32
+public let DKImageInvalidRequestID: LikeMindsSDK.DKImageRequestID
+public func getImageDataManager() -> LikeMindsSDK.DKImageDataManager
+@_hasMissingDesignatedInitializers public class DKImageDataManager {
+  public class func checkPhotoPermission(_ handler: @escaping (_ granted: Swift.Bool) -> Swift.Void)
+  @discardableResult
+  public func fetchImage(for asset: LikeMindsSDK.DKAsset, size: CoreGraphics.CGSize, options: Photos.PHImageRequestOptions? = nil, contentMode: Photos.PHImageContentMode = .aspectFill, completeBlock: @escaping (_ image: UIKit.UIImage?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void) -> LikeMindsSDK.DKImageRequestID
+  @discardableResult
+  public func fetchImageData(for asset: LikeMindsSDK.DKAsset, options: Photos.PHImageRequestOptions? = nil, completeBlock: @escaping (_ data: Foundation.Data?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void) -> LikeMindsSDK.DKImageRequestID
+  @discardableResult
+  public func fetchAVAsset(for asset: LikeMindsSDK.DKAsset, options: Photos.PHVideoRequestOptions? = nil, completeBlock: @escaping (_ avAsset: AVFoundation.AVAsset?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void) -> LikeMindsSDK.DKImageRequestID
+  public func cancelRequest(requestID: LikeMindsSDK.DKImageRequestID)
+  public func cancelRequests(requestIDs: [LikeMindsSDK.DKImageRequestID])
+  public func startCachingAssets(for assets: [Photos.PHAsset], targetSize: CoreGraphics.CGSize, contentMode: Photos.PHImageContentMode, options: Photos.PHImageRequestOptions?)
+  public func stopCachingAssets(for assets: [Photos.PHAsset], targetSize: CoreGraphics.CGSize, contentMode: Photos.PHImageContentMode, options: Photos.PHImageRequestOptions?)
+  public func stopCachingForAllAssets()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 11.0, *)
+@_Concurrency.MainActor(unsafe) open class DKPhotoPDFPreviewVC : LikeMindsSDK.DKPhotoBasePreviewVC {
+  @_Concurrency.MainActor(unsafe) public var closeBlock: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var autoHidesControlView: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var tapToToggleControlView: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var beginPlayBlock: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) override open func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) override open func createContentView() -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) override open func contentSize() -> CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) override open func fetchContent(withProgressBlock progressBlock: @escaping ((Swift.Float) -> Swift.Void), completeBlock: @escaping ((Any?, Swift.Error?) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) override open func updateContentView(with content: Any)
+  @_Concurrency.MainActor(unsafe) override open func enableZoom() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) override public func enableIndicatorView() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) override open var previewType: LikeMindsSDK.DKPhotoPreviewType {
+    @_Concurrency.MainActor(unsafe) get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct UnitsFormat {
+  public let bytes: Swift.UInt64
+  public var kilobytes: Swift.Double {
+    get
+  }
+  public var megabytes: Swift.Double {
+    get
+  }
+  public var gigabytes: Swift.Double {
+    get
+  }
+  public init(bytes: Swift.UInt64)
+  public func getReadableUnit() -> Swift.String
+}
+public struct MemberStateBase : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class RecordButton : UIKit.UIButton, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) public var recordView: LikeMindsSDK.RecordView!
+  @_Concurrency.MainActor(unsafe) public var listenForRecord: Swift.Bool! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @objc deinit
+}
+extension LikeMindsSDK.RecordButton {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+}
+@_hasMissingDesignatedInitializers public class APIHandler {
+  public static let shared: LikeMindsSDK.APIHandler
+  public func getUnreadConversationNotification(member_id: Swift.String, responseClosure: @escaping ([Swift.String : Any], Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+public struct ApiDataResponse<T> : Swift.Codable where T : Swift.Decodable, T : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SDKInitiateResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct InitiateUser : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @available(iOS 11.0, *)
+@_Concurrency.MainActor(unsafe) open class DKPDFView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var url: Foundation.URL? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var document: PDFKit.PDFDocument? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public let openButton: UIKit.UIButton
+  @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @available(iOS 11.0, *)
+@_Concurrency.MainActor(unsafe) public class KPItemView : UIKit.UIView {
+  public typealias TapHandler = (() -> ())
+  @_Concurrency.MainActor(unsafe) public var item: LikeMindsSDK.KPItem! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var tapHandler: LikeMindsSDK.KPItemView.TapHandler?
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, item: LikeMindsSDK.KPItem, onTap tapHandler: LikeMindsSDK.KPItemView.TapHandler?)
+  @_Concurrency.MainActor(unsafe) required public init?(coder aDecoder: Foundation.NSCoder, item: LikeMindsSDK.KPItem, onTap tapHandler: LikeMindsSDK.KPItemView.TapHandler?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+}
+public let DKPhotoGalleryItemExtraInfoKeyRemoteImageOriginalURL: Swift.String
+public let DKPhotoGalleryItemExtraInfoKeyRemoteImageOriginalSize: Swift.String
+@_inheritsConvenienceInitializers @objc public class DKPhotoGalleryItemConstant : ObjectiveC.NSObject {
+  @objc public class func extraInfoKeyRemoteImageOriginalURL() -> Swift.String
+  @objc public class func extraInfoKeyRemoteImageOriginalSize() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc open class DKPhotoGalleryItem : ObjectiveC.NSObject {
+  @objc open var thumbnail: UIKit.UIImage?
+  @objc open var image: UIKit.UIImage?
+  @objc open var imageURL: Foundation.URL?
+  @objc open var videoURL: Foundation.URL?
+  @objc open var pdfURL: Foundation.URL?
+  @objc open var asset: Photos.PHAsset?
+  @objc open var assetLocalIdentifier: Swift.String?
+  @objc open var extraInfo: [Swift.String : Any]?
+  @objc convenience public init(image: UIKit.UIImage)
+  @objc convenience public init(imageURL: Foundation.URL)
+  @objc convenience public init(videoURL: Foundation.URL)
+  @available(iOS 11.0, *)
+  @objc convenience public init(pdfURL: Foundation.URL)
+  @objc convenience public init(asset: Photos.PHAsset)
+  @objc public class func items(withImageURLs URLs: [Foundation.URL]) -> [LikeMindsSDK.DKPhotoGalleryItem]
+  @objc public class func items(withImageURLStrings URLStrings: [Swift.String]) -> [LikeMindsSDK.DKPhotoGalleryItem]
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ImageDownloader {
+  public static let shared: LikeMindsSDK.ImageDownloader
+  public func downloadImage(forURL url: Foundation.URL, completion: @escaping (Swift.Result<UIKit.UIImage, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class DKImagePickerControllerResource : ObjectiveC.NSObject {
+  @objc public static var customLocalizationBlock: ((_ title: Swift.String) -> Swift.String?)?
+  public class func localizedStringWithKey(_ key: Swift.String, value: Swift.String? = nil) -> Swift.String
+  @objc public static var customImageBlock: ((_ imageName: Swift.String) -> UIKit.UIImage?)?
+  public class func checkedImage() -> UIKit.UIImage
+  public class func blueTickImage() -> UIKit.UIImage
+  public class func cameraImage() -> UIKit.UIImage
+  public class func videoCameraIcon() -> UIKit.UIImage
+  public class func emptyAlbumIcon() -> UIKit.UIImage
+  public class func photoGalleryCheckedImage() -> UIKit.UIImage
+  public class func photoGalleryUncheckedImage() -> UIKit.UIImage
+  public class func photoGalleryBackArrowImage() -> UIKit.UIImage
+  public class func imageForResource(_ name: Swift.String, stretchable: Swift.Bool = false, cacheable: Swift.Bool = false) -> UIKit.UIImage
+  public class func stretchImgFromMiddle(_ image: UIKit.UIImage) -> UIKit.UIImage
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPermissionView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open class func permissionView(_ style: LikeMindsSDK.DKImagePickerControllerSourceType, withColors colors: LikeMindsSDK.DKPermissionViewColors = DKPermissionViewColors()) -> LikeMindsSDK.DKPermissionView
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
+  @objc @_Concurrency.MainActor(unsafe) open func gotoSettings()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public class DKPermissionViewColors : ObjectiveC.NSObject {
+  public init(forBackground background: UIKit.UIColor = UIColor.black, forPhotoTitle photoTitle: UIKit.UIColor = UIColor.gray, forCameraTitle cameraTitle: UIKit.UIColor = UIColor.white, forButton button: UIKit.UIColor = UIColor(red: 0, green: 122.0 / 255, blue: 1, alpha: 1))
+  @objc deinit
+}
+extension Swift.String {
+  public func isEmail() -> Swift.Bool
+  public func isNumber() -> Swift.Bool
+  public func isPassword() -> Swift.Bool
+  public func isValidPhoneNumber() -> Swift.Bool
+}
+public enum Regex : Swift.String {
+  case email
+  case number
+  case password
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Swift.String {
+  public func match(_ pattern: Swift.String) -> Swift.Bool
+  public func capitalizingFirstLetter() -> Swift.String
+  public mutating func capitalizeFirstLetter()
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryContentVC : UIKit.UIViewController, UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) public var pageChangeBlock: ((_ index: Swift.Int) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var prepareToShow: ((_ previewVC: LikeMindsSDK.DKPhotoBasePreviewVC) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) open var currentIndex: Swift.Int {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var currentVC: LikeMindsSDK.DKPhotoBasePreviewVC {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var currentContentView: UIKit.UIView {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var footerView: UIKit.UIView? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewWillEndDragging(_ scrollView: UIKit.UIScrollView, withVelocity velocity: CoreGraphics.CGPoint, targetContentOffset: Swift.UnsafeMutablePointer<CoreGraphics.CGPoint>)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct Videos : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct PDFValues : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Your_communities : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct NewChatRoomUsers : Swift.Codable {
+  public var name: Swift.String?
+  public var image_url: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Actions : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Member1 : Swift.Codable, Swift.Equatable {
+  public static func == (lhs: LikeMindsSDK.Member1, rhs: LikeMindsSDK.Member1) -> Swift.Bool
+  public var id: Swift.Int?
+  public var name: Swift.String?
+  public let email: Swift.String?
+  public let headline: Swift.String?
+  public let city: Swift.String?
+  public let contact_number: Swift.Int?
+  public let image_url: Swift.String?
+  public let about: Swift.String?
+  public let linkedin_link: Swift.String?
+  public let fb_link: Swift.String?
+  public let acceptedDate: Swift.String?
+  public let state: Swift.Int?
+  public let response: [LikeMindsSDK.MemberJoin]?
+  public let is_clickable: Swift.Bool?
+  public let question_answers: [LikeMindsSDK.MemberQuestionAnswer1]?
+  public let collabcard_state: Swift.Int?
+  public let route: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MemberQuestionAnswer1 : Swift.Codable {
+  public let community_id: Swift.Int?
+  public let member_id: Swift.Int?
+  public let question_title: Swift.String?
+  public let value: Swift.String?
+  public let question_id: Swift.Int?
+  public let state: Swift.Int?
+  public let question_instance: LikeMindsSDK.MemberQuestion?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MemberQuestion : Swift.Codable {
+  public let id: Swift.String?
+  public let question_title: Swift.String?
+  public let value: Swift.String?
+  public let help_text: Swift.String?
+  public let optional: Swift.Bool?
+  public let community_id: Swift.Int?
+  public let state: Swift.Int?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct MemberJoin : Swift.Codable {
+  public let key: Swift.String?
+  public let value: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class DKPhotoGalleryResource {
+  public class func localizedStringWithKey(_ key: Swift.String, value: Swift.String? = nil) -> Swift.String
+  @objc public static var customLocalizationBlock: ((_ title: Swift.String) -> Swift.String?)?
+  public class func downloadFailedImage() -> UIKit.UIImage
+  public class func closeVideoImage() -> UIKit.UIImage
+  public class func videoPlayImage() -> UIKit.UIImage
+  public class func videoToolbarPlayImage() -> UIKit.UIImage
+  public class func videoToolbarPauseImage() -> UIKit.UIImage
+  public class func videoPlayControlBackgroundImage() -> UIKit.UIImage
+  public class func videoTimeSliderImage() -> UIKit.UIImage
+  @objc deinit
+}
+public struct RecordingAttachment : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Instructor : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Highlight : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Testimonial : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct FAQ : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum DownloadError : Swift.Error {
+  case emptyData
+  case invalidImage
+  public static func == (a: LikeMindsSDK.DownloadError, b: LikeMindsSDK.DownloadError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryTransitionPresent : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+  @_Concurrency.MainActor(unsafe) @objc open func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc open func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class DKAssetGroupDetailVideoCell : LikeMindsSDK.DKAssetGroupDetailImageCell {
+  @_Concurrency.MainActor(unsafe) @objc override public class func cellReuseIdentifier() -> Swift.String
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override weak public var asset: LikeMindsSDK.DKAsset? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isSelected: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class DKAssetGroupDetailImageCell : LikeMindsSDK.DKAssetGroupDetailBaseCell {
+  @objc @_Concurrency.MainActor(unsafe) override public class func cellReuseIdentifier() -> Swift.String
+  @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKImageCheckView : UIKit.UIView {
+    @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+    @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+    @objc deinit
+  }
+  @_Concurrency.MainActor(unsafe) @objc override public var thumbnailImage: UIKit.UIImage? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override public var selectedIndex: Swift.Int {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override public var thumbnailImageView: UIKit.UIImageView {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public let checkView: LikeMindsSDK.DKAssetGroupDetailImageCell.DKImageCheckView
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isSelected: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc deinit
+}
+public typealias Parameters = [Swift.String : Any]
+extension Foundation.DateFormatter {
+  public class func getDateFormat(_ date: Foundation.Date, _ format: Swift.String) -> Swift.String
+}
+public struct ProductBanner : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Banner : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class KeychainService : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct PendingChatroomModal : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Attachments : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension LikeMindsSDK.DKAsset {
+  @objc dynamic public func fetchImage(with size: CoreGraphics.CGSize, options: Photos.PHImageRequestOptions? = nil, contentMode: Photos.PHImageContentMode = .aspectFit, completeBlock: @escaping (_ image: UIKit.UIImage?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
+  @objc dynamic public func fetchFullScreenImage(completeBlock: @escaping (_ image: UIKit.UIImage?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
+  @objc dynamic public func fetchOriginalImage(options: Photos.PHImageRequestOptions? = nil, completeBlock: @escaping (_ image: UIKit.UIImage?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
+  @objc dynamic public func fetchImageData(options: Photos.PHImageRequestOptions? = nil, compressionQuality: CoreGraphics.CGFloat = 0.9, completeBlock: @escaping (_ imageData: Foundation.Data?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
+  @objc dynamic public func fetchAVAsset(options: Photos.PHVideoRequestOptions? = nil, completeBlock: @escaping (_ AVAsset: AVFoundation.AVAsset?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
+  @objc dynamic public func cancelRequests()
+  public var fullScreenImage: (image: UIKit.UIImage?, info: [Swift.AnyHashable : Any]?)? {
+    get
+  }
+}
+public class ConversationDataModel : Swift.Codable, Swift.Equatable {
+  required public init(from decoder: Swift.Decoder) throws
+  public static func == (lhs: LikeMindsSDK.ConversationDataModel, rhs: LikeMindsSDK.ConversationDataModel) -> Swift.Bool
+  public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol SelectionReasonDelegate : AnyObject {
+  func selectedReason(selected: LikeMindsSDK.Tag, conversation: LikeMindsSDK.ConversationDataModel)
+}
+@objc public protocol DKPhotoGalleryDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func photoGallery(_ gallery: LikeMindsSDK.DKPhotoGallery, didShow index: Swift.Int)
+}
+@objc public protocol DKPhotoGalleryIncrementalDataSource : ObjectiveC.NSObjectProtocol {
+  @objc optional func numberOfItems(in gallery: LikeMindsSDK.DKPhotoGallery) -> Swift.Int
+  @objc func photoGallery(_ gallery: LikeMindsSDK.DKPhotoGallery, itemsBefore item: LikeMindsSDK.DKPhotoGalleryItem?, resultHandler: @escaping ((_ items: [LikeMindsSDK.DKPhotoGalleryItem]?, _ error: Swift.Error?) -> Swift.Void))
+  @objc func photoGallery(_ gallery: LikeMindsSDK.DKPhotoGallery, itemsAfter item: LikeMindsSDK.DKPhotoGalleryItem?, resultHandler: @escaping ((_ items: [LikeMindsSDK.DKPhotoGalleryItem]?, _ error: Swift.Error?) -> Swift.Void))
+}
+@objc public enum DKPhotoGallerySingleTapMode : Swift.Int {
+  case dismiss, toggleControlView
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGallery : UIKit.UINavigationController, UIKit.UIViewControllerTransitioningDelegate {
+  @objc @_Concurrency.MainActor(unsafe) open var items: [LikeMindsSDK.DKPhotoGalleryItem]?
+  @objc @_Concurrency.MainActor(unsafe) open var incrementalDataSource: LikeMindsSDK.DKPhotoGalleryIncrementalDataSource?
+  @objc @_Concurrency.MainActor(unsafe) open var finishedBlock: ((_ index: Swift.Int, _ item: LikeMindsSDK.DKPhotoGalleryItem) -> UIKit.UIImageView?)?
+  @objc @_Concurrency.MainActor(unsafe) open var presentingFromImageView: UIKit.UIImageView?
+  @objc @_Concurrency.MainActor(unsafe) open var presentationIndex: Swift.Int
+  @objc @_Concurrency.MainActor(unsafe) open var singleTapMode: LikeMindsSDK.DKPhotoGallerySingleTapMode
+  @objc @_Concurrency.MainActor(unsafe) weak open var galleryDelegate: LikeMindsSDK.DKPhotoGalleryDelegate?
+  @objc @_Concurrency.MainActor(unsafe) open var customLongPressActions: [UIKit.UIAlertAction]?
+  @objc @_Concurrency.MainActor(unsafe) open var customPreviewActions: [Any]?
+  @objc @_Concurrency.MainActor(unsafe) open var footerView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var transitionController: LikeMindsSDK.DKPhotoGalleryTransitionController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) open func dismissGallery()
+  @objc @_Concurrency.MainActor(unsafe) open func currentContentView() -> UIKit.UIView
+  @objc @_Concurrency.MainActor(unsafe) open func currentContentVC() -> LikeMindsSDK.DKPhotoBasePreviewVC
+  @objc @_Concurrency.MainActor(unsafe) open func currentIndex() -> Swift.Int
+  @objc @_Concurrency.MainActor(unsafe) open func updateNavigation()
+  @objc @_Concurrency.MainActor(unsafe) open func handleSingleTap()
+  @objc @_Concurrency.MainActor(unsafe) open func toggleControlView()
+  @objc @_Concurrency.MainActor(unsafe) open func showsControlView()
+  @objc @_Concurrency.MainActor(unsafe) open func hidesControlView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var previewActionItems: [UIKit.UIPreviewActionItem] {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func popViewController(animated: Swift.Bool) -> UIKit.UIViewController?
+  @_Concurrency.MainActor(unsafe) public class func setPreferredStatusBarStyle(statusBarStyle: UIKit.UIStatusBarStyle)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @available(iOS 5.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func present(photoGallery gallery: LikeMindsSDK.DKPhotoGallery, completion: (() -> Swift.Void)? = nil)
+}
+public struct UpdateManagerRightsModal : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers open class DKImageBaseManager : ObjectiveC.NSObject {
+  @objc open func add(observer object: Swift.AnyObject)
+  @objc open func remove(observer object: Swift.AnyObject)
+  open func notify(with selector: ObjectiveC.Selector, object: Swift.AnyObject?)
+  open func notify(with selector: ObjectiveC.Selector, object: Swift.AnyObject?, objectTwo: Swift.AnyObject?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc extension LikeMindsSDK.DKPhotoBasePreviewVC {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public class func photoPreviewClass(with item: LikeMindsSDK.DKPhotoGalleryItem) -> LikeMindsSDK.DKPhotoBasePreviewVC.Type
+  @objc @_Concurrency.MainActor(unsafe) dynamic public class func photoPreviewVC(with item: LikeMindsSDK.DKPhotoGalleryItem) -> LikeMindsSDK.DKPhotoBasePreviewVC
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class JLStickerLabelView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var border: QuartzCore.CAShapeLayer?
+  @_Concurrency.MainActor(unsafe) public var labelTextView: LikeMindsSDK.JLAttributedTextView?
+  @_Concurrency.MainActor(unsafe) public var rotateView: UIKit.UIImageView?
+  @_Concurrency.MainActor(unsafe) public var closeView: UIKit.UIImageView?
+  @_Concurrency.MainActor(unsafe) public var imageView: UIKit.UIImageView?
+  @_Concurrency.MainActor(unsafe) public var borderColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var enableClose: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var enableRotate: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var enableMoveRestriction: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var showsContentShadow: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToSuperview()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension LikeMindsSDK.JLStickerLabelView : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewShouldBeginEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+}
+extension LikeMindsSDK.JLStickerLabelView : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+extension LikeMindsSDK.JLStickerLabelView {
+  @_Concurrency.MainActor(unsafe) public func hideEditingHandlers()
+  @_Concurrency.MainActor(unsafe) public func showEditingHandles()
+}
+@objc public protocol JLStickerLabelViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func labelViewDidClose(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidShowEditingHandles(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidHideEditingHandles(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidStartEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidBeginEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidChangeEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidEndEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @objc optional func labelViewDidSelected(_ label: LikeMindsSDK.JLStickerLabelView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKAssetGroupGridLayout : UIKit.UICollectionViewFlowLayout {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepare()
+  @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryTransitionDismiss : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+  @_Concurrency.MainActor(unsafe) @objc open func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc open func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func openCamera(selectedImage: @escaping (UIKit.UIImage, Swift.String) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func openGallery(selectedImage: @escaping (UIKit.UIImage, Swift.String) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func openUrl(urlString: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func checkPhotoLibraryPermission() -> Swift.Bool
+}
+@objc extension LikeMindsSDK.DKAsset {
+  @objc dynamic public var localTemporaryPath: Foundation.URL? {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public var fileName: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public var fileSize: Swift.UInt {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public var progress: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public var error: Swift.Error? {
+    @objc get
+    @objc set
+  }
+}
+public protocol LikeMindsSDKDelegate : AnyObject {
+  func loginRequiredCallback()
+  func eventFiredCallback(eventName: Swift.String, properties: [Swift.String : Any])
+}
+extension LikeMindsSDK.LikeMindsSDKDelegate {
+  public func loginRequiredCallback()
+  public func eventFiredCallback(eventName: Swift.String, properties: [Swift.String : Any])
+}
+@_hasMissingDesignatedInitializers public class LikeMindsSDK {
+  public static let shared: LikeMindsSDK.LikeMindsSDK
+  public func configure(application: UIKit.UIApplication, apiKey: Swift.String, callback: LikeMindsSDK.LikeMindsSDKDelegate)
+  public func initiateGroupChat(viewController: UIKit.UIViewController, userName: Swift.String?, userId: Swift.String?, isGuest: Swift.Bool = false, completion: (_ response: Swift.String) -> Swift.Void)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class DKImageGroupDataManagerConfiguration : ObjectiveC.NSObject, Foundation.NSCopying {
+  public var assetGroupTypes: [Photos.PHAssetCollectionSubtype]
+  public var groupFetchPredicate: Foundation.NSPredicate?
+  @objc public var assetFetchOptions: Photos.PHFetchOptions?
+  @objc public var fetchLimit: Swift.Int
+  @objc required override dynamic public init()
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+}
+@objc open class DKImageGroupDataManager : LikeMindsSDK.DKImageBaseManager, Photos.PHPhotoLibraryChangeObserver {
+  public var groupIds: [Swift.String]?
+  public init(configuration: LikeMindsSDK.DKImageGroupDataManagerConfiguration)
+  @objc deinit
+  open func invalidate()
+  open func fetchGroups(_ completeBlock: @escaping (_ groups: [Swift.String]?, _ error: Foundation.NSError?) -> Swift.Void)
+  open func fetchGroup(with groupId: Swift.String) -> LikeMindsSDK.DKAssetGroup?
+  open func fetchGroupThumbnail(with groupId: Swift.String, size: CoreGraphics.CGSize, options: Photos.PHImageRequestOptions, completeBlock: @escaping (_ image: UIKit.UIImage?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
+  open func fetchAsset(_ group: LikeMindsSDK.DKAssetGroup, index: Swift.Int) -> LikeMindsSDK.DKAsset?
+  open func fetchPHAsset(_ group: LikeMindsSDK.DKAssetGroup, index: Swift.Int) -> Photos.PHAsset?
+  open func makeDKAssetGroup(with collection: Photos.PHAssetCollection) -> LikeMindsSDK.DKAssetGroup
+  open func collectionType(for subtype: Photos.PHAssetCollectionSubtype) -> Photos.PHAssetCollectionType
+  open func fetchGroups(assetGroupTypes: [Photos.PHAssetCollectionSubtype], groupFetchPredicate: Foundation.NSPredicate? = nil, block: @escaping (Photos.PHAssetCollection) -> Swift.Void)
+  open func updatePartial(groups: [Swift.String : LikeMindsSDK.DKAssetGroup], groupIds: [Swift.String], completeBlock: @escaping (_ groups: [Swift.String]?, _ error: Foundation.NSError?) -> Swift.Void)
+  open func updateGroup(_ group: LikeMindsSDK.DKAssetGroup, collection: Photos.PHAssetCollection)
+  open func updateGroup(_ group: LikeMindsSDK.DKAssetGroup, fetchResult: Photos.PHFetchResult<Photos.PHAsset>)
+  @objc open func photoLibraryDidChange(_ changeInstance: Photos.PHChange)
+}
+public struct CommunitySettingsResponse {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CommunitySetting : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CommunityToastResponse {
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol DKPhotoProgressIndicatorProtocol : ObjectiveC.NSObjectProtocol {
+  init(with view: UIKit.UIView)
+  func startIndicator()
+  func stopIndicator()
+  func setIndicatorProgress(_ progress: Swift.Float)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class DKAssetGroupDetailCameraCell : LikeMindsSDK.DKAssetGroupDetailBaseCell {
+  @objc @_Concurrency.MainActor(unsafe) override public class func cellReuseIdentifier() -> Swift.String
+  @objc deinit
+}
+public struct UserAppAccessData : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct CommunityDetails : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct CommunityData : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct AllMember : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Admins : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct CommunityFeedMetaData : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension UIKit.UIFont {
+  public static func loadFont(fontsNames: [Swift.String] = [])
+}
+@objc public protocol ABVideoRangeSliderDelegate {
+  @objc func didChangeValue(videoRangeSlider: LikeMindsSDK.ABVideoRangeSlider, startTime: Swift.Float64, endTime: Swift.Float64)
+  @objc func indicatorDidChangePosition(videoRangeSlider: LikeMindsSDK.ABVideoRangeSlider, position: Swift.Float64)
+  @objc optional func sliderGesturesBegan()
+  @objc optional func sliderGesturesEnded()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ABVideoRangeSlider : UIKit.UIView, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: LikeMindsSDK.ABVideoRangeSliderDelegate?
+  @_Concurrency.MainActor(unsafe) public var startTimeView: LikeMindsSDK.ABTimeView
+  @_Concurrency.MainActor(unsafe) public var endTimeView: LikeMindsSDK.ABTimeView
+  @_Concurrency.MainActor(unsafe) public var minSpace: Swift.Float
+  @_Concurrency.MainActor(unsafe) public var maxSpace: Swift.Float
+  @_Concurrency.MainActor(unsafe) public var isProgressIndicatorSticky: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var isProgressIndicatorDraggable: Swift.Bool
+  public enum ABTimeViewPosition {
+    case top
+    case bottom
+    public static func == (a: LikeMindsSDK.ABVideoRangeSlider.ABTimeViewPosition, b: LikeMindsSDK.ABVideoRangeSlider.ABTimeViewPosition) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @_Concurrency.MainActor(unsafe) public func setProgressIndicatorImage(image: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func hideProgressIndicator()
+  @_Concurrency.MainActor(unsafe) public func showProgressIndicator()
+  @_Concurrency.MainActor(unsafe) public func updateProgressIndicator(seconds: Swift.Float64)
+  @_Concurrency.MainActor(unsafe) public func setStartIndicatorImage(image: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func setEndIndicatorImage(image: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func setBorderImage(image: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func setTimeView(view: LikeMindsSDK.ABTimeView)
+  @_Concurrency.MainActor(unsafe) public func setTimeViewPosition(position: LikeMindsSDK.ABVideoRangeSlider.ABTimeViewPosition)
+  @_Concurrency.MainActor(unsafe) public func setVideoURL(videoURL: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func updateThumbnails()
+  @_Concurrency.MainActor(unsafe) public func setStartPosition(seconds: Swift.Float)
+  @_Concurrency.MainActor(unsafe) public func setEndPosition(seconds: Swift.Float)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func point(inside point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> Swift.Bool
+  @objc deinit
+}
+public struct UpdateCommunityRightsModal : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct UpdateCommunitySettingsModal : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc public enum CommunityScreen : Swift.Int {
+  case join = 0
+  case update
+  case edit
+  case adminJoin
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoBaseImagePreviewVC : LikeMindsSDK.DKPhotoBasePreviewVC {
+  @_Concurrency.MainActor(unsafe) override public func createContentView() -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) override public func updateContentView(with content: Any)
+  @_Concurrency.MainActor(unsafe) override public func snapshotImage() -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) override public func showError()
+  @_Concurrency.MainActor(unsafe) override public func hidesError()
+  @_Concurrency.MainActor(unsafe) override public func contentSize() -> CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) override public func defaultPreviewActions() -> [UIKit.UIPreviewActionItem]
+  @_Concurrency.MainActor(unsafe) override public func defaultLongPressActions() -> [UIKit.UIAlertAction]
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ButtonWithBadge : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+public struct LoginData : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct generateOTPResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct User : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Mobiles : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct Emails : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public typealias JSONArray = [[Swift.String : Any]]
+public typealias JSONDictionary = [Swift.String : Any]
+public typealias Action = () -> Swift.Void
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) final public func register<T>(cellType: T.Type) where T : UIKit.UITableViewCell, T : LikeMindsSDK.NibLoadable, T : LikeMindsSDK.Reusable
+  @_Concurrency.MainActor(unsafe) final public func register<T>(cellType: T.Type) where T : UIKit.UITableViewCell, T : LikeMindsSDK.Reusable
+  @_Concurrency.MainActor(unsafe) final public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath, cellType: T.Type = T.self) -> T where T : UIKit.UITableViewCell, T : LikeMindsSDK.Reusable
+  @_Concurrency.MainActor(unsafe) final public func dequeueReusableCell<T>(cellType: T.Type = T.self) -> T where T : UIKit.UITableViewCell, T : LikeMindsSDK.Reusable
+  @_Concurrency.MainActor(unsafe) final public func register<T>(headerFooterViewType: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : LikeMindsSDK.NibLoadable, T : LikeMindsSDK.Reusable
+  @_Concurrency.MainActor(unsafe) final public func register<T>(headerFooterViewType: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : LikeMindsSDK.Reusable
+  @_Concurrency.MainActor(unsafe) final public func dequeueReusableHeaderFooterView<T>(_ viewType: T.Type = T.self) -> T? where T : UIKit.UITableViewHeaderFooterView, T : LikeMindsSDK.Reusable
+}
+public struct ogTags : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public enum ChatRoomInputSource : Swift.Int {
+  case homeFeed
+  case notification
+  case communityFeed
+  case deepLink
+  case internalLink
+  case introductionRooms
+  case activeThreads
+  case route
+  case chatRoom
+  case directMessageScreen
+  case singleEvent
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoContentAnimationView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var contentMode: UIKit.UIView.ContentMode {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var backgroundColor: UIKit.UIColor? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoPlayerPreviewVC : LikeMindsSDK.DKPhotoBasePreviewVC {
+  @_Concurrency.MainActor(unsafe) public var closeBlock: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var autoHidesControlView: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var tapToToggleControlView: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var beginPlayBlock: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var isControlHidden: Swift.Bool {
+    get
+    set
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) override open func photoPreviewWillAppear()
+  @_Concurrency.MainActor(unsafe) override open func photoPreviewWillDisappear()
+  @_Concurrency.MainActor(unsafe) override open func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) override open func createContentView() -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) override open func contentSize() -> CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) override open func fetchContent(withProgressBlock progressBlock: @escaping ((Swift.Float) -> Swift.Void), completeBlock: @escaping ((Any?, Swift.Error?) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) override open func updateContentView(with content: Any)
+  @_Concurrency.MainActor(unsafe) override open func enableZoom() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) override public func enableIndicatorView() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) override open var previewType: LikeMindsSDK.DKPhotoPreviewType {
+    @_Concurrency.MainActor(unsafe) get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol Reusable : AnyObject {
+  static var reuseIdentifier: Swift.String { get }
+}
+public typealias NibReusable = LikeMindsSDK.NibLoadable & LikeMindsSDK.Reusable
+extension LikeMindsSDK.Reusable {
+  public static var reuseIdentifier: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers open class NavigationBar {
+  @objc deinit
+}
+public struct UpdateMemberRightsModal : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var closeBarButtonItem: UIKit.UIBarButtonItem {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var searchCloseBarButtonItem: UIKit.UIBarButtonItem {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var moreBarButtonItem: UIKit.UIBarButtonItem {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var fixedSpace: UIKit.UIBarButtonItem {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var searchButton: UIKit.UIBarButtonItem {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var shareButtonItem: UIKit.UIBarButtonItem {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var backBarButtonItem: UIKit.UIBarButtonItem {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func popViewController()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func dismissAction()
+  @_Concurrency.MainActor(unsafe) public func resetButtonTapped(_ sender: UIKit.UIBarButtonItem)
+  @_Concurrency.MainActor(unsafe) public func scanAction()
+  @_Concurrency.MainActor(unsafe) public func shareActionValue()
+  @_Concurrency.MainActor(unsafe) public func tutorialAction()
+  @_Concurrency.MainActor(unsafe) public func moreAction()
+  @_Concurrency.MainActor(unsafe) public func logoutAction()
+}
+public struct LastConversationMember : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class RecordView : UIKit.UIView, QuartzCore.CAAnimationDelegate {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: LikeMindsSDK.RecordViewDelegate?
+  @_Concurrency.MainActor(unsafe) public var offsetX: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var offsetY: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var isSoundEnabled: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var buttonTransformScale: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var slideToCancelText: Swift.String! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var slideToCancelTextColor: UIKit.UIColor! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var slideToCancelArrowImage: UIKit.UIImage! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var smallMicImage: UIKit.UIImage! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var durationTimerColor: UIKit.UIColor! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryTransitionController : UIKit.UIPresentationController, UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) open var gallery: LikeMindsSDK.DKPhotoGallery!
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForPresentation(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @objc deinit
+}
+public enum DKPhotoPreviewType {
+  case photo, video
+  @available(iOS 11.0, *)
+  case pdf
+  public static func == (a: LikeMindsSDK.DKPhotoPreviewType, b: LikeMindsSDK.DKPhotoPreviewType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol DKPhotoBasePreviewDataSource : ObjectiveC.NSObjectProtocol {
+  func createContentView() -> UIKit.UIView
+  func updateContentView(with content: Any)
+  func contentSize() -> CoreGraphics.CGSize
+  func fetchContent(withProgressBlock progressBlock: @escaping ((_ progress: Swift.Float) -> Swift.Void), completeBlock: @escaping ((_ data: Any?, _ error: Swift.Error?) -> Swift.Void))
+  func snapshotImage() -> UIKit.UIImage?
+  func showError()
+  func hidesError()
+  func enableZoom() -> Swift.Bool
+  func enableIndicatorView() -> Swift.Bool
+  func defaultPreviewActions() -> [UIKit.UIPreviewActionItem]
+  func defaultLongPressActions() -> [UIKit.UIAlertAction]
+  var previewType: LikeMindsSDK.DKPhotoPreviewType { get }
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoBasePreviewVC : UIKit.UIViewController, UIKit.UIScrollViewDelegate, LikeMindsSDK.DKPhotoBasePreviewDataSource {
+  @objc @_Concurrency.MainActor(unsafe) open var item: LikeMindsSDK.DKPhotoGalleryItem! {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var contentView: UIKit.UIView! {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var customLongPressActions: [UIKit.UIAlertAction]?
+  @objc @_Concurrency.MainActor(unsafe) open var customPreviewActions: [Any]?
+  @objc @_Concurrency.MainActor(unsafe) open var singleTapBlock: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func photoPreviewWillAppear()
+  @_Concurrency.MainActor(unsafe) open func photoPreviewWillDisappear()
+  @_Concurrency.MainActor(unsafe) open func resetScale()
+  @_Concurrency.MainActor(unsafe) open func showTips(_ message: Swift.String)
+  @_Concurrency.MainActor(unsafe) open func setNeedsUpdateContent()
+  @_Concurrency.MainActor(unsafe) open func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var previewActionItems: [UIKit.UIPreviewActionItem] {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarUpdateAnimation: UIKit.UIStatusBarAnimation {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidZoom(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) public func createContentView() -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public func updateContentView(with content: Any)
+  @_Concurrency.MainActor(unsafe) public func contentSize() -> CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) public func fetchContent(withProgressBlock progressBlock: @escaping ((_ progress: Swift.Float) -> Swift.Void), completeBlock: @escaping ((_ data: Any?, _ error: Swift.Error?) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) public func snapshotImage() -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public func showError()
+  @_Concurrency.MainActor(unsafe) public func hidesError()
+  @_Concurrency.MainActor(unsafe) public func enableZoom() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func enableIndicatorView() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func defaultPreviewActions() -> [UIKit.UIPreviewActionItem]
+  @_Concurrency.MainActor(unsafe) public func defaultLongPressActions() -> [UIKit.UIAlertAction]
+  @_Concurrency.MainActor(unsafe) public var previewType: LikeMindsSDK.DKPhotoPreviewType {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct KPItem {
+  public enum ItemType {
+    case Normal
+    case Cancel
+    public static func == (a: LikeMindsSDK.KPItem.ItemType, b: LikeMindsSDK.KPItem.ItemType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public typealias TapHandler = (() -> ())
+  public var title: Swift.String?
+  public var titleColor: Swift.String?
+  public var type: LikeMindsSDK.KPItem.ItemType
+  public var tapHandler: LikeMindsSDK.KPItem.TapHandler?
+  public init(title: Swift.String?, titleColor: Swift.String?, onTap tapHandler: LikeMindsSDK.KPItem.TapHandler?)
+  public init(title: Swift.String?, titleColor: Swift.String?, type: LikeMindsSDK.KPItem.ItemType)
+}
+public struct FactoryRegistrar {
+  public static var shared: LikeMindsSDK.FactoryRegistrar
+  public var factoryBuilder: LikeMindsSDK.FactoryBuilder
+}
+@objc public protocol DKAssetGroupCellType {
+  @objc static var preferredHeight: CoreGraphics.CGFloat { get }
+  @objc func configure(with assetGroup: LikeMindsSDK.DKAssetGroup, tag: Swift.Int, dataManager: LikeMindsSDK.DKImageGroupDataManager, imageRequestOptions: Photos.PHImageRequestOptions)
+}
+public struct UserChatroom : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension CoreGraphics.CGSize {
+  public func toPixel() -> CoreGraphics.CGSize
+}
+@objc public enum DKAssetType : Swift.Int {
+  case photo
+  case video
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc open class DKAsset : ObjectiveC.NSObject {
+  @objc public var type: LikeMindsSDK.DKAssetType {
+    get
+  }
+  @objc public var localIdentifier: Swift.String
+  @objc public var location: CoreLocation.CLLocation? {
+    get
+  }
+  @objc public var duration: Swift.Double {
+    get
+  }
+  @objc public var pixelWidth: Swift.Int {
+    get
+  }
+  @objc public var pixelHeight: Swift.Int {
+    get
+  }
+  @objc public var originalAsset: Photos.PHAsset? {
+    get
+  }
+  public init(originalAsset: Photos.PHAsset)
+  public var image: UIKit.UIImage? {
+    get
+  }
+  public init(image: UIKit.UIImage)
+  @objc override dynamic open func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+}
+extension AVFoundation.AVAsset {
+  @objc dynamic public func calculateFileSize() -> Swift.Float
+}
+public enum CAError : Swift.Error {
+  case none
+  case parsingFailure(message: Swift.String, request: Swift.String)
+  case noData(message: Swift.String, request: Swift.String)
+  case serverFailure(Swift.Error)
+  case serverRefused(message: Swift.String)
+  case other(childError: Swift.Error)
+}
+extension LikeMindsSDK.CAError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class LMPaddedLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func textRect(forBounds bounds: CoreGraphics.CGRect, limitedToNumberOfLines numberOfLines: Swift.Int) -> CoreGraphics.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct CollabcardAnswer1 : Swift.Codable {
+  public let id: Swift.Int?
+  public let answer: Swift.String?
+  public let created_at: Swift.String?
+  public let state: Swift.Int?
+  public let date: Swift.String?
+  public let deleted_by: Swift.Int?
+  public let member: LikeMindsSDK.Member1?
+  public var image_count: Swift.Int?
+  public let images: [LikeMindsSDK.CollabcardImages1]?
+  public let videos: [LikeMindsSDK.CollabcardVideo1]?
+  public var video_count: Swift.Int?
+  public let pdf: [LikeMindsSDK.CollabcardPDFs1]?
+  public let og_tags: LikeMindsSDK.OgTags1?
+  public let last_seen: Swift.Bool?
+  public let answer_bubble: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct CollabcardImages1 : Swift.Codable {
+  public let image_url: Swift.String?
+  public let url: Swift.String?
+  public let height: Swift.Int?
+  public let width: Swift.Int?
+  public let index: Swift.Int?
+  public let type: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct CollabcardVideo1 : Swift.Codable {
+  public let video_url: Swift.String?
+  public let type: Swift.String?
+  public let index: Swift.Int?
+  public let thumbnail_url: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct CollabcardPDFs1 : Swift.Codable {
+  public let pdfFileUrl: Swift.String?
+  public let pdfFile: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct OgTags1 : Swift.Codable {
+  public let title: Swift.String?
+  public let image: Swift.String?
+  public let description: Swift.String?
+  public let url: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct PollOption1 : Swift.Codable {
+  public let id: Swift.Int?
+  public var text: Swift.String?
+  public var is_selected: Swift.Bool?
+  public let percentage: Swift.Int?
+  public let poll_count: Swift.Int?
+  public let image_url: Swift.String?
+  public let sub_text: Swift.String?
+  public let no_votes: Swift.Int?
+  public let member: LikeMindsSDK.Member1?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct SuccessFailureResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @available(iOS 12.0, *)
+@objc public class NotificationCategoriesManager : ObjectiveC.NSObject {
+  @objc public func registerCategories()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct Tag : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum MemberDirectoryMode {
+  case memberDirectory
+  case viewParticipants
+  case viewAttendees
+  case viewCoHosts
+  case addCoHosts
+  case viewPrivateChatroomParticipants
+  case addParticipants
+  case addParticipantsForOpenChatroom
+  case pollUsers
+  case microPollUsers
+  case pendingMembers
+  public static func == (a: LikeMindsSDK.MemberDirectoryMode, b: LikeMindsSDK.MemberDirectoryMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Results<Value, CAError> {
+  case success(Value)
+  case failure(CAError)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class JLAttributedTextView : UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) public var textAttributes: [Foundation.NSAttributedString.Key : Swift.AnyObject] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var textAlpha: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var fontName: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var fontSize: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var foregroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textBackgroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textBackgroundAlpha: CoreGraphics.CGFloat? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var paragraphStyle: UIKit.NSMutableParagraphStyle {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var alignment: UIKit.NSTextAlignment {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var lineSpacing: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var paragraphSpacing: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var shadow: UIKit.NSShadow? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textShadowOffset: CoreGraphics.CGSize! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textShadowColor: UIKit.UIColor! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textShadowBlur: CoreGraphics.CGFloat! {
+    get
+    set
+  }
+  @available(iOS 7.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension LikeMindsSDK.JLAttributedTextView {
+  @_Concurrency.MainActor(unsafe) public func shadow(color: Swift.AnyObject?, offset: CoreGraphics.CGSize, blurRadius: CoreGraphics.CGFloat) -> Self
+  @_Concurrency.MainActor(unsafe) public func shadow(_ shadow: UIKit.NSShadow?) -> Self
+}
+extension LikeMindsSDK.JLAttributedTextView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func caretRect(for position: UIKit.UITextPosition) -> CoreGraphics.CGRect
+}
+public protocol AddParticipantsDelegate : AnyObject {
+  func selectedParticipants(participants: [Swift.Int], withCohorts cohortIds: [Swift.Int]?)
+}
+@objc public enum MemberDirectoryInputSource : Swift.Int {
+  case communityFeed
+  case homeComunityScreen
+  case communityDetail
+  case deepLink
+  case notification
+  case chatroom
+  case fetchchRouteUnknown
+  case memberDirectory
+  case homeScreen
+  case pollResult
+  case viewParticipantList
+  case singleEvent
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum DKImagePickerGroupListPresentationStyle : Swift.Int {
+  case popover
+  case presented
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol DKImagePickerControllerUIDelegate {
+  @objc func prepareLayout(_ imagePickerController: LikeMindsSDK.DKImagePickerController, vc: UIKit.UIViewController)
+  @objc func layoutForImagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController) -> UIKit.UICollectionViewLayout.Type
+  @objc func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, showsCancelButtonForVC vc: UIKit.UIViewController)
+  @objc func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, hidesCancelButtonForVC vc: UIKit.UIViewController)
+  @objc func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, didSelectAssets: [LikeMindsSDK.DKAsset])
+  @objc func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, didDeselectAssets: [LikeMindsSDK.DKAsset])
+  @objc func imagePickerControllerDidReachMaxLimit(_ imagePickerController: LikeMindsSDK.DKImagePickerController)
+  @objc func imagePickerControllerFooterView(_ imagePickerController: LikeMindsSDK.DKImagePickerController) -> UIKit.UIView?
+  @objc func imagePickerControllerHeaderView(_ imagePickerController: LikeMindsSDK.DKImagePickerController) -> UIKit.UIView?
+  @objc func imagePickerControllerCollectionViewBackgroundColor() -> UIKit.UIColor
+  @objc func imagePickerControllerCollectionImageCell() -> LikeMindsSDK.DKAssetGroupDetailBaseCell.Type
+  @objc func imagePickerControllerCollectionCameraCell() -> LikeMindsSDK.DKAssetGroupDetailBaseCell.Type
+  @objc func imagePickerControllerCollectionVideoCell() -> LikeMindsSDK.DKAssetGroupDetailBaseCell.Type
+  @objc func imagePickerControllerGroupCell() -> LikeMindsSDK.DKAssetGroupCellType.Type
+  @objc func imagePickerControllerSelectGroupButton(_ imagePickerController: LikeMindsSDK.DKImagePickerController, selectedGroup: LikeMindsSDK.DKAssetGroup) -> UIKit.UIButton
+  @objc func imagePickerControllerGroupListPresentationStyle() -> LikeMindsSDK.DKImagePickerGroupListPresentationStyle
+  @objc func imagePickerControllerPrepareGroupListViewController(_ listViewController: UIKit.UITableViewController)
+}
+@_inheritsConvenienceInitializers @objc open class DKImagePickerControllerBaseUIDelegate : ObjectiveC.NSObject, LikeMindsSDK.DKImagePickerControllerUIDelegate {
+  weak open var imagePickerController: LikeMindsSDK.DKImagePickerController!
+  open var doneButton: UIKit.UIButton?
+  open var selectGroupButton: UIKit.UIButton?
+  open func createDoneButtonIfNeeded() -> UIKit.UIButton
+  open func createSelectGroupButtonIfNeeded() -> UIKit.UIButton
+  open func updateDoneButtonTitle(_ button: UIKit.UIButton)
+  @objc open func prepareLayout(_ imagePickerController: LikeMindsSDK.DKImagePickerController, vc: UIKit.UIViewController)
+  @objc open func layoutForImagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController) -> UIKit.UICollectionViewLayout.Type
+  @objc open func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, showsCancelButtonForVC vc: UIKit.UIViewController)
+  @objc open func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, hidesCancelButtonForVC vc: UIKit.UIViewController)
+  @objc open func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, didSelectAssets: [LikeMindsSDK.DKAsset])
+  @objc open func imagePickerController(_ imagePickerController: LikeMindsSDK.DKImagePickerController, didDeselectAssets: [LikeMindsSDK.DKAsset])
+  open var isMaxLimitAlertDisplayed: Swift.Bool {
+    get
+  }
+  @objc open func imagePickerControllerDidReachMaxLimit(_ imagePickerController: LikeMindsSDK.DKImagePickerController)
+  @objc open func imagePickerControllerFooterView(_ imagePickerController: LikeMindsSDK.DKImagePickerController) -> UIKit.UIView?
+  @objc open func imagePickerControllerHeaderView(_ imagePickerController: LikeMindsSDK.DKImagePickerController) -> UIKit.UIView?
+  @objc open func imagePickerControllerCollectionViewBackgroundColor() -> UIKit.UIColor
+  @objc open func imagePickerControllerCollectionImageCell() -> LikeMindsSDK.DKAssetGroupDetailBaseCell.Type
+  @objc open func imagePickerControllerCollectionCameraCell() -> LikeMindsSDK.DKAssetGroupDetailBaseCell.Type
+  @objc open func imagePickerControllerCollectionVideoCell() -> LikeMindsSDK.DKAssetGroupDetailBaseCell.Type
+  @objc open func imagePickerControllerGroupCell() -> LikeMindsSDK.DKAssetGroupCellType.Type
+  @objc open func imagePickerControllerSelectGroupButton(_ imagePickerController: LikeMindsSDK.DKImagePickerController, selectedGroup: LikeMindsSDK.DKAssetGroup) -> UIKit.UIButton
+  @objc open func imagePickerControllerGroupListPresentationStyle() -> LikeMindsSDK.DKImagePickerGroupListPresentationStyle
+  @objc open func imagePickerControllerPrepareGroupListViewController(_ listViewController: UIKit.UITableViewController)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol RecordViewDelegate {
+  @objc func onStart(duration: CoreGraphics.CGFloat)
+  @objc func onCancel()
+  @objc func onFinished(duration: CoreGraphics.CGFloat)
+  @objc func onFailed(errorString: Swift.String)
+  @objc func onLockedButton()
+  @objc optional func onAnimationEnd()
+}
+extension Swift.String {
+  public func removingAllWhitespaces() -> Swift.String
+  public func removingCharacters(from set: Foundation.CharacterSet) -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class DKImageAssetDiskPurger {
+  @objc deinit
+  public func add(directory: Foundation.URL)
+  public func clear()
+}
+@objc public enum DKImageAssetExporterError : Swift.Int {
+  case cancelled, exportFailed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum DKImageExportPresent : Swift.Int {
+  case compatible, current
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias DKImageAssetExportRequestID = Swift.Int32
+public let DKImageAssetExportInvalidRequestID: LikeMindsSDK.DKImageAssetExportRequestID
+public let DKImageAssetExporterDomain: Swift.String
+public let DKImageAssetExportResultRequestIDKey: Swift.String
+public let DKImageAssetExportResultCancelledKey: Swift.String
+@objc public protocol DKImageAssetExporterObserver {
+  @objc optional func exporterWillBeginExporting(exporter: LikeMindsSDK.DKImageAssetExporter, asset: LikeMindsSDK.DKAsset)
+  @objc optional func exporterDidUpdateProgress(exporter: LikeMindsSDK.DKImageAssetExporter, asset: LikeMindsSDK.DKAsset)
+  @objc optional func exporterDidEndExporting(exporter: LikeMindsSDK.DKImageAssetExporter, asset: LikeMindsSDK.DKAsset)
+}
+@_inheritsConvenienceInitializers @objc public class DKImageAssetExporterConfiguration : ObjectiveC.NSObject, Foundation.NSCopying {
+  @objc public var imageExportPreset: LikeMindsSDK.DKImageExportPresent
+  @objc public var videoExportPreset: Swift.String
+  @objc public var avOutputFileType: AVFoundation.AVFileType
+  @objc public var exportDirectory: Foundation.URL
+  @objc public var compressionQuality: CoreGraphics.CGFloat
+  @objc required override dynamic public init()
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+}
+@objc open class DKImageAssetExporter : LikeMindsSDK.DKImageBaseManager {
+  @objc public static let sharedInstance: LikeMindsSDK.DKImageAssetExporter
+  @objc public init(configuration: LikeMindsSDK.DKImageAssetExporterConfiguration)
+  @discardableResult
+  @objc public func exportAssetsAsynchronously(assets: [LikeMindsSDK.DKAsset], completion: ((_ info: [Swift.AnyHashable : Any]) -> Swift.Void)?) -> LikeMindsSDK.DKImageAssetExportRequestID
+  @objc public func cancel(requestID: LikeMindsSDK.DKImageAssetExportRequestID)
+  @objc public func cancelAll()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CommunityShareURL : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class SharePreviewData : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class ChatRoomShareURL : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class JLStickerImageView : UIKit.UIImageView, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) public var currentlyEditingLabel: LikeMindsSDK.JLStickerLabelView!
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension LikeMindsSDK.JLStickerImageView {
+  @_Concurrency.MainActor(unsafe) public func addLabel()
+  @_Concurrency.MainActor(unsafe) public func addImage()
+  @_Concurrency.MainActor(unsafe) public func renderContentOnView() -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public func limitImageViewToSuperView()
+}
+extension LikeMindsSDK.JLStickerImageView : LikeMindsSDK.JLStickerLabelViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidBeginEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidClose(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidShowEditingHandles(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidHideEditingHandles(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidStartEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidChangeEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidEndEditing(_ label: LikeMindsSDK.JLStickerLabelView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labelViewDidSelected(_ label: LikeMindsSDK.JLStickerLabelView)
+}
+extension LikeMindsSDK.JLStickerImageView {
+  public enum textShadowPropterties {
+    case offSet(CoreGraphics.CGSize)
+    case color(UIKit.UIColor)
+    case blurRadius(CoreGraphics.CGFloat)
+  }
+  @_Concurrency.MainActor(unsafe) public var fontName: Swift.String! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textColor: UIKit.UIColor! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textAlpha: CoreGraphics.CGFloat! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textAlignment: UIKit.NSTextAlignment! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var lineSpacing: CoreGraphics.CGFloat! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textBackgroundColor: UIKit.UIColor! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textBackgroundAlpha: CoreGraphics.CGFloat! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textShadowOffset: CoreGraphics.CGSize! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textShadowColor: UIKit.UIColor! {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textShadowBlur: CoreGraphics.CGFloat! {
+    get
+    set
+  }
+}
+extension LikeMindsSDK.DKImageExtensionType : Swift.Equatable {}
+extension LikeMindsSDK.DKImageExtensionType : Swift.Hashable {}
+extension LikeMindsSDK.DKImageExtensionType : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKImagePickerControllerAssetType : Swift.Equatable {}
+extension LikeMindsSDK.DKImagePickerControllerAssetType : Swift.Hashable {}
+extension LikeMindsSDK.DKImagePickerControllerAssetType : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKImagePickerControllerSourceType : Swift.Equatable {}
+extension LikeMindsSDK.DKImagePickerControllerSourceType : Swift.Hashable {}
+extension LikeMindsSDK.DKImagePickerControllerSourceType : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKImagePickerControllerExportStatus : Swift.Equatable {}
+extension LikeMindsSDK.DKImagePickerControllerExportStatus : Swift.Hashable {}
+extension LikeMindsSDK.DKImagePickerControllerExportStatus : Swift.RawRepresentable {}
+extension LikeMindsSDK.PreviewUnreadCountResponse : Swift.Decodable {}
+extension LikeMindsSDK.DKPhotoIncrementalIndicatorDirection : Swift.Equatable {}
+extension LikeMindsSDK.DKPhotoIncrementalIndicatorDirection : Swift.Hashable {}
+extension LikeMindsSDK.ReportTypeTag : Swift.Equatable {}
+extension LikeMindsSDK.ReportTypeTag : Swift.Hashable {}
+extension LikeMindsSDK.ReportTypeTag : Swift.RawRepresentable {}
+extension LikeMindsSDK.Regex : Swift.Equatable {}
+extension LikeMindsSDK.Regex : Swift.Hashable {}
+extension LikeMindsSDK.Regex : Swift.RawRepresentable {}
+extension LikeMindsSDK.DownloadError : Swift.Equatable {}
+extension LikeMindsSDK.DownloadError : Swift.Hashable {}
+extension LikeMindsSDK.DKPhotoGallerySingleTapMode : Swift.Equatable {}
+extension LikeMindsSDK.DKPhotoGallerySingleTapMode : Swift.Hashable {}
+extension LikeMindsSDK.DKPhotoGallerySingleTapMode : Swift.RawRepresentable {}
+extension LikeMindsSDK.CommunitySettingsResponse : Swift.Decodable {}
+extension LikeMindsSDK.CommunityToastResponse : Swift.Decodable {}
+extension LikeMindsSDK.ABVideoRangeSlider.ABTimeViewPosition : Swift.Equatable {}
+extension LikeMindsSDK.ABVideoRangeSlider.ABTimeViewPosition : Swift.Hashable {}
+extension LikeMindsSDK.CommunityScreen : Swift.Equatable {}
+extension LikeMindsSDK.CommunityScreen : Swift.Hashable {}
+extension LikeMindsSDK.CommunityScreen : Swift.RawRepresentable {}
+extension LikeMindsSDK.ChatRoomInputSource : Swift.Equatable {}
+extension LikeMindsSDK.ChatRoomInputSource : Swift.Hashable {}
+extension LikeMindsSDK.ChatRoomInputSource : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKPhotoPreviewType : Swift.Equatable {}
+extension LikeMindsSDK.DKPhotoPreviewType : Swift.Hashable {}
+extension LikeMindsSDK.KPItem.ItemType : Swift.Equatable {}
+extension LikeMindsSDK.KPItem.ItemType : Swift.Hashable {}
+extension LikeMindsSDK.DKAssetType : Swift.Equatable {}
+extension LikeMindsSDK.DKAssetType : Swift.Hashable {}
+extension LikeMindsSDK.DKAssetType : Swift.RawRepresentable {}
+extension LikeMindsSDK.MemberDirectoryMode : Swift.Equatable {}
+extension LikeMindsSDK.MemberDirectoryMode : Swift.Hashable {}
+extension LikeMindsSDK.MemberDirectoryInputSource : Swift.Equatable {}
+extension LikeMindsSDK.MemberDirectoryInputSource : Swift.Hashable {}
+extension LikeMindsSDK.MemberDirectoryInputSource : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKImagePickerGroupListPresentationStyle : Swift.Equatable {}
+extension LikeMindsSDK.DKImagePickerGroupListPresentationStyle : Swift.Hashable {}
+extension LikeMindsSDK.DKImagePickerGroupListPresentationStyle : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKImageAssetExporterError : Swift.Equatable {}
+extension LikeMindsSDK.DKImageAssetExporterError : Swift.Hashable {}
+extension LikeMindsSDK.DKImageAssetExporterError : Swift.RawRepresentable {}
+extension LikeMindsSDK.DKImageExportPresent : Swift.Equatable {}
+extension LikeMindsSDK.DKImageExportPresent : Swift.Hashable {}
+extension LikeMindsSDK.DKImageExportPresent : Swift.RawRepresentable {}

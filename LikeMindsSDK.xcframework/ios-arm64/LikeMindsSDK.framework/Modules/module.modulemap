@@ -1,0 +1,11 @@
+framework module LikeMindsSDK {
+  umbrella header "LikeMindsSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module LikeMindsSDK.Swift {
+    header "LikeMindsSDK-Swift.h"
+    requires objc
+}
