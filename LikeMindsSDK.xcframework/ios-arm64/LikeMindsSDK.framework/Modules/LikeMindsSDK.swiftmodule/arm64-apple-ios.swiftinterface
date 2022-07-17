@@ -12,7 +12,7 @@ import CircleProgressBar
 import CoreImage
 import CropViewController
 import FLAnimatedImage
-import Firebase
+import FirebaseCore
 import FirebaseDatabase
 import FirebaseMessaging
 import FirebaseStorage
@@ -1286,8 +1286,8 @@ extension LikeMindsSDK.LikeMindsSDKDelegate {
   public func loginRequiredCallback()
   public func eventFiredCallback(eventName: Swift.String, properties: [Swift.String : Any])
 }
-@_hasMissingDesignatedInitializers public class LikeMindsSDK {
-  public static let shared: LikeMindsSDK.LikeMindsSDK
+@_hasMissingDesignatedInitializers public class LikeMinds {
+  public static let shared: LikeMindsSDK.LikeMinds
   public func configure(application: UIKit.UIApplication, apiKey: Swift.String, callback: LikeMindsSDK.LikeMindsSDKDelegate)
   public func initiateGroupChat(viewController: UIKit.UIViewController, userName: Swift.String?, userId: Swift.String?, isGuest: Swift.Bool = false, completion: (_ response: Swift.String) -> Swift.Void)
   @objc deinit

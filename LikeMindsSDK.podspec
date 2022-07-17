@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsSDK"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.1"
   spec.summary      = "LikeMindsSDK"
   spec.description  = <<-DESC
                       LikeMinds SDK Description
@@ -34,22 +34,22 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = "LikeMindsSDK.xcframework"
   spec.swift_version = "4.2"
 
+  spec.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
    #  spec.dependency 'ColorSlider', '~> 4.4'
   spec.dependency 'AFNetworking', '4.0'
-  spec.dependency 'CocoaLumberjack', '3.4.2'
   spec.dependency 'DCKeyValueObjectMapping', '1.5'
   spec.dependency 'MBProgressHUD', '1.1.0'
   spec.dependency 'SDWebImage/GIF', '4.4.2'
   spec.dependency 'iCarousel', '1.8.3'
   spec.dependency 'UIImageView-Letters'
   spec.dependency 'Toast', '4.0.0'
-  spec.dependency 'Firebase'
   spec.dependency 'Firebase/Messaging'
-  spec.dependency 'Firebase/Core'
-  # spec.dependency 'Firebase/Analytics'
   spec.dependency 'Firebase/Database'
   spec.dependency 'Firebase/Storage'
-  # spec.dependency 'Firebase/Crashlytics'
   spec.dependency 'UITextView+Placeholder'
   spec.dependency 'IQKeyboardManagerSwift'
   spec.dependency 'IQKeyboardManager'
@@ -60,7 +60,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'ProgressHUD'
   spec.dependency 'MaterialShowcase'
   spec.dependency 'MKDropdownMenu'
-  # spec.dependency 'GooglePlaces'
+  spec.dependency 'GooglePlaces'
   spec.dependency 'CircleProgressBar', '~> 0.32'
   spec.dependency 'Branch', '0.35.0'
   spec.dependency 'CropViewController'
