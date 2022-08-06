@@ -63,7 +63,7 @@ Call this method in AppDelegate in <code>didReceiveRemoteNotification</code>
 
 ```sh
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-    LikeMinds.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
+    LikeMinds.shared.didReceieveNotification(userInfo: userInfo)
 }
 ```
 
