@@ -38,8 +38,8 @@ Remember to call this in your application life cycle method <code>applicationDid
 import LikeMindsSDK
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LikeMinds.shared.initiateLikeMinds(apiKey: LIKEMINDS_API_KEY)
-        LikeMinds.shared.delegate = self
+        LikeMindsSDK.shared.initiateLikeMinds(apiKey: LIKEMINDS_API_KEY)
+        LikeMindsSDK.shared.delegate = self
         return true
 }
 ```
@@ -63,7 +63,7 @@ Call this method in AppDelegate in <code>didReceiveRemoteNotification</code>
 
 ```sh
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-    LikeMinds.shared.didReceieveNotification(userInfo: userInfo)
+    LikeMindsSDK.shared.didReceieveNotification(userInfo: userInfo)
 }
 ```
 
@@ -73,7 +73,7 @@ Or by implementing <code>UNUserNotificationCenterDelegate</code> in AppDelegate
 extension AppDelegate: UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        LikeMinds.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
+        LikeMindsSDK.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
     }
 }
 ```
@@ -85,10 +85,10 @@ Group chat list view can be present or push from your <code> UIViewController </
 ```sh
 import LikeMindsSDK
 
-LikeMinds.shared.initiateGroupChat(userName: USERNAME, userId: USERID, isGuest: true|false) { [weak self] response, chatListViewController in
-            guard let response.success == true,
-                  let chatListViewController = chatListViewController else { return }
-            self?.navigationController?.pushViewController(chatListViewController, animated: true)
+LikeMindsSDK.shared.initiateGroupChat(userName: USERNAME, userId: USERID, isGuest: true|false) { [weak self] response, chatListViewController in
+            guard let chatListViewController = chatListViewController else { return }
+                  let navigationController = UINavigationController(rootViewController: chatListViewController)
+            self?.navigationController?.present(navigationController, animated: true)
  }
 ```
 
