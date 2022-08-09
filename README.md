@@ -38,8 +38,8 @@ Remember to call this in your application life cycle method <code>applicationDid
 import LikeMindsSDK
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LikeMindsSDK.shared.initiateLikeMinds(apiKey: LIKEMINDS_API_KEY)
-        LikeMindsSDK.shared.delegate = self
+        LikeMindsSdk.shared.initiateLikeMinds(apiKey: LIKEMINDS_API_KEY)
+        LikeMindsSdk.shared.delegate = self
         return true
 }
 ```
@@ -63,7 +63,7 @@ Call this method in AppDelegate in <code>didReceiveRemoteNotification</code>
 
 ```sh
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-    LikeMindsSDK.shared.didReceieveNotification(userInfo: userInfo)
+    LikeMindsSdk.shared.didReceieveNotification(userInfo: userInfo)
 }
 ```
 
@@ -73,7 +73,7 @@ Or by implementing <code>UNUserNotificationCenterDelegate</code> in AppDelegate
 extension AppDelegate: UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        LikeMindsSDK.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
+        LikeMindsSdk.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
     }
 }
 ```
@@ -85,7 +85,7 @@ Group chat list view can be present or push from your <code> UIViewController </
 ```sh
 import LikeMindsSDK
 
-LikeMindsSDK.shared.initiateGroupChat(userName: USERNAME, userId: USERID, isGuest: true|false) { [weak self] response, chatListViewController in
+LikeMindsSdk.shared.initiateGroupChat(userName: USERNAME, userId: USERID, isGuest: true|false) { [weak self] response, chatListViewController in
             guard let chatListViewController = chatListViewController else { return }
                   let navigationController = UINavigationController(rootViewController: chatListViewController)
             self?.navigationController?.present(navigationController, animated: true)
