@@ -339,20 +339,6 @@ SWIFT_CLASS("_TtC12LikeMindsSDK7DKAsset")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-@interface DKAsset (SWIFT_EXTENSION(LikeMindsSDK))
-/// The exported file will be placed in this location.
-/// All exported files can be automatically cleaned by the DKImageAssetDiskPurger when appropriate.
-@property (nonatomic, copy) NSURL * _Nullable localTemporaryPath;
-@property (nonatomic, copy) NSString * _Nullable fileName;
-/// Indicates the file’s size in bytes.
-@property (nonatomic) NSUInteger fileSize;
-/// If you export an asset whose data is not on the local device, and you have enabled downloading with the isNetworkAccessAllowed property, the progress indicates the progress of the download. A value of 0.0 indicates that the download has just started, and a value of 1.0 indicates the download is complete.
-@property (nonatomic) double progress;
-/// Describes the error that occurred if the export has failed or been cancelled.
-@property (nonatomic) NSError * _Nullable error;
-@end
-
 @class PHImageRequestOptions;
 @class UIImage;
 @class NSData;
@@ -370,6 +356,20 @@ SWIFT_CLASS("_TtC12LikeMindsSDK7DKAsset")
 /// Fetch an AVAsset with a completeBlock and PHVideoRequestOptions.
 - (void)fetchAVAssetWithOptions:(PHVideoRequestOptions * _Nullable)options completeBlock:(void (^ _Nonnull)(AVAsset * _Nullable, NSDictionary * _Nullable))completeBlock;
 - (void)cancelRequests;
+@end
+
+
+@interface DKAsset (SWIFT_EXTENSION(LikeMindsSDK))
+/// The exported file will be placed in this location.
+/// All exported files can be automatically cleaned by the DKImageAssetDiskPurger when appropriate.
+@property (nonatomic, copy) NSURL * _Nullable localTemporaryPath;
+@property (nonatomic, copy) NSString * _Nullable fileName;
+/// Indicates the file’s size in bytes.
+@property (nonatomic) NSUInteger fileSize;
+/// If you export an asset whose data is not on the local device, and you have enabled downloading with the isNetworkAccessAllowed property, the progress indicates the progress of the download. A value of 0.0 indicates that the download has just started, and a value of 1.0 indicates the download is complete.
+@property (nonatomic) double progress;
+/// Describes the error that occurred if the export has failed or been cancelled.
+@property (nonatomic) NSError * _Nullable error;
 @end
 
 
@@ -1375,6 +1375,7 @@ SWIFT_CLASS("_TtC12LikeMindsSDK19SharingPreviewModel")
 @interface UIViewController (SWIFT_EXTENSION(LikeMindsSDK))
 - (void)presentWithPhotoGallery:(DKPhotoGallery * _Nonnull)gallery completion:(void (^ _Nullable)(void))completion;
 @end
+
 
 
 

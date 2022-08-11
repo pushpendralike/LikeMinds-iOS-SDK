@@ -7,7 +7,6 @@ import AVKit
 import AWSCognito
 import AWSS3
 import Alamofire
-import Branch
 import CircleProgressBar
 import CoreImage
 import CropViewController
@@ -48,7 +47,6 @@ import Toast
 import UIKit
 import UserNotifications
 import WebKit
-import WootricSDK
 import _Concurrency
 import iCarousel
 @_hasMissingDesignatedInitializers public class DKImageExtensionContext {
@@ -362,6 +360,15 @@ public enum DKPhotoIncrementalIndicatorDirection {
   }
 }
 public typealias AttachmentsFileSizeCompletion = (_ success: Swift.Bool, _ oversizedFileCounts: Swift.Int?) -> Swift.Void
+public struct Community : Swift.Codable {
+  public var id: Swift.Int?
+  public var name: Swift.String?, purpose: Swift.String?
+  public var imageURL: Swift.String?
+  public var createdBy: Swift.String?
+  public var promotersCount: Swift.Int?, MembersCount: Swift.Int?, MemberState: Swift.Int?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 @objc @_hasMissingDesignatedInitializers public class DKAssetGroup : ObjectiveC.NSObject {
   final public let groupId: Swift.String
   public var groupName: Swift.String?
@@ -754,9 +761,16 @@ public struct SDKInitiateResponse : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct InitiateUser : Swift.Codable {
+public struct UserData : Swift.Codable {
+  public let id: Swift.Int
+  public let imageUrl: Swift.String?, name: Swift.String?, organisationName: Swift.String?, userUniqueId: Swift.String?
+  public let isGuest: Swift.Bool
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+}
+public struct GroupChatResponse {
+  public let user: LikeMindsSDK.UserData?
+  public let community: LikeMindsSDK.Community?
 }
 @objc @available(iOS 11.0, *)
 @_Concurrency.MainActor(unsafe) open class DKPDFView : UIKit.UIView {
@@ -1062,7 +1076,6 @@ public enum DownloadError : Swift.Error {
   }
   @objc deinit
 }
-public typealias Parameters = [Swift.String : Any]
 extension Foundation.DateFormatter {
   public class func getDateFormat(_ date: Foundation.Date, _ format: Swift.String) -> Swift.String
 }
@@ -1286,10 +1299,12 @@ extension LikeMindsSDK.LikeMindsSDKDelegate {
   public func loginRequiredCallback()
   public func eventFiredCallback(eventName: Swift.String, properties: [Swift.String : Any])
 }
-@_hasMissingDesignatedInitializers public class LikeMinds {
-  public static let shared: LikeMindsSDK.LikeMinds
-  public func configure(application: UIKit.UIApplication, apiKey: Swift.String, callback: LikeMindsSDK.LikeMindsSDKDelegate)
-  public func initiateGroupChat(viewController: UIKit.UIViewController, userName: Swift.String?, userId: Swift.String?, isGuest: Swift.Bool = false, completion: (_ response: Swift.String) -> Swift.Void)
+@_hasMissingDesignatedInitializers public class LikeMindsSdk {
+  public static let shared: LikeMindsSDK.LikeMindsSdk
+  weak public var delegate: LikeMindsSDK.LikeMindsSDKDelegate?
+  public func initiateLikeMinds(apiKey: Swift.String)
+  public func initiateGroupChat(userName: Swift.String?, userId: Swift.String?, isGuest: Swift.Bool = false, completion: @escaping (_ groupChatResponse: LikeMindsSDK.GroupChatResponse?, _ viewController: UIKit.UIViewController?) -> Swift.Void)
+  public func didReceieveNotification(userInfo: [Swift.AnyHashable : Any])
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class DKImageGroupDataManagerConfiguration : ObjectiveC.NSObject, Foundation.NSCopying {
@@ -1318,6 +1333,10 @@ extension LikeMindsSDK.LikeMindsSDKDelegate {
   open func updateGroup(_ group: LikeMindsSDK.DKAssetGroup, collection: Photos.PHAssetCollection)
   open func updateGroup(_ group: LikeMindsSDK.DKAssetGroup, fetchResult: Photos.PHFetchResult<Photos.PHAsset>)
   @objc open func photoLibraryDidChange(_ changeInstance: Photos.PHChange)
+}
+public enum Results<Value, CAError> {
+  case success(Value)
+  case failure(CAError)
 }
 public struct CommunitySettingsResponse {
   public init(from decoder: Swift.Decoder) throws
@@ -1897,10 +1916,6 @@ public enum MemberDirectoryMode {
   public var hashValue: Swift.Int {
     get
   }
-}
-public enum Results<Value, CAError> {
-  case success(Value)
-  case failure(CAError)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class JLAttributedTextView : UIKit.UITextView {
   @_Concurrency.MainActor(unsafe) public var textAttributes: [Foundation.NSAttributedString.Key : Swift.AnyObject] {

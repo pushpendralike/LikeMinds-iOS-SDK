@@ -26,7 +26,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		r+3S/TkK9QEX6fnCXoDpTz84wCY=
+		ZuAjdYIe+t6nv4MgSudj0NSyszo=
 		</data>
 		<key>AudioCellContainerView.nib</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>BottomSendMessageView.nib</key>
 		<data>
-		GznI1L7LD/zfXyhcmWrdSZa8OKA=
+		8GDvCPImw7atGpKix6G64VDC+1s=
 		</data>
 		<key>ChatMessageTableViewCell.nib</key>
 		<data>
@@ -682,7 +682,7 @@
 		</data>
 		<key>FollowView.nib</key>
 		<data>
-		4GGuN4KdF9UoJvTKLEPxNRmy/eQ=
+		jJRw7CsI+SiIlZFpJWd+5LJxpKY=
 		</data>
 		<key>GIFLinkPreviewContainerView.nib</key>
 		<data>
@@ -1175,7 +1175,7 @@
 		</dict>
 		<key>Headers/LikeMindsSDK-Swift.h</key>
 		<data>
-		BIEkw+kJyyW8BFYsIKgmoDnNJ18=
+		ZKdCBQLpM+frBh3xfqscCT447tQ=
 		</data>
 		<key>Headers/LikeMindsSDK.h</key>
 		<data>
@@ -1183,11 +1183,11 @@
 		</data>
 		<key>ImagePreview.nib/objects-12.3+.nib</key>
 		<data>
-		B5HZY+FIrpRTZI0kOH1tDUEFakM=
+		ZE6rdD/HSM4PDrZUZEJNg9nkIb4=
 		</data>
 		<key>ImagePreview.nib/runtime.nib</key>
 		<data>
-		z4uJWuItCZFoCOfTe54WBewWnkA=
+		3UvYbpre4HkHHz33XhHyYGIolC8=
 		</data>
 		<key>ImagesChatroomSharePreview.nib</key>
 		<data>
@@ -1195,7 +1195,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Bf7jxudNOYY8ZxxzI0yatG9YiLg=
+		1VappL3RqaE8zHmOU9aVldvrkEY=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1231,7 +1231,7 @@
 		</data>
 		<key>JoinCommunity.storyboardc/gk6-CM-Qkq-view-AQF-HD-9GO.nib</key>
 		<data>
-		ArJRNZDmjghqH9Gt2h9qCZNPh+U=
+		vsA2eVOVAwUjSOWEcJwHdOZ+G4Y=
 		</data>
 		<key>JoinFormMultipleSelectionCell.nib</key>
 		<data>
@@ -1263,7 +1263,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		X53bdt3rrWgnbpQaJRhsSkTPKzY=
+		ZzXHvihTvpGzZP8EbMFx3HmXJDk=
 		</data>
 		<key>LMDropdownViewCell.nib</key>
 		<data>
@@ -1275,7 +1275,7 @@
 		</data>
 		<key>LMTextViewCell.nib</key>
 		<data>
-		AT4+M9+dtG2J6vrvpXUBIU2Qc+s=
+		bJYWhUnyliw3+a+u/ImcKPzqmIg=
 		</data>
 		<key>LMUploadFileViewCell.nib</key>
 		<data>
@@ -1515,15 +1515,15 @@
 		</data>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		fA/wkQikXnhH91ogpitVAn9drCg=
+		4dqJWd/JISLF+WgbzTds/xjrChk=
 		</data>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		j216OAV6eXgaCrsX7TRuyPwXaME=
+		37B1Tc7KRBjwCD9f2toi9AtNX4w=
 		</data>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		t36nowkVXK5UEeW770QPKZlzZHg=
+		fOS3PpR831vllZ5d+/JkkeLc/QQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1563,7 +1563,7 @@
 		</data>
 		<key>NavigationMenuView.nib</key>
 		<data>
-		vvFXLiPyYr452EWIWChADe08LAQ=
+		+eCJhb7wBEfT6C1pmOaJqIrV1qo=
 		</data>
 		<key>NavigationTitleView.nib</key>
 		<data>
@@ -1843,7 +1843,7 @@
 		</data>
 		<key>NewHomeFeed.storyboardc/ZdD-y7-Gyh-view-MhK-sS-dy4.nib</key>
 		<data>
-		Cr5KkqJOIzRrNccRU5TwJmq68d8=
+		7pYvzibE9kSx6iEE37Kdpb3539k=
 		</data>
 		<key>NewHomeFeedChatRoomTableViewCell.nib</key>
 		<data>
@@ -1863,7 +1863,7 @@
 		</data>
 		<key>NewHomeFeedExploreTableViewCell.nib</key>
 		<data>
-		75932NwU/8RgrHEry9MLgbwyGsU=
+		H5xTHgiptNLiS8CCn1Q1F6c6h6U=
 		</data>
 		<key>NormalChatRoomPreviewCell.nib</key>
 		<data>
@@ -1887,7 +1887,7 @@
 		</data>
 		<key>PdfViewController.nib</key>
 		<data>
-		2bTBnTsBIwKcWXhACqAz+HOD46w=
+		Gp0YP624T77Xltsjl5DED2MhjCA=
 		</data>
 		<key>PendingProfileTableViewCell.nib</key>
 		<data>
@@ -1932,14 +1932,6 @@
 		<key>PhotoNavBar.nib</key>
 		<data>
 		DMyKxmXFvyKyLtsJL8saNif3A3c=
-		</data>
-		<key>PickerView.nib/objects-14.0+.nib</key>
-		<data>
-		BxdE5Hesm6BNzWby988xlCT2wYo=
-		</data>
-		<key>PickerView.nib/runtime.nib</key>
-		<data>
-		J21k+swQjb4YMGHNJhpqBS3/nvk=
 		</data>
 		<key>PollChatroomMessageCell.nib</key>
 		<data>
@@ -2059,11 +2051,7 @@
 		</data>
 		<key>ReactionView.nib</key>
 		<data>
-		nP5c7qJqeLYZdGYmB1Z+ypWwgOw=
-		</data>
-		<key>ReadMe.md</key>
-		<data>
-		uGJilM+rEWL74TrfHfhaupQOLs8=
+		Lo1LTnzjExWqRcC2aE26WttzOiY=
 		</data>
 		<key>ReasonStoryBoard.storyboardc/6il-Vd-8vS-view-pWY-P4-SQB.nib</key>
 		<data>
@@ -2207,7 +2195,7 @@
 		</data>
 		<key>Settings.plist</key>
 		<data>
-		XGtV/GLmLRjtpbG6us3uf40Hs/c=
+		MaVBkkKbU2/GICqONkBDNChUqjg=
 		</data>
 		<key>SignPainter-HouseScript.ttf</key>
 		<data>
@@ -2306,10 +2294,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>arrow@1x.png</key>
-		<data>
-		isin4sYhU+z1oxSY3cYsyfsf5bA=
-		</data>
 		<key>arrow@2x.png</key>
 		<data>
 		jILEEr7MyBH5/IAyPkoiv2ILdTE=
@@ -2424,10 +2408,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>mic_blue@1x.png</key>
-		<data>
-		SS2A12kJiq26LundV9O8hKiW7tY=
-		</data>
 		<key>mic_blue@2x.png</key>
 		<data>
 		rpK1sna8iK32/yUuLc+Ra6LPBf4=
@@ -2435,10 +2415,6 @@
 		<key>mic_blue@3x.png</key>
 		<data>
 		95qKFdIR3FpQCe/YNp7+hrkIt/w=
-		</data>
-		<key>mic_red@1x.png</key>
-		<data>
-		NJ9d8sGAGe15jOWjuMx/6VpTyfU=
 		</data>
 		<key>mic_red@2x.png</key>
 		<data>
@@ -2596,7 +2572,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FNg7UWPjTmGuNztJykPICua7W6YaK6C3nk2y21zS0S8=
+			9s5cgqh7P/bSSBeFpb7orOoI+5Qiq83f+MxiLQ8g2v0=
 			</data>
 		</dict>
 		<key>AudioCellContainerView.nib</key>
@@ -2666,7 +2642,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y9KdmpwWbPoeH0PewrY5qEAhTvSdu84NetPn0Qp9C4s=
+			8jKeCbxYZYKzC8zg9aecdthxMvWiYMfWi5wji1Wc6m8=
 			</data>
 		</dict>
 		<key>ChatMessageTableViewCell.nib</key>
@@ -3609,7 +3585,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MdFPfGWhsrts0RfmxFOWrDOuSxphZsQNkwMPPTNeHSA=
+			gHOl4/TRJGBL9IPJoT3/ngzsPxDiZ5/T/bOvKs/Ji8g=
 			</data>
 		</dict>
 		<key>GIFLinkPreviewContainerView.nib</key>
@@ -4141,7 +4117,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kWuUIb3Gl9e2lbsxwLtyQA7K92H4q9M+KIopmynxDXk=
+			w07kdXf9Vymw1bKPsEXdyy0mg54BZB6QdKkCNB9VGJ4=
 			</data>
 		</dict>
 		<key>Headers/LikeMindsSDK.h</key>
@@ -4155,14 +4131,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DLdg4upL810x78xcmXMR4fbPU8bER4G6GkE+C0l9uQo=
+			Wj1OzGC62rQIOgoFwe471LvY+B8tPuzwKZoB7MWJb8s=
 			</data>
 		</dict>
 		<key>ImagePreview.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6QpU4iu7mbsJhd2tJz4Wpb0n9DWswlgIB6gLaGMjLMU=
+			g52YohMHuTxKQTShwkB4kbt3jhMsmgmpEiQ1QiKrQRc=
 			</data>
 		</dict>
 		<key>ImagesChatroomSharePreview.nib</key>
@@ -4232,7 +4208,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9y8+oB9AeZVrjRwA+NntFzuuFsfLR/+fXKDXEVYvqPo=
+			Oj8abZlsJob0tYexV/PjvQAbXv9t+/eRE1mASJLlY9A=
 			</data>
 		</dict>
 		<key>JoinFormMultipleSelectionCell.nib</key>
@@ -4288,7 +4264,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cdro/DFkrP8TPVPA1HWMJwim6PxyNZOGFHNsy4gCXMc=
+			yfGoyMim5Jrd4uVHRPK28F4pO8xJk5T2EcDoKg9H+p0=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib</key>
@@ -4309,7 +4285,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+hVDA3qfUyqDzPkjzYSuQIRHpzp2rnKpiueqbVj0Lt0=
+			4+Ps+7QQVEeJOoat/M/9wxfn4hBxmAiiECOR6kBx4f4=
 			</data>
 		</dict>
 		<key>LMUploadFileViewCell.nib</key>
@@ -4729,21 +4705,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0hsSB9iAUP7U7P0ANei+YcSRLRj4Ef/sIjHk9Zmwq64=
+			w9eXHmifW3xFtpbry4WLbphaZ2+9xL0C3bLmjMLYeGk=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			atT2dlpkbSHvRJtFCMA8fzPoexENvXTSn8lOmihXrPQ=
+			CuIHIjYINlCvLUmA2dw3X8150pBx5y4uCaCGLyijquA=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			06i3ojbl8dtk/56uFqAg3saxXJSImBjxX0bUmuWzSbY=
+			WU3pBRAGpVfniJfDnCwo5FBfYjq03V0v/tfAxBk2WII=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -4813,7 +4789,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1ANnGudOkBHl3kwwgrTnLr/A4p7OqWRfuHYN1rZsvF4=
+			aLdBKMIq2OkXUu/AykAkmGJ2LJerJ9tzyyOA9tuoU1M=
 			</data>
 		</dict>
 		<key>NavigationTitleView.nib</key>
@@ -5303,7 +5279,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t14hor0s5gc/SnMdMzWF0y627J7Z984VftCY7ITU2a0=
+			xHxC/I0w1QmRvu/oBcZFQ38xHjRYCULHzWQ9NXkhV1Q=
 			</data>
 		</dict>
 		<key>NewHomeFeedChatRoomTableViewCell.nib</key>
@@ -5338,7 +5314,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IFPmmXGjJgSppLY2ZchTQCYQKTpJfN2G3+aGm44S82M=
+			MN0CO1o0ijWBAwkZTYbf9NzlervugMXtbNwoLnlPUlI=
 			</data>
 		</dict>
 		<key>NormalChatRoomPreviewCell.nib</key>
@@ -5380,7 +5356,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NQ2vL4h+zMfotFC9AqhBD61iw8U76KqtvKKjgmyem6I=
+			RzOG8P0PgJoP7WaI1KXvbPUaSrzp5rHCNRAFtBeml3Q=
 			</data>
 		</dict>
 		<key>PendingProfileTableViewCell.nib</key>
@@ -5458,20 +5434,6 @@
 			<key>hash2</key>
 			<data>
 			7ClGXN6tgj/TES6RO1YOrFzUqdemEMX+yLISAqtcOlA=
-			</data>
-		</dict>
-		<key>PickerView.nib/objects-14.0+.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			yqVV3Lu/bqkaaI7CCml6ibJZAa2ANDztdTM7jxCebJ4=
-			</data>
-		</dict>
-		<key>PickerView.nib/runtime.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6emx9S1D2BF3JtkFqgqYjwFD74U5f6qvAoElSaDB+OM=
 			</data>
 		</dict>
 		<key>PollChatroomMessageCell.nib</key>
@@ -5681,14 +5643,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DYS/D/DHmNphuy8LbEE4aob3QOiJvlnuqTWwBhkr/Z8=
-			</data>
-		</dict>
-		<key>ReadMe.md</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			W1cgDapSZbLBdKQG1sqXRqbWCE9mhunpPMInK7+mUVk=
+			kjzjHdN7JZBaPNpzdlWMbZdkHQ6rOPhG84NDgdeYxB0=
 			</data>
 		</dict>
 		<key>ReasonStoryBoard.storyboardc/6il-Vd-8vS-view-pWY-P4-SQB.nib</key>
@@ -5940,7 +5895,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eWj3nxSGt/a5js3t6RjEW0Ctmf3ktaZ2Feb2zNfwXqM=
+			MfKzjZvLGvEMC5Fp7cfiSYok2a6dwu6s6UMii1jWU3I=
 			</data>
 		</dict>
 		<key>SignPainter-HouseScript.ttf</key>
@@ -6106,13 +6061,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>arrow@1x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XdArP0gVL7EZPPW904JXw5EuZCUPANMXjD/XugpZwmY=
-			</data>
-		</dict>
 		<key>arrow@2x.png</key>
 		<dict>
 			<key>hash2</key>
@@ -6245,13 +6193,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>mic_blue@1x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CYm/HMwUrMYfShAg7fFz0BpVn05e5Op6omNG8wQIQFo=
-			</data>
-		</dict>
 		<key>mic_blue@2x.png</key>
 		<dict>
 			<key>hash2</key>
@@ -6264,13 +6205,6 @@
 			<key>hash2</key>
 			<data>
 			PAbA+VV3KRqDKLmfGfgBW25/9zXf+ad6ULnD2kVAfxM=
-			</data>
-		</dict>
-		<key>mic_red@1x.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			3oeBnnp+UBrqX0z/phWOCYesUy/P0PozNgIironWIUY=
 			</data>
 		</dict>
 		<key>mic_red@2x.png</key>
