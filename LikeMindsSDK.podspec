@@ -41,8 +41,6 @@ Pod::Spec.new do |spec|
   }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-   #  spec.dependency 'ColorSlider', '~> 4.4'
-  # spec.dependency 'AFNetworking', '4.0'
   spec.dependency 'Alamofire'
   spec.dependency 'DCKeyValueObjectMapping', '1.5'
   spec.dependency 'MBProgressHUD', '1.1.0'
