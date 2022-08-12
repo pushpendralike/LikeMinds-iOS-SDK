@@ -30,8 +30,7 @@ Pod::Spec.new do |spec|
   #  When using multiple platforms
   spec.ios.deployment_target = "12.4"
 
-  # spec.source       = { :git => "https://github.com/pushpendralike/LikeMinds-iOS-SDK.git", :tag => "#{spec.version}" }
-  spec.source       = { :path => "/Users/pushpendra/likeminds_workspace/LikeMinds-Specs/LikeMinds-iOS-SDK/", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/pushpendralike/LikeMinds-iOS-SDK.git", :tag => "#{spec.version}" }
 
   spec.vendored_frameworks = "LikeMindsSDK.xcframework"
   spec.swift_version = "4.2"
