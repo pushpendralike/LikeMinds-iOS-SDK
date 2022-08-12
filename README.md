@@ -21,7 +21,7 @@ We have experts who have built for 25 Mil concurrent users. LikeMinds infrastruc
 Add below line into your podfile.
 
 ```sh
-pod 'LikeMindsSDK', '~> 0.1.1'
+pod 'LikeMindsSDK', '~> 1.1.0'
 ```
 And run the command on your project root.
 
