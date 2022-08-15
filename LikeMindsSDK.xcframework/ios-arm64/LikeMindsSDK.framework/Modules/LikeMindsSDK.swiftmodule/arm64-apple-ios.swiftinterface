@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios12.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LikeMindsSDK
-import ALCameraViewController
 import AVFoundation
 import AVKit
 import AWSCognito
@@ -1264,8 +1263,6 @@ extension LikeMindsSDK.JLStickerLabelView {
   @objc deinit
 }
 extension UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public func openCamera(selectedImage: @escaping (UIKit.UIImage, Swift.String) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func openGallery(selectedImage: @escaping (UIKit.UIImage, Swift.String) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func openUrl(urlString: Swift.String)
   @_Concurrency.MainActor(unsafe) public func checkPhotoLibraryPermission() -> Swift.Bool
 }
