@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsSDK"
-  spec.version      = "1.1.0"
+  spec.version      = "1.0"
   spec.summary      = "LikeMindsSDK"
   spec.description  = <<-DESC
                       LikeMinds SDK Description
@@ -56,7 +56,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'AlamofireObjectMapper', '~> 5.2.0'
   spec.dependency 'SwiftyJSON', '~> 4.0'
   spec.dependency 'Kingfisher', '~> 7.0'
-  spec.dependency 'ALCameraViewController'
   spec.dependency 'ProgressHUD'
   spec.dependency 'MaterialShowcase'
   spec.dependency 'MKDropdownMenu'
