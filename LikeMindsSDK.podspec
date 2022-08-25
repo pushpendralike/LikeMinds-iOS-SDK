@@ -52,7 +52,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'Firebase/Storage'
   spec.dependency 'UITextView+Placeholder'
   spec.dependency 'IQKeyboardManagerSwift'
-  spec.dependency 'IQKeyboardManager'
   spec.dependency 'AlamofireObjectMapper', '~> 5.2.0'
   spec.dependency 'SwiftyJSON', '~> 4.0'
   spec.dependency 'Kingfisher', '~> 7.0'
