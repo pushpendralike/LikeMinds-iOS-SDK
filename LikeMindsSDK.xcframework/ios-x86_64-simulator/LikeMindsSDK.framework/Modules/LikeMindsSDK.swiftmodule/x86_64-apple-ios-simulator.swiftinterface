@@ -1184,6 +1184,40 @@ public struct UpdateManagerRightsModal : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum Orientation {
+  case horizontal
+  case vertical
+  public static func == (a: LikeMindsSDK.Orientation, b: LikeMindsSDK.Orientation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_Concurrency.MainActor(unsafe) public class ColorSlider : UIKit.UIControl {
+  @_Concurrency.MainActor(unsafe) public var color: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public let gradientView: LikeMindsSDK.LMGradientView
+  @_Concurrency.MainActor(unsafe) final public let previewView: LikeMindsSDK.PreviewView?
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) convenience public init(orientation: LikeMindsSDK.Orientation = .vertical, previewSide side: LikeMindsSDK.DefaultPreviewView.Side = .left)
+  @_Concurrency.MainActor(unsafe) required public init(orientation: LikeMindsSDK.Orientation, previewView: LikeMindsSDK.PreviewView?)
+  @objc deinit
+}
+extension LikeMindsSDK.ColorSlider {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+}
+extension LikeMindsSDK.ColorSlider {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func continueTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func cancelTracking(with event: UIKit.UIEvent?)
+}
+extension LikeMindsSDK.ColorSlider {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func hitTest(_ point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+}
 @objc @_inheritsConvenienceInitializers open class DKImageBaseManager : ObjectiveC.NSObject {
   @objc open func add(observer object: Swift.AnyObject)
   @objc open func remove(observer object: Swift.AnyObject)
@@ -1195,6 +1229,21 @@ public struct UpdateManagerRightsModal : Swift.Codable {
 @objc extension LikeMindsSDK.DKPhotoBasePreviewVC {
   @objc @_Concurrency.MainActor(unsafe) dynamic public class func photoPreviewClass(with item: LikeMindsSDK.DKPhotoGalleryItem) -> LikeMindsSDK.DKPhotoBasePreviewVC.Type
   @objc @_Concurrency.MainActor(unsafe) dynamic public class func photoPreviewVC(with item: LikeMindsSDK.DKPhotoGalleryItem) -> LikeMindsSDK.DKPhotoBasePreviewVC
+}
+public typealias PreviewView = UIKit.UIView & LikeMindsSDK.ColorSliderPreviewing
+public enum PreviewState {
+  case inactive
+  case activeFixed
+  case active
+  public static func == (a: LikeMindsSDK.PreviewState, b: LikeMindsSDK.PreviewState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ColorSliderPreviewing {
+  func colorChanged(to color: UIKit.UIColor)
+  func transition(to state: LikeMindsSDK.PreviewState)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class JLStickerLabelView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var border: QuartzCore.CAShapeLayer?
@@ -1287,6 +1336,34 @@ extension UIKit.UIViewController {
     @objc get
     @objc set
   }
+}
+@objc @_Concurrency.MainActor(unsafe) final public class LMGradientView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var automaticallyAdjustsCornerRadius: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var saturation: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var whiteInset: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var blackInset: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) required public init(orientation: LikeMindsSDK.Orientation)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension LikeMindsSDK.LMGradientView {
+  @_Concurrency.MainActor(unsafe) @objc override final public class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
 }
 public protocol LikeMindsSDKDelegate : AnyObject {
   func loginRequiredCallback()
@@ -1569,6 +1646,41 @@ extension LikeMindsSDK.Reusable {
 }
 @_hasMissingDesignatedInitializers open class NavigationBar {
   @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class DefaultPreviewView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var animationDuration: Swift.Double
+  public enum Side {
+    case left
+    case right
+    case top
+    case bottom
+    public static func == (a: LikeMindsSDK.DefaultPreviewView.Side, b: LikeMindsSDK.DefaultPreviewView.Side) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public var side: LikeMindsSDK.DefaultPreviewView.Side {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var scaleAmounts: [LikeMindsSDK.PreviewState : CoreGraphics.CGFloat]
+  @_Concurrency.MainActor(unsafe) public var offsetAmount: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var offset: CoreGraphics.CGPoint
+  @_Concurrency.MainActor(unsafe) final public let colorView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public var hapticsEnabled: Swift.Bool
+  @_Concurrency.MainActor(unsafe) required public init(side: LikeMindsSDK.DefaultPreviewView.Side = .left)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func calculateOffset()
+  @objc deinit
+}
+extension LikeMindsSDK.DefaultPreviewView : LikeMindsSDK.ColorSliderPreviewing {
+  @_Concurrency.MainActor(unsafe) public func colorChanged(to color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func transition(to state: LikeMindsSDK.PreviewState)
 }
 public struct UpdateMemberRightsModal : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
@@ -2237,6 +2349,10 @@ extension LikeMindsSDK.DownloadError : Swift.Hashable {}
 extension LikeMindsSDK.DKPhotoGallerySingleTapMode : Swift.Equatable {}
 extension LikeMindsSDK.DKPhotoGallerySingleTapMode : Swift.Hashable {}
 extension LikeMindsSDK.DKPhotoGallerySingleTapMode : Swift.RawRepresentable {}
+extension LikeMindsSDK.Orientation : Swift.Equatable {}
+extension LikeMindsSDK.Orientation : Swift.Hashable {}
+extension LikeMindsSDK.PreviewState : Swift.Equatable {}
+extension LikeMindsSDK.PreviewState : Swift.Hashable {}
 extension LikeMindsSDK.CommunitySettingsResponse : Swift.Decodable {}
 extension LikeMindsSDK.CommunityToastResponse : Swift.Decodable {}
 extension LikeMindsSDK.ABVideoRangeSlider.ABTimeViewPosition : Swift.Equatable {}
@@ -2247,6 +2363,8 @@ extension LikeMindsSDK.CommunityScreen : Swift.RawRepresentable {}
 extension LikeMindsSDK.ChatRoomInputSource : Swift.Equatable {}
 extension LikeMindsSDK.ChatRoomInputSource : Swift.Hashable {}
 extension LikeMindsSDK.ChatRoomInputSource : Swift.RawRepresentable {}
+extension LikeMindsSDK.DefaultPreviewView.Side : Swift.Equatable {}
+extension LikeMindsSDK.DefaultPreviewView.Side : Swift.Hashable {}
 extension LikeMindsSDK.DKPhotoPreviewType : Swift.Equatable {}
 extension LikeMindsSDK.DKPhotoPreviewType : Swift.Hashable {}
 extension LikeMindsSDK.KPItem.ItemType : Swift.Equatable {}

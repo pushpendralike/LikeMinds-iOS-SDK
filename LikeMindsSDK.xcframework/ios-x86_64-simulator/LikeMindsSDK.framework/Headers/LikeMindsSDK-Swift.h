@@ -309,6 +309,90 @@ typedef SWIFT_ENUM(NSInteger, ChatRoomInputSource, open) {
   ChatRoomInputSourceUnknown = 11,
 };
 
+
+/// ColorSlider is a customizable color picker with live preview.
+/// Inspired by Snapchat, ColorSlider lets you drag to select black, white, or any color in between.
+/// Customize <code>ColorSlider</code> and its preview via a simple API, and receive callbacks via <code>UIControlEvents</code>.
+/// Use the convenience initializer to create a <code>.vertical</code> ColorSlider with a live preview that appears to the <code>.left</code> of it:
+/// \code
+/// let colorSlider = ColorSlider(orientation: .vertical, previewSide: .left)
+///
+/// \endcodeYou can create a custom preview view using the <code>ColorSliderPreviewing</code> protocol, or by subclassing <code>DefaultPreviewView</code>.
+/// To pass in a custom preview view, simply use the default initializer instead:
+/// \code
+/// let myPreviewView = MyPreviewView()
+/// let colorSlider = ColorSlider(orientation: .vertical, previewView: myPreviewView)
+///
+/// \endcodeColorSlider is a <code>UIControl</code> subclass and fully supports the following <code>UIControlEvents</code>:
+/// <ul>
+///   <li>
+///     <code>.valueChanged</code>
+///   </li>
+///   <li>
+///     <code>.touchDown</code>
+///   </li>
+///   <li>
+///     <code>.touchUpInside</code>
+///   </li>
+///   <li>
+///     <code>.touchUpOutside</code>
+///   </li>
+///   <li>
+///     <code>.touchCancel</code>
+///   </li>
+/// </ul>
+/// Once adding your class as a target, you can get callbacks via the <code>color</code> property:
+/// \code
+/// colorSlider.addTarget(self, action: #selector(ViewController.changedColor(_:)), forControlEvents: .valueChanged)
+///
+/// func changedColor(_ slider: ColorSlider) {
+/// 	var color = slider.color
+/// 	// ...
+/// }
+///
+/// \endcodeCustomize the appearance of ColorSlider by setting properties on the <code>gradientView</code>:
+/// \code
+/// // Add a border
+/// colorSlider.gradientView.layer.borderWidth = 2.0
+/// colorSlider.gradientView.layer.borderColor = UIColor.white
+///
+/// // Disable rounded corners
+/// colorSlider.gradientView.automaticallyAdjustsCornerRadius = false
+///
+/// \endcodeColorSlider uses the <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSB</a> color standard internally.
+/// You can set the <code>saturation</code> of your ColorSlider’s <code>gradientView</code> to change the saturation of colors on the slider.
+/// See the <code>GradientView</code> and <code>HSBColor</code> for more details on how colors are calculated.
+SWIFT_CLASS("_TtC12LikeMindsSDK11ColorSlider")
+@interface ColorSlider : UIControl
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@interface ColorSlider (SWIFT_EXTENSION(LikeMindsSDK))
+/// Increase the tappable area of <code>ColorSlider</code> to a minimum of 44 points on either edge.
+- (UIView * _Nullable)hitTest:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+@interface ColorSlider (SWIFT_EXTENSION(LikeMindsSDK))
+- (void)layoutSubviews;
+@end
+
+@class UITouch;
+
+@interface ColorSlider (SWIFT_EXTENSION(LikeMindsSDK))
+/// Begins tracking a touch when the user starts dragging.
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+/// Continues tracking a touch as the user drags.
+- (BOOL)continueTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+/// Ends tracking a touch when the user finishes dragging.
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+/// Cancels tracking a touch when the user cancels dragging.
+- (void)cancelTrackingWithEvent:(UIEvent * _Nullable)event;
+@end
+
 typedef SWIFT_ENUM(NSInteger, CommunityScreen, open) {
   CommunityScreenJoin = 0,
   CommunityScreenUpdate = 1,
@@ -1102,6 +1186,22 @@ SWIFT_CLASS("_TtC12LikeMindsSDK23DKPopoverViewController")
 
 
 
+
+/// The default preview view of a <code>ColorSlider</code>.
+/// Appears to the given <code>side</code> of the associated <code>ColorSlider</code> at the point of the currently
+/// selected color with an offset of <code>offsetAmount</code> and a scale given by <code>scaleAmounts</code> for a given state.
+/// You can subclass this class and pass it as a preview to <code>ColorSlider</code> to customize its appearance or animation.
+/// You may also create your own custom <code>UIView</code> and conform to the <code>PreviewView</code> protocol and pass that to <code>ColorSlider</code>’s initializer.
+SWIFT_CLASS("_TtC12LikeMindsSDK18DefaultPreviewView")
+@interface DefaultPreviewView : UIView
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 @class NSTextContainer;
 
 SWIFT_CLASS("_TtC12LikeMindsSDK20JLAttributedTextView")
@@ -1215,7 +1315,6 @@ SWIFT_CLASS("_TtC12LikeMindsSDK13KPActionSheet")
 - (void)animateTransition:(id <UIViewControllerContextTransitioning> _Nonnull)transitionContext;
 @end
 
-@class UITouch;
 
 SWIFT_CLASS("_TtC12LikeMindsSDK10KPItemView") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface KPItemView : UIView
@@ -1230,6 +1329,28 @@ SWIFT_CLASS("_TtC12LikeMindsSDK10KPItemView") SWIFT_AVAILABILITY(ios,introduced=
 SWIFT_CLASS("_TtC12LikeMindsSDK15KeychainService")
 @interface KeychainService : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A gradient view that acts as the background of any <code>ColorSlider</code>.
+/// This class draws colors based on the <code>orientation</code> passed to the initializer
+/// and determines the output color of <code>ColorSlider</code> after a touch event.
+/// Customize the appearance of ColorSlider by setting layer properties on
+/// this class, including <code>borderWidth</code>, <code>borderColor</code>, and <code>cornerRadius</code>.
+SWIFT_CLASS("_TtC12LikeMindsSDK14LMGradientView")
+@interface LMGradientView : UIView
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+
+@interface LMGradientView (SWIFT_EXTENSION(LikeMindsSDK))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (void)drawRect:(CGRect)rect;
+- (void)layoutSubviews;
 @end
 
 
@@ -1313,6 +1434,8 @@ SWIFT_CLASS("_TtC12LikeMindsSDK12SharePreview")
 SWIFT_CLASS("_TtC12LikeMindsSDK19SharingPreviewModel")
 @interface SharingPreviewModel : NSObject
 @end
+
+
 
 
 

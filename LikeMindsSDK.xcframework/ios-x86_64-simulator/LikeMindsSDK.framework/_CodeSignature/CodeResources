@@ -26,7 +26,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		TGh4o7sQj7Cq1Kq8XamQBiiwb1s=
+		ZuAjdYIe+t6nv4MgSudj0NSyszo=
 		</data>
 		<key>AudioCellContainerView.nib</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>BottomSendMessageView.nib</key>
 		<data>
-		8GDvCPImw7atGpKix6G64VDC+1s=
+		pxWO1XwLGq9dmGvP+N5M6xVtiCU=
 		</data>
 		<key>ChatMessageTableViewCell.nib</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>ChatMesssageCell.nib/objects-14.0+.nib</key>
 		<data>
-		bxfjJZFBTo2yjNIuNc9W3/47sJw=
+		Q4lxtY7QhOINF54GGC0LPS4Y7Q8=
 		</data>
 		<key>ChatMesssageCell.nib/runtime.nib</key>
 		<data>
-		2g6d6z+zu5YeDJeW2yZJfs98ekI=
+		0RsaiuMc6UNubARTM8xefbFQAag=
 		</data>
 		<key>ChatRoom.storyboardc/Info.plist</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>ChatRoom.storyboardc/M5T-AU-3kH-view-bTe-2k-20O.nib</key>
 		<data>
-		o973WJu+k3gpGm40RGYK+ZUvScM=
+		Ip2rLMlFQ3727zzaY1S5FaKf7OY=
 		</data>
 		<key>ChatRoom.storyboardc/NewChatRoomViewController.nib</key>
 		<data>
@@ -1175,7 +1175,7 @@
 		</dict>
 		<key>Headers/LikeMindsSDK-Swift.h</key>
 		<data>
-		ZKdCBQLpM+frBh3xfqscCT447tQ=
+		Tan8NYd+GYU/NLPFMOxvUI7fdjY=
 		</data>
 		<key>Headers/LikeMindsSDK.h</key>
 		<data>
@@ -1195,7 +1195,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		F8iKITF/pK74LNBapFZ2KdtHFaE=
+		ne/aymLYG/CYZ855iPgqO+bXB74=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1263,7 +1263,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		i4pnkVrx4rsjhmfBcXb4uV36KDA=
+		mYIzyRODZ7lGWNT2TBN0ctEBP9I=
 		</data>
 		<key>LMDropdownViewCell.nib</key>
 		<data>
@@ -1515,15 +1515,15 @@
 		</data>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		4dqJWd/JISLF+WgbzTds/xjrChk=
+		yjmTvltGWBtSidEG3HKcG+St/bo=
 		</data>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		K0uFlR1ktkmajn96JjMoYfyScDE=
+		E8pzfqDn7r9aON8U68D43C6Xla0=
 		</data>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/umKziTu7Zl53/9ZlmTdE6iIfyw=
+		4saSLh1gf+BNp4rX5k08p8+zug8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1871,7 +1871,7 @@
 		</data>
 		<key>NormalChatroomMessageCell.nib</key>
 		<data>
-		WMcJAEPxLwtN0vdZyA88kWgcdjY=
+		wQILIWVV+LPoikYptAoB6K/7O9Y=
 		</data>
 		<key>PDFCellView.nib</key>
 		<data>
@@ -1927,7 +1927,7 @@
 		</data>
 		<key>PhotoGalleryVC.nib</key>
 		<data>
-		+XySc/0ltwefom9cBYnZHr897xs=
+		stSbCtQDHnIap0eGRHfMaCSNagU=
 		</data>
 		<key>PhotoNavBar.nib</key>
 		<data>
@@ -1943,11 +1943,15 @@
 		</data>
 		<key>PollContainerView.nib</key>
 		<data>
-		CmPbJmGmDLI6Rlksmk49zQY0MoA=
+		KQUZarpbootVtdWSoKE2dc8lCqg=
 		</data>
-		<key>PollContentView.nib</key>
+		<key>PollContentView.nib/objects-14.0+.nib</key>
 		<data>
-		xx2Z2YdSBSA++ZlzlVtvSaBnzTU=
+		e3QVB6xLMwhKvjQCkuEE6DzLz50=
+		</data>
+		<key>PollContentView.nib/runtime.nib</key>
+		<data>
+		TaTYRvuNFQ35OBRzB5vqCr6qZPk=
 		</data>
 		<key>PollCustomView.nib/objects-14.0+.nib</key>
 		<data>
@@ -2015,11 +2019,11 @@
 		</data>
 		<key>Reaction.storyboardc/I4L-WX-rUX-view-I9e-ue-kZ9.nib/objects-12.3+.nib</key>
 		<data>
-		HnCoA/X1VzD3/dPpeyzbs1jHlpY=
+		1JQ9QAGK4cyjObAro3oE56WzyMg=
 		</data>
 		<key>Reaction.storyboardc/I4L-WX-rUX-view-I9e-ue-kZ9.nib/runtime.nib</key>
 		<data>
-		Py10gOMobtwWXgfwjeU0AJJ3QoY=
+		hT7WP8NaMN2uuR0jjNCZSqhuv8A=
 		</data>
 		<key>Reaction.storyboardc/Info.plist</key>
 		<data>
@@ -2043,11 +2047,11 @@
 		</data>
 		<key>Reaction.storyboardc/hMK-Mg-BpA-view-1ad-un-c5j.nib/objects-12.3+.nib</key>
 		<data>
-		bad0Zncqx/nCXHkFGDDIX0uIw54=
+		RZHCQfCWLNrwOSCHAu+EKpLtBLw=
 		</data>
 		<key>Reaction.storyboardc/hMK-Mg-BpA-view-1ad-un-c5j.nib/runtime.nib</key>
 		<data>
-		8biSdZR6tT0t3LKKq9UY+nqLCOo=
+		fmTIoVYUW+MH39UoVX8/xJW62WA=
 		</data>
 		<key>ReactionView.nib</key>
 		<data>
@@ -2215,11 +2219,11 @@
 		</data>
 		<key>SingleImageViewController.nib</key>
 		<data>
-		Sn0XhK2m4rXWBBkwlDI628HV36U=
+		b07w5HoU3t/7XsyHcDcvjiNKG9M=
 		</data>
 		<key>SingleMediaContainerView.nib</key>
 		<data>
-		RHTXR3/QZHf8TFQfqKTYVnwCkJ0=
+		gqPDG1GoFuk/zv9fPyo8+TJsU3Q=
 		</data>
 		<key>SkipToJoinCell.nib</key>
 		<data>
@@ -2572,7 +2576,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DPQSehukkWFju1mEM1uW38A1tJ3tyXqv425A6MezI9k=
+			9s5cgqh7P/bSSBeFpb7orOoI+5Qiq83f+MxiLQ8g2v0=
 			</data>
 		</dict>
 		<key>AudioCellContainerView.nib</key>
@@ -2642,7 +2646,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8jKeCbxYZYKzC8zg9aecdthxMvWiYMfWi5wji1Wc6m8=
+			T1nXguIN7G8Q1KIy2EZGMdsonNrwvSD5eXfoyN/c9vY=
 			</data>
 		</dict>
 		<key>ChatMessageTableViewCell.nib</key>
@@ -2656,14 +2660,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rU++Zfn58xyrwNNP7F7UD4qYmg1MR8xGURvjnniQJVI=
+			w6B4VkzMERvUrYNLJl3pWcFqhWEHA29Wv4bwfSk5TgQ=
 			</data>
 		</dict>
 		<key>ChatMesssageCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qMw1lXERz6dip9KjW7ufvnA1CBhgTvY11coA3tyMiJg=
+			hoHChVHgJWhiacXcVDFlqfkJBcB4pRuWo7etOxrU3+8=
 			</data>
 		</dict>
 		<key>ChatRoom.storyboardc/Info.plist</key>
@@ -2677,7 +2681,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FxihjR2xg6pjxo68o0tsCz8CIzSMXRU+ZNzvS3CjSu0=
+			GqjUd/n9cElevyjpX3YzkrSfto24gT/piWoLO/n1IC0=
 			</data>
 		</dict>
 		<key>ChatRoom.storyboardc/NewChatRoomViewController.nib</key>
@@ -4117,7 +4121,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w07kdXf9Vymw1bKPsEXdyy0mg54BZB6QdKkCNB9VGJ4=
+			htk+D0zXzc/EYVOAzNgYMfu5uVpOGEKamEq6yw580a4=
 			</data>
 		</dict>
 		<key>Headers/LikeMindsSDK.h</key>
@@ -4264,7 +4268,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gGAxAZNj/llR47t745RnWvkSwdDqfYjN9Wulwa5xq8k=
+			2+cO2dGH9KqoOdsXWfGZ9CvvWVhYb/FtSMQaSKtqVkY=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib</key>
@@ -4705,21 +4709,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w9eXHmifW3xFtpbry4WLbphaZ2+9xL0C3bLmjMLYeGk=
+			GZzp3aV62oBiqYtNctbHltcWb1Gu0Xxv+7mLTZ2/b0s=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mnP5i7u1yrCG1lxwcxlD+C7MicVLSrQ0pvfe1shx4rY=
+			S7B5wpCZsEuoNmT/B3zNQoOsRbfel/PpF9mmVtH8Gbs=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fj8f+L/ouNQPypEyKlJICfCew8tKMe1JPD6rF3xGRIQ=
+			GIse7g6Ep+hUB5FIU0LVftXX/KV/7PGhGmB0U/9zBY0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -5328,7 +5332,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UkZ4jdDm7WuQ6G1TEJr7PgZXaMfAiA1DC0ThXAUL9Kg=
+			VvTgtMtKHDncGn1zfze/3Oy3XKMmFGOx3u53npiXXV4=
 			</data>
 		</dict>
 		<key>PDFCellView.nib</key>
@@ -5426,7 +5430,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rT6XfWNSiUa2gmyuAa3dGNfe29+gjQAjGrL/6L4lyQI=
+			r+EPvwcNQZGnjA+u5DQcfvixXZjyyv2HEPvIHlpY2QM=
 			</data>
 		</dict>
 		<key>PhotoNavBar.nib</key>
@@ -5454,14 +5458,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YMr7418oGBPDX6dxwYGypU/bBp1dcT5vbgF6WS6pEp4=
+			YgxOpKM2mDSeMdykyNTT1+bDBKmWXnpkSRCClP3gElw=
 			</data>
 		</dict>
-		<key>PollContentView.nib</key>
+		<key>PollContentView.nib/objects-14.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			esPcRlccdZW1+h98bBwVKCBmy5XFcWWN4CkyxcBeGDo=
+			vBFCS/EYOwCR8EMlv4yPv5s9TRmFZDdCtiQ/G6UynwA=
+			</data>
+		</dict>
+		<key>PollContentView.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aScdSAdb/LG88EzJX5JLWIQfxRmDe8BTX0no5aWAras=
 			</data>
 		</dict>
 		<key>PollCustomView.nib/objects-14.0+.nib</key>
@@ -5580,14 +5591,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9hbgg7c045CazrgHOKZS3ecStKFAc4Gdvnj/BnOTSu8=
+			lj5mXzmaXK8rvVTBdErO9/9Pq45Aeifw0WUJGBh8zpk=
 			</data>
 		</dict>
 		<key>Reaction.storyboardc/I4L-WX-rUX-view-I9e-ue-kZ9.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			urTQQU/H6cWfnJKT8OsnFPvh+wQFt7jcHRDJM6gbhXs=
+			u/nsKvYG9G7sFc5ZELdq6tnVHeUq7fTJH3M/nD5JT5Y=
 			</data>
 		</dict>
 		<key>Reaction.storyboardc/Info.plist</key>
@@ -5629,14 +5640,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gAHWyFjxEtUjYS1HevvJNj23tyG7jAzQAU4VcbFr95k=
+			I0JeyWxriG2a3m7Lbd1bSqY9nX9NE7SwCUkF0srcQW0=
 			</data>
 		</dict>
 		<key>Reaction.storyboardc/hMK-Mg-BpA-view-1ad-un-c5j.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M/84kACKWntO1oc9m3/pGQTGg81IRWwRPJCdcl+OuT4=
+			sq4n3Gn9G7rL0Ih+cZIB49wvgg+yM+04bL2ciss3O40=
 			</data>
 		</dict>
 		<key>ReactionView.nib</key>
@@ -5930,14 +5941,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9IfeiGD8tcndEOhfBEKTnvhFLm9U2j23W3WxFXTeIbE=
+			GdqNZDL1mrmoU+sqmyAAuFrO5SnUjuhIFby8oSIuWXI=
 			</data>
 		</dict>
 		<key>SingleMediaContainerView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			62eXxIHNdWG4xX8dpPNZW6oFV5ab1/AIx3zxERvUz5s=
+			A9qOMLUC3B86/uxkQ3K7yDvvaehY1jOeG3cWqasMy2Q=
 			</data>
 		</dict>
 		<key>SkipToJoinCell.nib</key>
