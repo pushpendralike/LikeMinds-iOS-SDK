@@ -70,7 +70,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'Sentry', '~> 7.16'
   spec.dependency 'MoEngage-iOS-SDK', '7.0'
   spec.dependency 'MoEngageInApp','2.0.0'
-  spec.dependency 'lottie-ios', '~> 3.2.3'
+  spec.dependency 'lottie-ios', '~> 3.2'
   spec.dependency 'SwiftyGif'
   spec.dependency 'Giphy'
   spec.dependency 'iOSDropDown'
