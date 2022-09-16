@@ -6,22 +6,22 @@
 ## Why LikeMinds?
 
 #### Faster go to market
-Building a community platform in-house takes years of engineering efforts. LikeMinds SDK enables community for your users in minutes.
+Building a community platform in-house takes years of engineering efforts. LikeMindsChat enables community for your users in minutes.
 
 #### Customisability
-We understand every business has its unique requirements. Our SDK is customisable to support community experiences the way you want to design them. As good as built in-house!
+We understand every business has its unique requirements. Our framework is customisable to support community experiences the way you want to design them. As good as built in-house!
 
 #### Scalable Infra
 We have experts who have built for 25 Mil concurrent users. LikeMinds infrastructure is scalable no matter what the demand.
 
-## How to use LikeMinds-iOS-SDK?
+## How to use LikeMindsChat?
 
 ### Install using pod
 
 Add below line into your podfile.
 
 ```sh
-pod 'LikeMindsSDK', '~> 1.0'
+pod 'LikeMindsChat', '~> 1.1'
 ```
 And run the command on your project root.
 
@@ -35,18 +35,20 @@ Remember to call this in your application life cycle method <code>applicationDid
 
 
 ```sh
-import LikeMindsSDK
+import LikeMindsChat
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LikeMindsSdk.shared.initiateLikeMinds(apiKey: LIKEMINDS_API_KEY)
-        LikeMindsSdk.shared.delegate = self
+    let extras = InitiateLikeMindsExtra(apiKey: API_KEY)
+                .withDomainUrl(DOMAIN_URL)
+    LikeMinds.shared.initiateLikeMinds(extras: extras)
+    LikeMinds.shared.delegate = self
         return true
 }
 ```
 #### Implemention of Likeminds delegate methods to take require action
 
 ```sh
-extension AppDelegate: LikeMindsSDKDelegate {
+extension AppDelegate: LikeMindsDelegate {
 
     // When guest user tries to send a message, reaction, view participants, view profile and join chatroom.
     func loginRequiredCallback() {
@@ -59,13 +61,13 @@ extension AppDelegate: LikeMindsSDKDelegate {
     }
 }
 ```
-#### To add route feature on tap of notification, pass the userInfo data to likeminds sdk.
+#### To add route feature on tap of notification, pass the userInfo data to likeminds.
 
 Call this method in AppDelegate in <code>didReceiveRemoteNotification</code>
 
 ```sh
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-    LikeMindsSdk.shared.didReceieveNotification(userInfo: userInfo)
+    LikeMinds.shared.didReceieveNotification(userInfo: userInfo)
 }
 ```
 
@@ -75,7 +77,7 @@ Or by implementing <code>UNUserNotificationCenterDelegate</code> in AppDelegate
 extension AppDelegate: UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        LikeMindsSdk.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
+        LikeMinds.shared.didReceieveNotification(userInfo: response.notification.request.content.userInfo)
     }
 }
 ```
@@ -85,30 +87,30 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 Group chat list view can be present or push from your <code> UIViewController </code> class.
 
 ```sh
-import LikeMindsSDK
+import LikeMindsChat
 
-LikeMindsSdk.shared.initiateGroupChat(userName: USERNAME, userId: USERID, isGuest: true|false) { [weak self] response, chatListViewController in
+LikeMinds.shared.initiateGroupChat(userName: USERNAME, userId: USERID, isGuest: true|false) { [weak self] response, chatListViewController in
     guard let chatListViewController = chatListViewController else { return }
           let navigationController = UINavigationController(rootViewController: chatListViewController)
     self?.navigationController?.present(navigationController, animated: true)
  }
 ```
 
-## React Native bridge for iOS SDK
+## React Native bridge for iOS
 
-For React Native applications to use the LikeMinds SDK, we have to follow the following steps.
+For React Native applications to use the LikeMindsChat, we have to follow the following steps.
 
 Note: All the following code changes will be done in the iOS folder of the react native project.
 
 
 ### Step 1: Import LikeMinds Dependency
 
-#### Install LikeMindsSDK using pod
+#### Install LikeMindsChat using pod
 
 Open podfile and add below line into your podfile.
 
 ```sh
-pod 'LikeMindsSDK', '~> 1.0'
+pod 'LikeMindsChat', '~> 1.1'
 ```
 Run the command on your project ios root folder.
 
@@ -138,7 +140,7 @@ enable_user_defined_build_types!
 The above code will enable the custom user-defined build types in our iOS project and then we can define the custom build type for a specific pod as shown below:
 
 ```sh
-pod 'LikeMindsSDK', '~> 0.1.1', :build_type => :dynamic_framework
+pod 'LikeMindsChat', '~> 1.1', :build_type => :dynamic_framework
 ```
 
 After all this setup run the pod command
@@ -147,18 +149,20 @@ After all this setup run the pod command
 pod install
 ```
 
-### Step 2: Initialise LikeMindsSDK 
+### Step 2: Initialise LikeMindsChat 
 
- Initialise LikeMindsSDK in the application life cycle method <code>applicationDidFinishLaunching</code> in <code>AppDelegate</code> class.
- As we developed this SDK in swift, so we need a helper swift class to provide a method for initialisation of likeminds sdk and helper class method will call into <code> AppDelegate.m </code> lifecycle method <code> didFinishLaunchingWithOptions </code>.
+ Initialise LikeMindsChat in the application life cycle method <code>applicationDidFinishLaunching</code> in <code>AppDelegate</code> class.
+ As we developed this framework in swift, so we need a helper swift class to provide a method for initialisation of likeminds framework and helper class method will call into <code> AppDelegate.m </code> lifecycle method <code> didFinishLaunchingWithOptions </code>.
  
  ```sh
-import LikeMindsSDK
+import LikeMindsChat
 
- @objc class LikeMindsSDKSetup: NSObject {
+@objc class LikeMindsSetup: NSObject {
   @objc func initializeLikeMinds(application: UIApplication, callback: AppDelegate) {
-    LikeMindsSdk.shared.initiateLikeMinds(apiKey: LIKEMINDS_API_KEY)
-    LikeMindsSdk.shared.delegate = callback
+    let extras = InitiateLikeMindsExtra(apiKey: LIKEMINDS_API_KEY)
+      .withDomainUrl(DOMAIN_URL)
+    LikeMinds.shared.initiateLikeMinds(extras: extras)
+    LikeMinds.shared.delegate = callback
   }
 }
  
@@ -173,8 +177,8 @@ import "ProjectName-Swift.h"
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   ...
-  LikeMindsSDKSetup *sdkSetup = [LikeMindsSDKSetup new];
-  [sdkSetup initializeLikeMindsWithApplication:application callback: self];
+  LikeMindsSetup *likemindsSetup = [LikeMindsSetup new];
+  [likemindsSetup initializeLikeMindsWithApplication:application callback: self];
   return true
 }
 ```
@@ -182,7 +186,7 @@ import "ProjectName-Swift.h"
 #### Implemention of Likeminds delegate methods to take require action
 
 ```sh
-extension AppDelegate: LikeMindsSDKDelegate {
+extension AppDelegate: LikeMindsDelegate {
 
     // When guest user tries to send a message, reaction, view participants, view profile and join chatroom.
     func loginRequiredCallback() {
@@ -214,7 +218,7 @@ class LikeMindsAppView: UIView {
   }
   
   @objc func addLikeMindsView(to view: UIView, userName: NSString, userId: NSString, isGuest: Bool ) {
-    LikeMindsSdk.shared.initiateGroupChat(userName: userName as String, userId: userId as String, isGuest: isGuest)
+    LikeMinds.shared.initiateGroupChat(userName: userName as String, userId: userId as String, isGuest: isGuest)
     { [weak self] response, vc in
       DispatchQueue.main.async {
         guard let _ = self?.homeFeedViewController else  {
@@ -278,7 +282,7 @@ RCT_EXPORT_METHOD(callLikeMindsModule:(nonnull NSNumber*) reactTag userName:(nul
 
 ```
 
-Method <code> addLikeMindsView </code> in class <code> LikeMindsAppView </code> calls a function <code> LikeMindsSdk.shared.initiateGroupChat </code> which shows the group chat screen.
+Method <code> addLikeMindsView </code> in class <code> LikeMindsAppView </code> calls a function <code> LikeMinds.shared.initiateGroupChat </code> which shows the group chat screen.
 
 
 #### Create <code>LikeMindsEmitterManager.swift</code> subview of <code>RCTEventEmitter</code>.
@@ -309,14 +313,14 @@ class LikeMindsEmitterManager: RCTEventEmitter {
 ```
 
 
-#### Create a <code> LikeMindsSDKEmitterManager.m </code> class with subclass of <code> RCTEventEmitter </code> to expose emitter class, methods and properties to react native app.
+#### Create a <code> LikeMindsChatEmitterManager.m </code> class with subclass of <code> RCTEventEmitter </code> to expose emitter class, methods and properties to react native app.
 
 ```sh
 #import <React/RCTViewManager.h>
 #import <React/RCTEventEmitter.h>
 
 
-@interface RCT_EXTERN_MODULE(LikeMindsSDKEmitter, RCTEventEmitter)
+@interface RCT_EXTERN_MODULE(LikeMindsChatEmitter, RCTEventEmitter)
   RCT_EXTERN_METHOD(supportedEvents)
 @end
   
