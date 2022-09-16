@@ -1,0 +1,11 @@
+framework module LikeMindsChat {
+  umbrella header "LikeMindsChat.h"
+
+  export *
+  module * { export * }
+}
+
+module LikeMindsChat.Swift {
+  header "LikeMindsChat-Swift.h"
+  requires objc
+}
