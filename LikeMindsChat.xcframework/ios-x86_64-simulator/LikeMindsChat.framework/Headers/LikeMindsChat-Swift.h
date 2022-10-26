@@ -305,19 +305,19 @@ SWIFT_CLASS("_TtC13LikeMindsChat16AttachmentPicker")
 @interface AttachmentPicker (SWIFT_EXTENSION(LikeMindsChat)) <UINavigationControllerDelegate>
 @end
 
-@class UIImagePickerController;
-
-@interface AttachmentPicker (SWIFT_EXTENSION(LikeMindsChat)) <UIImagePickerControllerDelegate>
-- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
-- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
-@end
-
 @class UIDocumentPickerViewController;
 @class NSURL;
 
 @interface AttachmentPicker (SWIFT_EXTENSION(LikeMindsChat)) <UIDocumentPickerDelegate>
 - (void)documentPicker:(UIDocumentPickerViewController * _Nonnull)controller didPickDocumentsAtURLs:(NSArray<NSURL *> * _Nonnull)urls;
 - (void)documentPickerWasCancelled:(UIDocumentPickerViewController * _Nonnull)controller;
+@end
+
+@class UIImagePickerController;
+
+@interface AttachmentPicker (SWIFT_EXTENSION(LikeMindsChat)) <UIImagePickerControllerDelegate>
+- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
 @end
 
 
@@ -461,6 +461,20 @@ SWIFT_CLASS("_TtC13LikeMindsChat7DKAsset")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+@interface DKAsset (SWIFT_EXTENSION(LikeMindsChat))
+/// The exported file will be placed in this location.
+/// All exported files can be automatically cleaned by the DKImageAssetDiskPurger when appropriate.
+@property (nonatomic, copy) NSURL * _Nullable localTemporaryPath;
+@property (nonatomic, copy) NSString * _Nullable fileName;
+/// Indicates the file’s size in bytes.
+@property (nonatomic) NSUInteger fileSize;
+/// If you export an asset whose data is not on the local device, and you have enabled downloading with the isNetworkAccessAllowed property, the progress indicates the progress of the download. A value of 0.0 indicates that the download has just started, and a value of 1.0 indicates the download is complete.
+@property (nonatomic) double progress;
+/// Describes the error that occurred if the export has failed or been cancelled.
+@property (nonatomic) NSError * _Nullable error;
+@end
+
 @class PHImageRequestOptions;
 @class UIImage;
 @class NSData;
@@ -478,20 +492,6 @@ SWIFT_CLASS("_TtC13LikeMindsChat7DKAsset")
 /// Fetch an AVAsset with a completeBlock and PHVideoRequestOptions.
 - (void)fetchAVAssetWithOptions:(PHVideoRequestOptions * _Nullable)options completeBlock:(void (^ _Nonnull)(AVAsset * _Nullable, NSDictionary * _Nullable))completeBlock;
 - (void)cancelRequests;
-@end
-
-
-@interface DKAsset (SWIFT_EXTENSION(LikeMindsChat))
-/// The exported file will be placed in this location.
-/// All exported files can be automatically cleaned by the DKImageAssetDiskPurger when appropriate.
-@property (nonatomic, copy) NSURL * _Nullable localTemporaryPath;
-@property (nonatomic, copy) NSString * _Nullable fileName;
-/// Indicates the file’s size in bytes.
-@property (nonatomic) NSUInteger fileSize;
-/// If you export an asset whose data is not on the local device, and you have enabled downloading with the isNetworkAccessAllowed property, the progress indicates the progress of the download. A value of 0.0 indicates that the download has just started, and a value of 1.0 indicates the download is complete.
-@property (nonatomic) double progress;
-/// Describes the error that occurred if the export has failed or been cancelled.
-@property (nonatomic) NSError * _Nullable error;
 @end
 
 
@@ -1258,6 +1258,7 @@ SWIFT_CLASS("_TtC13LikeMindsChat20JLAttributedTextView")
 
 SWIFT_CLASS("_TtC13LikeMindsChat18JLStickerImageView")
 @interface JLStickerImageView : UIImageView <UIGestureRecognizerDelegate>
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -1392,15 +1393,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 @end
 
 
-SWIFT_CLASS("_TtC13LikeMindsChat13LMPaddedLabel")
-@interface LMPaddedLabel : UILabel
-- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines SWIFT_WARN_UNUSED_RESULT;
-- (void)drawTextInRect:(CGRect)rect;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 typedef SWIFT_ENUM(NSInteger, MemberDirectoryInputSource, open) {
   MemberDirectoryInputSourceCommunityFeed = 0,
   MemberDirectoryInputSourceHomeComunityScreen = 1,
@@ -1472,6 +1464,7 @@ SWIFT_CLASS("_TtC13LikeMindsChat12SharePreview")
 SWIFT_CLASS("_TtC13LikeMindsChat19SharingPreviewModel")
 @interface SharingPreviewModel : NSObject
 @end
+
 
 
 

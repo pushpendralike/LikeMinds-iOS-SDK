@@ -636,6 +636,15 @@ public struct SwifterSwift {
     get
   }
 }
+public class InitiateLikeMindsExtra {
+  public init(apiKey: Swift.String)
+  public func domainUrl(_ domain: Swift.String) -> LikeMindsChat.InitiateLikeMindsExtra
+  public func fonts(_ fonts: LikeMindsChat.Fonts) -> LikeMindsChat.InitiateLikeMindsExtra
+  public func getApiKey() -> Swift.String
+  public func getDomainUrl() -> Swift.String?
+  public func getFonts() -> LikeMindsChat.Fonts?
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKAssetGroupDetailVC : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate, UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, LikeMindsChat.DKImagePickerControllerAware {
   @_Concurrency.MainActor(unsafe) public var selectedGroupId: Swift.String?
   @_Concurrency.MainActor(unsafe) @objc weak public var imagePickerController: LikeMindsChat.DKImagePickerController?
@@ -1032,6 +1041,10 @@ public enum DownloadError : Swift.Error {
   }
   @objc deinit
 }
+public class Fonts {
+  public init(regular: Swift.String, medium: Swift.String, bold: Swift.String)
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class DKAssetGroupDetailImageCell : LikeMindsChat.DKAssetGroupDetailBaseCell {
   @objc @_Concurrency.MainActor(unsafe) override public class func cellReuseIdentifier() -> Swift.String
   @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKImageCheckView : UIKit.UIView {
@@ -1423,8 +1436,8 @@ public struct UserAppAccessData : Swift.Codable {
 }
 public class DeepLinkRequest {
   public init(url: Swift.String)
-  public func withUserUniqueId(_ userUniqueId: Swift.String?) -> LikeMindsChat.DeepLinkRequest
-  public func withUsername(_ userName: Swift.String?) -> LikeMindsChat.DeepLinkRequest
+  public func userUniqueId(_ userUniqueId: Swift.String?) -> LikeMindsChat.DeepLinkRequest
+  public func userName(_ userName: Swift.String?) -> LikeMindsChat.DeepLinkRequest
   @objc deinit
 }
 public struct CommunityDetails : Swift.Codable {
@@ -1612,11 +1625,6 @@ public struct Community : Swift.Codable {
   public var promotersCount: Swift.Int?, MembersCount: Swift.Int?, MemberState: Swift.Int?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
-}
-public class InitiateLikeMindsExtra {
-  public init(apiKey: Swift.String)
-  public func withDomainUrl(_ domain: Swift.String) -> LikeMindsChat.InitiateLikeMindsExtra
-  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoContentAnimationView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -1943,13 +1951,6 @@ extension LikeMindsChat.CAError : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class LMPaddedLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func textRect(forBounds bounds: CoreFoundation.CGRect, limitedToNumberOfLines numberOfLines: Swift.Int) -> CoreFoundation.CGRect
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 public struct CollabcardAnswer1 : Swift.Codable {
   public let id: Swift.Int?
@@ -2280,6 +2281,9 @@ public class ChatRoomShareURL : Swift.Codable {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class JLStickerImageView : UIKit.UIImageView, UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor(unsafe) public var currentlyEditingLabel: LikeMindsChat.JLStickerLabelView!
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
