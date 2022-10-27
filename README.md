@@ -24,7 +24,7 @@ Follow this tutorial to integrate group chat in your iOS app
 ## Getting Started
 1. Add this entry in `Podfile`
 ```sh
-pod 'LikeMindsChat', '~> 1.1'
+pod 'LikeMindsChat', '~> 1.2.0'
 ```
 
 2. Run the command.
@@ -42,7 +42,7 @@ let LIKEMINDS_CHAT_API_KEY = "LIKEMINDS_CHAT_API_KEY"
 let DOMAIN_URL = "YOUR_DOMAIN" 
 
 let extras = InitiateLikeMindsExtra(apiKey: LIKEMINDS_CHAT_API_KEY)  //API Key generated
-            .withDomainUrl(DOMAIN_URL) //Optional | Domain used for deeplinking
+            .domainUrl(DOMAIN_URL) //Optional | Domain used for deeplinking
 ```
 
 :::tip 
