@@ -22,7 +22,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		G99YnPskRSyYKhRa46GZKq7nMCs=
+		MVhIjaWCAf6QcQMDF+xC+h+t+VU=
 		</data>
 		<key>AudioCellContainerView.nib</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>ChatMesssageCell.nib/objects-14.0+.nib</key>
 		<data>
-		w8py8U6p85AxK2OkK+bskrxsBig=
+		5T11pf4G8yXZYPVK26+z6h9rcNs=
 		</data>
 		<key>ChatMesssageCell.nib/runtime.nib</key>
 		<data>
-		sjAJJ35kqp38OkMfxwfLxS9G1+0=
+		OEx6ooJeJ6Cy20S8sxgBPJ9I640=
 		</data>
 		<key>ChatRoom.storyboardc/Info.plist</key>
 		<data>
@@ -1035,7 +1035,7 @@
 		</dict>
 		<key>Headers/LikeMindsChat-Swift.h</key>
 		<data>
-		7UypMw1uxxXZ8GROFnxL6pV39gk=
+		svtne8cMx4QEralgn0f1ag8KrYU=
 		</data>
 		<key>Headers/LikeMindsChat.h</key>
 		<data>
@@ -1055,7 +1055,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/jORXhM97Fc+pLWtdHQF5HGzOB0=
+		89HpZFJwf/tzZMQT7A94lFVsAeA=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1123,7 +1123,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		3D/B1d/AiEV68zI6ueUqgEnOiFI=
+		ntZweXlulqPyTHnMsNlMqN+Nv/M=
 		</data>
 		<key>LMDropdownViewCell.nib</key>
 		<data>
@@ -1303,23 +1303,23 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		l/VECzKvg9GChncoC+H8tY+z3sw=
+		NbFDQ7l+pCMflbCZeNCsQ1Tuz2A=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Q+fxMdaBLSUTn7LiK6okLxEKOfw=
+		7KZpYhUMgFJQUFU/VwCuldh/Giw=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		cS9MUrq695F6pOKc0HJzAnNVm10=
+		kuQRcS+x63opeAMuBm3bU6Nzbow=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Q+fxMdaBLSUTn7LiK6okLxEKOfw=
+		7KZpYhUMgFJQUFU/VwCuldh/Giw=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6s7DdazGEse6vAJsFH41FpIaBTk=
+		PDkuMIe3tt/sBiaNOHQjGzaazdY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1411,7 +1411,7 @@
 		</data>
 		<key>NormalChatroomMessageCell.nib</key>
 		<data>
-		6q33/n1UlFf848mVk8TJv8PshUA=
+		JzJWF2vpg5HUu42f/21Ws/b96ME=
 		</data>
 		<key>OnboardService.storyboardc/FE3-fa-uWd-view-M4I-Yc-Ms5.nib/objects-14.0+.nib</key>
 		<data>
@@ -1751,11 +1751,11 @@
 		</data>
 		<key>SingleImageViewController.nib/objects-14.0+.nib</key>
 		<data>
-		I8dqLUF6ZNXaN0d322PXbDVsyPE=
+		PCgQEQ8z4OOp/ZBzAH5XvLe43C4=
 		</data>
 		<key>SingleImageViewController.nib/runtime.nib</key>
 		<data>
-		tZEMRYau3g1yxlQ/0F3kEIv8RLM=
+		SOAwZ7zxaQSs8Dd2v09kCB33Lc8=
 		</data>
 		<key>SingleMediaContainerView.nib</key>
 		<data>
@@ -1775,7 +1775,7 @@
 		</data>
 		<key>TaggedListTableViewCell.nib</key>
 		<data>
-		A3PioG0qO9BCmBhV9QNJC9NZvKM=
+		DzgVmcCKxXemDIQsEng86rZ+tS4=
 		</data>
 		<key>TaggedUserList.nib</key>
 		<data>
@@ -1807,7 +1807,7 @@
 		</data>
 		<key>UserTaggingTableViewCell.nib</key>
 		<data>
-		O6M1vDKS2GEHnTfnJMrFyvxfx8A=
+		YQpPjKFufB8J+B1Ma4xGWL/3+24=
 		</data>
 		<key>ViewMoreButton.nib</key>
 		<data>
@@ -2105,7 +2105,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ao4ZT1k8r1uOr7AtvrXhyoNwmhZSOScpmkXul2Wx40Q=
+			QH+dq7MMrBNUdRt9778Sx1lOCgZR5QnmSRTnGwAYZm0=
 			</data>
 		</dict>
 		<key>AudioCellContainerView.nib</key>
@@ -2189,14 +2189,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BmIRrAftsLZMvLDb4aO89dKMeMno1ZVK6s8pKk0I5RM=
+			VaZkhqs0+MKBo0McBSwy0qQv2C4AqMleEuazGa9J8iw=
 			</data>
 		</dict>
 		<key>ChatMesssageCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6hGnp9b/ILeEGpgY8gco0y7Tph9sjMGlH5sVGQEVvmM=
+			YOEwFFLlsA6gkI/3ptVYI+k+IVKl9Gf9W7nne9KZ2oE=
 			</data>
 		</dict>
 		<key>ChatRoom.storyboardc/Info.plist</key>
@@ -3412,7 +3412,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v711lsXR/STP/hB1+yUlqk2Liqy6ddU/dMVeeb+g9I0=
+			1+vd58flKaalasnxsSrXPEwFGF0oP6W7qKtzPl6B0s4=
 			</data>
 		</dict>
 		<key>Headers/LikeMindsChat.h</key>
@@ -3559,7 +3559,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GNuN9Z0w/0VYKxk4Jr768ok0Tz4BhRSTcmBaeAzGUM4=
+			29aNWNtKkBXYO9GSmW2wPjlWAAqB+z6iQGKhNQe68zs=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib</key>
@@ -3874,35 +3874,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VRTg302JbSlPXY19ZGY1eBMOgDfdDWuuCQ9r85q85JI=
+			9WRgbcQlWe+p/LON1dl48dkcfva4B2WzuFMDzeAS+9U=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S8URaCdeOPEm6P8pTlY6jqGUzLIY4E2kPNvzsuSmvrI=
+			5xvlvOt5c6iMH7fv/096p32IX1GVKg/sz2sB4jcWrqw=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			37pNzWVNHY/KPFpykEQqPjgj+ghGay7ZNaPgioZOGs8=
+			Mm+YJUd4kNHb8ZHD80ECaaSFcZZ8V3YfYmKIqurQtbI=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S8URaCdeOPEm6P8pTlY6jqGUzLIY4E2kPNvzsuSmvrI=
+			5xvlvOt5c6iMH7fv/096p32IX1GVKg/sz2sB4jcWrqw=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5VY6NPt3enI4Qidk1mZrmNmlHPFrw5s+BdpozLFC7S0=
+			AcOuVK9DnqeTV2krLKFXXXhkiocUQNAeNmk8Ti4wO9g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -4063,7 +4063,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f1Y2fAn9B7EW05FTnRoT2g6fYv8NSAx0R4XX/7gyRq4=
+			ttQw8Pi5LRipiVXYSwjZxuS/7v2zo4B5FYmVmU1NA2U=
 			</data>
 		</dict>
 		<key>OnboardService.storyboardc/FE3-fa-uWd-view-M4I-Yc-Ms5.nib/objects-14.0+.nib</key>
@@ -4658,14 +4658,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lePAizGzKqdtTRGJsTN54ObFtHWvYe41aMW21onelP8=
+			A3EhSeR1+eZbUsA4CQwvOCkTSev7+W/8XTlsAKSVgqI=
 			</data>
 		</dict>
 		<key>SingleImageViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uIdNhmVp1nS7+P1C6fioBHbr6eAxO7upbHCjPTL34hE=
+			tTCM87RhGf5CdFDeRXAfGT6qfXh8K568tM2173dmSRQ=
 			</data>
 		</dict>
 		<key>SingleMediaContainerView.nib</key>
@@ -4700,7 +4700,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RdRoEdwlc3TnGgwT05Q8NXCZhJMEJPU6jkwHtNnES4k=
+			iAmZrM+ZpGdEvjpgurSL8s3zYvAMc3iWF1+H+u6qpJI=
 			</data>
 		</dict>
 		<key>TaggedUserList.nib</key>
@@ -4756,7 +4756,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/oX6T6DMbb7gTWhmkpZMZFzsIfYhf0B2dvhwmvKxtDI=
+			t9KsdTh8dw2cPFZQgbEZnJCE2DzdoUhS1EFVHxuI8XU=
 			</data>
 		</dict>
 		<key>ViewMoreButton.nib</key>
