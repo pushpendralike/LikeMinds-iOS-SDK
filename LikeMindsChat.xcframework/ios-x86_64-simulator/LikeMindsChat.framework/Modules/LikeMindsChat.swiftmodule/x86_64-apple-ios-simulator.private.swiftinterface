@@ -410,6 +410,8 @@ public enum ReportTypeTag : Swift.Int {
   case chatRoom
   case member
   case community
+  case conversation
+  case link
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -751,10 +753,6 @@ extension LikeMindsChat.RecordButton {
   public static let shared: LikeMindsChat.APIHandler
   public func getUnreadConversationNotification(member_id: Swift.String, responseClosure: @escaping ([Swift.String : Any], Swift.Bool) -> Swift.Void)
   @objc deinit
-}
-public struct ApiDataResponse<T> : Swift.Codable where T : Swift.Decodable, T : Swift.Encodable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 @objc @available(iOS 11.0, *)
 @_Concurrency.MainActor(unsafe) open class DKPDFView : UIKit.UIView {

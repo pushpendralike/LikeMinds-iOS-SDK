@@ -24,7 +24,7 @@ Follow this tutorial to integrate group chat in your iOS app
 ## Getting Started
 1. Add this entry in `Podfile`
 ```sh
-pod 'LikeMindsChat', '~> 1.3.0'
+pod 'LikeMindsChat', '~> 1.4.0'
 ```
 
 2. Run the command.
