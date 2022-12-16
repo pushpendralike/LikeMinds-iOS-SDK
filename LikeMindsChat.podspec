@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.4.1"
+  spec.version      = "1.5.0"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.
@@ -66,9 +66,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'AWSS3'
   spec.dependency 'RealmSwift','10.5.2'
   spec.dependency 'Sentry', '~> 7.16'
-  spec.dependency 'MoEngage-iOS-SDK', '~> 7.0'
-  spec.dependency 'MoEngageInApp','~> 2.0'
-  spec.dependency 'lottie-ios', '~> 3.2'
+  spec.dependency 'lottie-ios', '~> 3.4.0'
   spec.dependency 'SwiftyGif'
   spec.dependency 'Giphy'
   spec.dependency 'iOSDropDown'
