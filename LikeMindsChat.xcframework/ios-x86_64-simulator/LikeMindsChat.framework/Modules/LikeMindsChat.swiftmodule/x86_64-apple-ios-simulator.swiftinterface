@@ -7,7 +7,6 @@ import AVKit
 import AWSCognito
 import AWSS3
 import Alamofire
-import CircleProgressBar
 import CoreImage
 import CropViewController
 import FLAnimatedImage
@@ -746,11 +745,6 @@ public struct MemberStateBase : Swift.Codable {
 }
 extension LikeMindsChat.RecordButton {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
-}
-@_hasMissingDesignatedInitializers public class APIHandler {
-  public static let shared: LikeMindsChat.APIHandler
-  public func getUnreadConversationNotification(member_id: Swift.String, responseClosure: @escaping ([Swift.String : Any], Swift.Bool) -> Swift.Void)
-  @objc deinit
 }
 @objc @available(iOS 11.0, *)
 @_Concurrency.MainActor(unsafe) open class DKPDFView : UIKit.UIView {

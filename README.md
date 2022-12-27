@@ -24,7 +24,7 @@ Follow this tutorial to integrate group chat in your iOS app
 ## Getting Started
 1. Add this entry in `Podfile`
 ```sh
-pod 'LikeMindsChat', '~> 1.5.0'
+pod 'LikeMindsChat', '~> 1.6.0'
 ```
 
 2. Run the command.
@@ -81,44 +81,6 @@ LikeMinds.shared.initiateGroupChat(userName: userName, userId: userId, isGuest: 
 :::tip 
 We suggest that you use the unique ID from your database for the user so that you do not have to save the one we generate. 
 :::
-
-### Normal User
-1. **If new user** 
-```swift
-//Set userId to custom user ID present in your database or null if you want to generate new user ID (to be saved in database against user)
-let userId = "user_id"
-let userName = "user_name"
-LikeMinds.shared.initiateGroupChat(userName: userName, userId: userId, isGuest: false) { groupChatResponse, groupChatViewController in
-    // do something
-}
-```
-2. **If returning user/login** 
-```swift
-//Custom user ID present in your database or already generated user ID with first time call to initiateGroupChat
-let userId = "user_id"
-let userName = "user_name"
-LikeMinds.shared.initiateGroupChat(userName: userName, userId: userId, isGuest: false) { groupChatResponse, groupChatViewController in
-    // do something
-}
-```
-### Guest User
-```swift
-//If you want to set custom user name for guest (default=Guest User)
-let userName = "user_name"
-LikeMinds.shared.initiateGroupChat(userName: userName, userId: userId, isGuest: true) { groupChatResponse, groupChatViewController in
-    // do something
-}
-```
-
-## Logout
-
-To disconnect a user (say that you’re for instance logging out and logging in as someone new) you can call the `logout()` with `logoutResponse`, a callback which will return whether logout is successful or not.
-
-```swift
-LikeMinds.shared.logout() { logoutResponse in
-    // do something
-}
-```
 
 ## Firebase Integration
 In order to receive notification, FCM server key needs to be generated. 

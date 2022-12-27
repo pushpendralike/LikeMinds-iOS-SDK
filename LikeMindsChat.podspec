@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.5.0"
+  spec.version      = "1.6.0"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.
@@ -52,14 +52,12 @@ Pod::Spec.new do |spec|
   spec.dependency 'Firebase/Storage'
   spec.dependency 'UITextView+Placeholder'
   spec.dependency 'IQKeyboardManagerSwift'
-  spec.dependency 'AlamofireObjectMapper', '~> 5.2.0'
   spec.dependency 'SwiftyJSON', '~> 4.0'
   spec.dependency 'Kingfisher', '~> 7.0'
   spec.dependency 'ProgressHUD'
   spec.dependency 'MaterialShowcase'
   spec.dependency 'MKDropdownMenu'
   spec.dependency 'GooglePlaces'
-  spec.dependency 'CircleProgressBar', '~> 0.32'
   spec.dependency 'CropViewController'
   spec.dependency 'AWSCore'
   spec.dependency 'AWSCognito'
@@ -69,6 +67,5 @@ Pod::Spec.new do |spec|
   spec.dependency 'lottie-ios', '~> 3.4.0'
   spec.dependency 'SwiftyGif'
   spec.dependency 'Giphy'
-  spec.dependency 'iOSDropDown'
 
 end

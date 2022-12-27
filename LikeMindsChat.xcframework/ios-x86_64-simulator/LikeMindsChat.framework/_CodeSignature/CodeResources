@@ -1035,7 +1035,7 @@
 		</dict>
 		<key>Headers/LikeMindsChat-Swift.h</key>
 		<data>
-		q73Z6lFa32H+x3g0hYwL5q/r1ac=
+		8FF6pi6Qd0w7rrpI1HfSw6twbwM=
 		</data>
 		<key>Headers/LikeMindsChat.h</key>
 		<data>
@@ -1055,7 +1055,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		L3CbpCcOOmfpmah9Tb6dkcZn81A=
+		cGWPUf+m5fwO2kRJ/6hYD2BwFuo=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1091,7 +1091,7 @@
 		</data>
 		<key>JoinCommunity.storyboardc/gk6-CM-Qkq-view-AQF-HD-9GO.nib</key>
 		<data>
-		mFb9TEF0h4d4dkjH4nu3oCC/Uac=
+		VrKZipIt7BH1/h4Gi9pd+oBnsZg=
 		</data>
 		<key>JoinFormMultipleSelectionCell.nib</key>
 		<data>
@@ -1123,7 +1123,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		JeLqMhZBWFgIQZD1Wm2YuqJenO0=
+		QpKTA1kVTf65BRywbV6mC+b3KyA=
 		</data>
 		<key>LMDropdownViewCell.nib</key>
 		<data>
@@ -1131,11 +1131,11 @@
 		</data>
 		<key>LMTextFieldCell.nib</key>
 		<data>
-		BSPo9DNrr2iM3K5K5h84zM7ha0c=
+		BDk7PGgS3p1E76MoUFyhU5cXs8g=
 		</data>
 		<key>LMTextViewCell.nib</key>
 		<data>
-		e/UPbbgiWAJoujBGUSdcUGiwQp8=
+		QV3R7xDhkSzRFyeNCOqXQVeCVXg=
 		</data>
 		<key>LMUploadFileViewCell.nib</key>
 		<data>
@@ -1323,11 +1323,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		dj/pDDG/dUclZOpX/lcArFmI08c=
+		PufJg3/Un+gaaeLtccJp1g6pFoM=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		U5alDu0FKpVTl45u0M69Q9DdUHE=
+		guj6tVVGiw7smxMC+oCGiIN1iDM=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -1335,11 +1335,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		U5alDu0FKpVTl45u0M69Q9DdUHE=
+		guj6tVVGiw7smxMC+oCGiIN1iDM=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SFDHri3wKUQKpHHtSoEEonECkE0=
+		rd1vgIirCgbMAb2f2BuNCqMeuss=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1415,7 +1415,7 @@
 		</data>
 		<key>NewHomeFeedChatRoomTableViewCell.nib</key>
 		<data>
-		ABi+gb3J3BLtxEvYyKVsTd5ds4w=
+		peidlE9MO8HfcoJcGDcAuhqs+uU=
 		</data>
 		<key>NewHomeFeedCommunityFeedCell.nib</key>
 		<data>
@@ -1872,10 +1872,6 @@
 		<key>WebViewController.nib</key>
 		<data>
 		gtqWoNSNnJib0qINA40AhwSWdzE=
-		</data>
-		<key>WebViewReportViewController.nib</key>
-		<data>
-		7iYeaT6cP6wpei2V/ZjFdhwJKVQ=
 		</data>
 		<key>ar.lproj/DKImagePickerController.strings</key>
 		<dict>
@@ -3464,7 +3460,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Iprh08wT++UnZyR2KurK3dM5C2jMjbqSoD5HnDMEeRs=
+			zWXkWSCjFspRDnrIU95SlSq2gY3mvhWChSYByXTGmNM=
 			</data>
 		</dict>
 		<key>Headers/LikeMindsChat.h</key>
@@ -3555,7 +3551,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			03j9kbhFtwWsd3JJO9zZIahPACfqXVIvBvAByeUPeGU=
+			bjNqCxqKuwkZYbZnFut3ljsq4niBRpt7SdmM9B//mac=
 			</data>
 		</dict>
 		<key>JoinFormMultipleSelectionCell.nib</key>
@@ -3611,7 +3607,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4qT5iSzHBYNwGT0nzFPdFylfuBsENdFCiUOb7M70/Ug=
+			hlwroLg00f4l/hnrSNLSXFqdAPfCTjMrtn+mxpxdPfo=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib</key>
@@ -3625,14 +3621,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7DnU9piPllT7lmvZbpGusCYUD3+lW0aCreMfSra5vUo=
+			V7vpNLLoMRbqKLRJGVe3I6YmqGMge6Y9uY2fRSM6PVs=
 			</data>
 		</dict>
 		<key>LMTextViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ICZTkcQ0vOGcnKX3RSTtWjRSKcLCBVS4s5BVMlgo+vc=
+			VsL91+Lm3AZANiEYR6ULGz1o9mWL0GNT9D63C8RV4Z0=
 			</data>
 		</dict>
 		<key>LMUploadFileViewCell.nib</key>
@@ -3961,14 +3957,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xOaLXg0qfrtuG8AqnQxI9BGw6MnDcS2Fjv6lQOds9a8=
+			NRRGE3bLug9mtL/6LJsqaJEdFzi+6oN9cDlyvLeVTYo=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JXNe0SmhUCZziLU/fV1N9qwwxg1Iit7LY9qGDAPAYCo=
+			YAEcqMxqvJsTQr99V4acMSDqDS+wGbxpDdc+ZArgmiY=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -3982,14 +3978,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JXNe0SmhUCZziLU/fV1N9qwwxg1Iit7LY9qGDAPAYCo=
+			YAEcqMxqvJsTQr99V4acMSDqDS+wGbxpDdc+ZArgmiY=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T3Mka/R2o9fzNjFYwGbVZzu0Atymyudl3xGCoqxlo5o=
+			FctUJHXF7Ylu2xeNqLc0TZWyOfrFIPWflPW8NeJbtxc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -4122,7 +4118,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6FxekFdxIGlVKZPeJITEK9CdYFe+BCRoaEjEc+3PNzQ=
+			TsgB6aFzQ/9UH0x3Q/fN5faCoHCqg5j7Cy5uY1Rfk5I=
 			</data>
 		</dict>
 		<key>NewHomeFeedCommunityFeedCell.nib</key>
@@ -4921,13 +4917,6 @@
 			<key>hash2</key>
 			<data>
 			lzN6+X1s15eNmpnNl911DXBCTBafLLWxXe8cr19+Os4=
-			</data>
-		</dict>
-		<key>WebViewReportViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			/PNpAcCccuHbHSB55ZyaaVjNLb0NNMx8rW99c3UUJmg=
 			</data>
 		</dict>
 		<key>ar.lproj/DKImagePickerController.strings</key>
