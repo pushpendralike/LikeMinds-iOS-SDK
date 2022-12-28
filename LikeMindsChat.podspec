@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.6.0"
+  spec.version      = "1.6.1"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.
@@ -41,7 +41,6 @@ Pod::Spec.new do |spec|
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   spec.dependency 'Alamofire'
-  spec.dependency 'DCKeyValueObjectMapping', '1.5'
   spec.dependency 'MBProgressHUD', '1.1.0'
   spec.dependency 'SDWebImage', '~> 5.1'
   spec.dependency 'SDWebImageFLPlugin'
