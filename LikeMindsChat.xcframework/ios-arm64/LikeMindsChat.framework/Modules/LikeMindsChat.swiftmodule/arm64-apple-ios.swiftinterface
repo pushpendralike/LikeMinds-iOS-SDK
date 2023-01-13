@@ -639,6 +639,8 @@ public class InitiateLikeMindsExtra {
   public init(apiKey: Swift.String)
   public func domainUrl(_ domain: Swift.String) -> LikeMindsChat.InitiateLikeMindsExtra
   public func fonts(_ fonts: LikeMindsChat.Fonts) -> LikeMindsChat.InitiateLikeMindsExtra
+  public func filterConversationStates(_ states: [LikeMindsChat.ConversationState]) -> LikeMindsChat.InitiateLikeMindsExtra
+  public func hideMembersCount(_ hide: Swift.Bool) -> LikeMindsChat.InitiateLikeMindsExtra
   public func getApiKey() -> Swift.String
   public func getDomainUrl() -> Swift.String?
   public func getFonts() -> LikeMindsChat.Fonts?
@@ -1002,6 +1004,23 @@ public struct Testimonial : Swift.Codable {
 public struct FAQ : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+}
+public enum ConversationState : Swift.Int {
+  case normal
+  case firstConversation
+  case memberJoinedOpenChatroom
+  case memberLeftOpenChatroom
+  case memberAddedToChatroom
+  case memberLeftSecretChatroom
+  case memberRemovedFromChatroom
+  case poll
+  case allMembersAdded
+  case topicChanged
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public enum DownloadError : Swift.Error {
   case emptyData
@@ -2362,6 +2381,9 @@ extension LikeMindsChat.ReportTypeTag : Swift.RawRepresentable {}
 extension LikeMindsChat.Regex : Swift.Equatable {}
 extension LikeMindsChat.Regex : Swift.Hashable {}
 extension LikeMindsChat.Regex : Swift.RawRepresentable {}
+extension LikeMindsChat.ConversationState : Swift.Equatable {}
+extension LikeMindsChat.ConversationState : Swift.Hashable {}
+extension LikeMindsChat.ConversationState : Swift.RawRepresentable {}
 extension LikeMindsChat.DownloadError : Swift.Equatable {}
 extension LikeMindsChat.DownloadError : Swift.Hashable {}
 extension LikeMindsChat.DKPhotoGallerySingleTapMode : Swift.Equatable {}
