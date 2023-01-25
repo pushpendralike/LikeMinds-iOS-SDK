@@ -1372,10 +1372,12 @@ extension LikeMindsChat.LMGradientView {
 public protocol LikeMindsDelegate : AnyObject {
   func loginRequiredCallback()
   func eventFiredCallback(eventName: Swift.String, properties: [Swift.String : Any])
+  func cancelJoinFormCallback()
 }
 extension LikeMindsChat.LikeMindsDelegate {
   public func loginRequiredCallback()
   public func eventFiredCallback(eventName: Swift.String, properties: [Swift.String : Any])
+  public func cancelJoinFormCallback()
 }
 @_hasMissingDesignatedInitializers public class LikeMinds {
   public static let shared: LikeMindsChat.LikeMinds
