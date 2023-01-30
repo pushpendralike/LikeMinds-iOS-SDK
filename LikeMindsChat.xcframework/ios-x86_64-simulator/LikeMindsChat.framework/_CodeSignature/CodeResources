@@ -22,7 +22,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		kVPsApNwYGEeqMyujMn3joTlzp4=
+		L8pepcZ5k61hJz0BcENMECKyQb8=
 		</data>
 		<key>AudioCellContainerView.nib</key>
 		<data>
@@ -1055,7 +1055,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		g30Abo9FsHZXAE6+8baXxdigXKU=
+		K4YZVT5COOdWnpYZlq6FQcoFO2o=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1123,11 +1123,11 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		zxu+kjXLaHKKKBJxQx4ZxrupmdM=
+		HgkVgNBcK0DODW78qzu1J5y22Rw=
 		</data>
 		<key>LMDropdownViewCell.nib</key>
 		<data>
-		K1R0/MqX2PqDOB7RwGXHz2kPhLc=
+		XaizrV4E2DTNFZ/SjaGSHlMB6mI=
 		</data>
 		<key>LMTextFieldCell.nib</key>
 		<data>
@@ -1323,7 +1323,7 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		13dTmEz40r2ZHAdvHXKSQVDKLTs=
+		3T2le8+5XOt1GzATcVkhKf/JKf4=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -1339,7 +1339,7 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Kk0BCYe/CIPNr0mCt4z1BQkP5r8=
+		8/KetEc7SF4nfIRQCSBhor8h8Wk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2157,7 +2157,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4w2RPPG6ydmIvrJzkPQd/SgYUdYgZvjvm3rw0/Omky8=
+			zW88rflg0GY7wJZim403BdUv10cyCpClzbn5U+VzNZc=
 			</data>
 		</dict>
 		<key>AudioCellContainerView.nib</key>
@@ -3611,14 +3611,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nd0DZAShyiWgxhUx1xKiqpTnSsmjU/9e57sDAxQnj2Y=
+			WP/yUUxn7f5k0as2IsIEe3KsbtcTQ5qJ0V7TKlj0TpI=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tYnzXSaU8nwcXb/mjTyz11lzJ/Aw+tPJLEn0EYMoc2o=
+			CBrltE1e1xbw4Ba/WhyW4kPHZFyuQIYIK0zDijXoTss=
 			</data>
 		</dict>
 		<key>LMTextFieldCell.nib</key>
@@ -3961,7 +3961,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xCRARaf7MZob57Mpf5klkFMwXD8B+Qqp+E9fevoV01o=
+			w5OTc9omX8nIo+k823fCBsKM3CD8syt8cavEU/yC2hI=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -3989,7 +3989,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z5M+qP2talEveOXEZ/rDKI6f6mQZwosUbxjlxFJJcGE=
+			C2xUYZ0frmnVSwsxVBWw0w/O0dIBhvew3bHpNJdPjrU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
