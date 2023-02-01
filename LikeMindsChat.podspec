@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.7.3"
+  spec.version      = "1.7.4"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.
@@ -31,7 +31,6 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "12.4"
 
   spec.source = { :git => "https://github.com/pushpendralike/LikeMinds-iOS-SDK.git", :tag => "#{spec.version}" }
-
   spec.vendored_frameworks = "LikeMindsChat.xcframework"
   spec.swift_version = "4.2"
 
