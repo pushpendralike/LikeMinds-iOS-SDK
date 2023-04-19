@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target x86_64-apple-ios12.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LikeMindsChat
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -171,7 +171,7 @@ public protocol DKImageExtensionProtocol {
   @_Concurrency.MainActor(unsafe) convenience public init(groupDataManager: LikeMindsChat.DKImageGroupDataManager? = nil)
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @objc @_Concurrency.MainActor(unsafe) open func makeRootVC() -> any UIKit.UIViewController & LikeMindsChat.DKImagePickerControllerAware
+  @objc @_Concurrency.MainActor(unsafe) open func makeRootVC() -> UIKit.UIViewController & LikeMindsChat.DKImagePickerControllerAware
   @objc @_Concurrency.MainActor(unsafe) open func presentCamera()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func present(_ viewControllerToPresent: UIKit.UIViewController, animated flag: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
@@ -221,16 +221,16 @@ public protocol DKImageExtensionProtocol {
   @objc var thumbnailImageView: UIKit.UIImageView { get }
 }
 public struct ConfigModel : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct UserDetail : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct UserMetrics : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers open class FactoryBuilder {
   public var communityFeed: LikeMindsChat.CommunityFeedFactory {
@@ -254,10 +254,10 @@ public struct UserMetrics : Swift.Codable {
   @objc deinit
 }
 extension LikeMindsChat.KPActionSheet : UIKit.UIViewControllerTransitioningDelegate, UIKit.UIViewControllerAnimatedTransitioning {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func transitionDuration(using transitionContext: (any UIKit.UIViewControllerContextTransitioning)?) -> Foundation.TimeInterval
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animateTransition(using transitionContext: any UIKit.UIViewControllerContextTransitioning)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
 }
 public func ArrowDefaultColor() -> UIKit.UIColor
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class DKPopoverViewController : UIKit.UIViewController {
@@ -319,21 +319,21 @@ public func ArrowDefaultColor() -> UIKit.UIColor
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
 }
 public struct PreviewUnreadCountResponse {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ConversationUsers : Swift.Codable {
   public let id: Swift.Int?
   public let name: Swift.String?
   public let image_url: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public protocol AttachmentPickerDelegate : AnyObject {
   func didSelectImage(image: UIKit.UIImage?, url: Swift.String?, actionType: Swift.String?)
   func didSelectDocument(uri: Foundation.URL?, url: Swift.String?, actionType: Swift.String?)
 }
 @objc open class AttachmentPicker : ObjectiveC.NSObject {
-  public init(presentationController: UIKit.UIViewController, delegate: any LikeMindsChat.AttachmentPickerDelegate)
+  public init(presentationController: UIKit.UIViewController, delegate: LikeMindsChat.AttachmentPickerDelegate)
   public func present(documentOption: Swift.Bool = true, imagePickerOption: Swift.Bool = true, audioOption: Swift.Bool = false)
   @objc deinit
 }
@@ -393,12 +393,12 @@ extension LikeMindsChat.NibLoadable where Self : UIKit.UIView {
   @objc deinit
 }
 public struct CommunitySettingsRights : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct SettingRights : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers open class CommunityFeedFactory {
   @objc deinit
@@ -417,21 +417,21 @@ public enum ReportTypeTag : Swift.Int {
 }
 @objc @objcMembers public class SharingPreviewModel : ObjectiveC.NSObject, Swift.Codable {
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @objc @objcMembers public class SharePreview : ObjectiveC.NSObject, Swift.Codable {
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public struct ManagementToolsModal : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ManagementTool : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public class CollabCard1 : Swift.Codable {
   final public let id: Swift.Int?
@@ -503,9 +503,9 @@ public class CollabCard1 : Swift.Codable {
   final public let lastResponseMembers: [LikeMindsChat.Member1]?
   final public let secretChatroomLeft: Swift.Bool?
   final public let secretChatroomParticipants: [Swift.Int]?
-  required public init(from decoder: any Swift.Decoder) throws
+  required public init(from decoder: Swift.Decoder) throws
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_Concurrency.MainActor(unsafe) open class DKPhotoImageView : UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage? = nil, highlightedImage: UIKit.UIImage? = nil)
@@ -702,7 +702,7 @@ public func getImageDataManager() -> LikeMindsChat.DKImageDataManager
   @_Concurrency.MainActor(unsafe) override open func prepareForReuse()
   @_Concurrency.MainActor(unsafe) override open func createContentView() -> UIKit.UIView
   @_Concurrency.MainActor(unsafe) override open func contentSize() -> CoreFoundation.CGSize
-  @_Concurrency.MainActor(unsafe) override open func fetchContent(withProgressBlock progressBlock: @escaping ((Swift.Float) -> Swift.Void), completeBlock: @escaping ((Any?, (any Swift.Error)?) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) override open func fetchContent(withProgressBlock progressBlock: @escaping ((Swift.Float) -> Swift.Void), completeBlock: @escaping ((Any?, Swift.Error?) -> Swift.Void))
   @_Concurrency.MainActor(unsafe) override open func updateContentView(with content: Any)
   @_Concurrency.MainActor(unsafe) override open func enableZoom() -> Swift.Bool
   @_Concurrency.MainActor(unsafe) override public func enableIndicatorView() -> Swift.Bool
@@ -728,8 +728,8 @@ public struct UnitsFormat {
   public func getReadableUnit() -> Swift.String
 }
 public struct MemberStateBase : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class RecordButton : UIKit.UIButton, UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor(unsafe) public var recordView: LikeMindsChat.RecordView!
@@ -809,7 +809,7 @@ public let DKPhotoGalleryItemExtraInfoKeyRemoteImageOriginalSize: Swift.String
 }
 @_hasMissingDesignatedInitializers public class ImageDownloader {
   public static let shared: LikeMindsChat.ImageDownloader
-  public func downloadImage(forURL url: Foundation.URL, completion: @escaping (Swift.Result<UIKit.UIImage, any Swift.Error>) -> Swift.Void)
+  public func downloadImage(forURL url: Foundation.URL, completion: @escaping (Swift.Result<UIKit.UIImage, Swift.Error>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class DKImagePickerControllerResource : ObjectiveC.NSObject {
@@ -865,8 +865,8 @@ extension Swift.String {
 public struct LogoutResponse : Swift.Codable {
   public let success: Swift.Bool
   public let errorMessage: Swift.String?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryContentVC : UIKit.UIViewController, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) public var pageChangeBlock: ((_ index: Swift.Int) -> Swift.Void)?
@@ -900,28 +900,28 @@ public struct LogoutResponse : Swift.Codable {
   @objc deinit
 }
 public struct Videos : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
   public init()
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct PDFValues : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
   public init()
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Your_communities : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct NewChatRoomUsers : Swift.Codable {
   public var name: Swift.String?
   public var image_url: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Actions : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Member1 : Swift.Codable, Swift.Equatable {
   public static func == (lhs: LikeMindsChat.Member1, rhs: LikeMindsChat.Member1) -> Swift.Bool
@@ -942,8 +942,8 @@ public struct Member1 : Swift.Codable, Swift.Equatable {
   public let question_answers: [LikeMindsChat.MemberQuestionAnswer1]?
   public let collabcard_state: Swift.Int?
   public let route: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct MemberQuestionAnswer1 : Swift.Codable {
   public let community_id: Swift.Int?
@@ -953,8 +953,8 @@ public struct MemberQuestionAnswer1 : Swift.Codable {
   public let question_id: Swift.Int?
   public let state: Swift.Int?
   public let question_instance: LikeMindsChat.MemberQuestion?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct MemberQuestion : Swift.Codable {
   public let id: Swift.String?
@@ -964,14 +964,14 @@ public struct MemberQuestion : Swift.Codable {
   public let optional: Swift.Bool?
   public let community_id: Swift.Int?
   public let state: Swift.Int?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct MemberJoin : Swift.Codable {
   public let key: Swift.String?
   public let value: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers public class DKPhotoGalleryResource {
   public class func localizedStringWithKey(_ key: Swift.String, value: Swift.String? = nil) -> Swift.String
@@ -986,24 +986,24 @@ public struct MemberJoin : Swift.Codable {
   @objc deinit
 }
 public struct RecordingAttachment : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Instructor : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct Highlight : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct Testimonial : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct FAQ : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum ConversationState : Swift.Int {
   case normal
@@ -1032,8 +1032,8 @@ public enum DownloadError : Swift.Error {
   }
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryTransitionPresent : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
-  @_Concurrency.MainActor(unsafe) @objc open func transitionDuration(using transitionContext: (any UIKit.UIViewControllerContextTransitioning)?) -> Foundation.TimeInterval
-  @_Concurrency.MainActor(unsafe) @objc open func animateTransition(using transitionContext: any UIKit.UIViewControllerContextTransitioning)
+  @_Concurrency.MainActor(unsafe) @objc open func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc open func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
   @objc deinit
 }
@@ -1083,22 +1083,22 @@ extension Foundation.DateFormatter {
   public class func getDateFormat(_ date: Foundation.Date, _ format: Swift.String) -> Swift.String
 }
 public struct ProductBanner : Swift.Decodable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct Banner : Swift.Decodable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers public class KeychainService : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
 }
 public struct PendingChatroomModal : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct Attachments : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 extension LikeMindsChat.DKAsset {
   @objc dynamic public func fetchImage(with size: CoreFoundation.CGSize, options: Photos.PHImageRequestOptions? = nil, contentMode: Photos.PHImageContentMode = .aspectFit, completeBlock: @escaping (_ image: UIKit.UIImage?, _ info: [Swift.AnyHashable : Any]?) -> Swift.Void)
@@ -1112,11 +1112,11 @@ extension LikeMindsChat.DKAsset {
   }
 }
 public class ConversationDataModel : Swift.Codable, Swift.Equatable {
-  required public init(from decoder: any Swift.Decoder) throws
+  required public init(from decoder: Swift.Decoder) throws
   public static func == (lhs: LikeMindsChat.ConversationDataModel, rhs: LikeMindsChat.ConversationDataModel) -> Swift.Bool
   public init()
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public protocol SelectionReasonDelegate : AnyObject {
   func selectedReason(selected: LikeMindsChat.Tag, conversation: LikeMindsChat.ConversationDataModel)
@@ -1126,8 +1126,8 @@ public protocol SelectionReasonDelegate : AnyObject {
 }
 @objc public protocol DKPhotoGalleryIncrementalDataSource : ObjectiveC.NSObjectProtocol {
   @objc optional func numberOfItems(in gallery: LikeMindsChat.DKPhotoGallery) -> Swift.Int
-  @objc func photoGallery(_ gallery: LikeMindsChat.DKPhotoGallery, itemsBefore item: LikeMindsChat.DKPhotoGalleryItem?, resultHandler: @escaping ((_ items: [LikeMindsChat.DKPhotoGalleryItem]?, _ error: (any Swift.Error)?) -> Swift.Void))
-  @objc func photoGallery(_ gallery: LikeMindsChat.DKPhotoGallery, itemsAfter item: LikeMindsChat.DKPhotoGalleryItem?, resultHandler: @escaping ((_ items: [LikeMindsChat.DKPhotoGalleryItem]?, _ error: (any Swift.Error)?) -> Swift.Void))
+  @objc func photoGallery(_ gallery: LikeMindsChat.DKPhotoGallery, itemsBefore item: LikeMindsChat.DKPhotoGalleryItem?, resultHandler: @escaping ((_ items: [LikeMindsChat.DKPhotoGalleryItem]?, _ error: Swift.Error?) -> Swift.Void))
+  @objc func photoGallery(_ gallery: LikeMindsChat.DKPhotoGallery, itemsAfter item: LikeMindsChat.DKPhotoGalleryItem?, resultHandler: @escaping ((_ items: [LikeMindsChat.DKPhotoGalleryItem]?, _ error: Swift.Error?) -> Swift.Void))
 }
 @objc public enum DKPhotoGallerySingleTapMode : Swift.Int {
   case dismiss, toggleControlView
@@ -1139,12 +1139,12 @@ public protocol SelectionReasonDelegate : AnyObject {
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGallery : UIKit.UINavigationController, UIKit.UIViewControllerTransitioningDelegate {
   @objc @_Concurrency.MainActor(unsafe) open var items: [LikeMindsChat.DKPhotoGalleryItem]?
-  @objc @_Concurrency.MainActor(unsafe) open var incrementalDataSource: (any LikeMindsChat.DKPhotoGalleryIncrementalDataSource)?
+  @objc @_Concurrency.MainActor(unsafe) open var incrementalDataSource: LikeMindsChat.DKPhotoGalleryIncrementalDataSource?
   @objc @_Concurrency.MainActor(unsafe) open var finishedBlock: ((_ index: Swift.Int, _ item: LikeMindsChat.DKPhotoGalleryItem) -> UIKit.UIImageView?)?
   @objc @_Concurrency.MainActor(unsafe) open var presentingFromImageView: UIKit.UIImageView?
   @objc @_Concurrency.MainActor(unsafe) open var presentationIndex: Swift.Int
   @objc @_Concurrency.MainActor(unsafe) open var singleTapMode: LikeMindsChat.DKPhotoGallerySingleTapMode
-  @objc @_Concurrency.MainActor(unsafe) weak open var galleryDelegate: (any LikeMindsChat.DKPhotoGalleryDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) weak open var galleryDelegate: LikeMindsChat.DKPhotoGalleryDelegate?
   @objc @_Concurrency.MainActor(unsafe) open var customLongPressActions: [UIKit.UIAlertAction]?
   @objc @_Concurrency.MainActor(unsafe) open var customPreviewActions: [Any]?
   @objc @_Concurrency.MainActor(unsafe) open var footerView: UIKit.UIView? {
@@ -1165,7 +1165,7 @@ public protocol SelectionReasonDelegate : AnyObject {
   @objc @_Concurrency.MainActor(unsafe) open func toggleControlView()
   @objc @_Concurrency.MainActor(unsafe) open func showsControlView()
   @objc @_Concurrency.MainActor(unsafe) open func hidesControlView()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var previewActionItems: [any UIKit.UIPreviewActionItem] {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var previewActionItems: [UIKit.UIPreviewActionItem] {
     @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
@@ -1185,8 +1185,8 @@ extension UIKit.UIViewController {
   @objc @_Concurrency.MainActor(unsafe) dynamic public func present(photoGallery gallery: LikeMindsChat.DKPhotoGallery, completion: (() -> Swift.Void)? = nil)
 }
 public struct UpdateManagerRightsModal : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum Orientation {
   case horizontal
@@ -1203,11 +1203,11 @@ public enum Orientation {
     set
   }
   @_Concurrency.MainActor(unsafe) final public let gradientView: LikeMindsChat.LMGradientView
-  @_Concurrency.MainActor(unsafe) final public let previewView: (any UIKit.UIView & LikeMindsChat.ColorSliderPreviewing)?
+  @_Concurrency.MainActor(unsafe) final public let previewView: LikeMindsChat.PreviewView?
   @available(*, unavailable)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) convenience public init(orientation: LikeMindsChat.Orientation = .vertical, previewSide side: LikeMindsChat.DefaultPreviewView.Side = .left)
-  @_Concurrency.MainActor(unsafe) required public init(orientation: LikeMindsChat.Orientation, previewView: (any UIKit.UIView & LikeMindsChat.ColorSliderPreviewing)?)
+  @_Concurrency.MainActor(unsafe) required public init(orientation: LikeMindsChat.Orientation, previewView: LikeMindsChat.PreviewView?)
   @objc deinit
 }
 extension LikeMindsChat.ColorSlider {
@@ -1310,8 +1310,8 @@ extension LikeMindsChat.JLStickerLabelView {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryTransitionDismiss : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
-  @_Concurrency.MainActor(unsafe) @objc open func transitionDuration(using transitionContext: (any UIKit.UIViewControllerContextTransitioning)?) -> Foundation.TimeInterval
-  @_Concurrency.MainActor(unsafe) @objc open func animateTransition(using transitionContext: any UIKit.UIViewControllerContextTransitioning)
+  @_Concurrency.MainActor(unsafe) @objc open func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc open func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
   @objc deinit
 }
@@ -1336,7 +1336,7 @@ extension UIKit.UIViewController {
     @objc get
     @objc set
   }
-  @objc dynamic public var error: (any Swift.Error)? {
+  @objc dynamic public var error: Swift.Error? {
     @objc get
     @objc set
   }
@@ -1381,7 +1381,7 @@ extension LikeMindsChat.LikeMindsDelegate {
 }
 @_hasMissingDesignatedInitializers public class LikeMinds {
   public static let shared: LikeMindsChat.LikeMinds
-  weak public var delegate: (any LikeMindsChat.LikeMindsDelegate)?
+  weak public var delegate: LikeMindsChat.LikeMindsDelegate?
   public func initiateLikeMinds(extras: LikeMindsChat.InitiateLikeMindsExtra)
   public func initiateGroupChat(userName: Swift.String?, userId: Swift.String?, isGuest: Swift.Bool = false, completion: @escaping (_ groupChatResponse: LikeMindsChat.GroupChatResponse?, _ viewController: UIKit.UIViewController?) -> Swift.Void)
   public func didReceieveNotification(userInfo: [Swift.AnyHashable : Any])
@@ -1421,14 +1421,14 @@ public enum Results<Value, CAError> {
   case failure(CAError)
 }
 public struct CommunitySettingsResponse {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct CommunitySetting : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct CommunityToastResponse {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol DKPhotoProgressIndicatorProtocol : ObjectiveC.NSObjectProtocol {
   init(with view: UIKit.UIView)
@@ -1441,9 +1441,9 @@ public protocol DKPhotoProgressIndicatorProtocol : ObjectiveC.NSObjectProtocol {
   @objc deinit
 }
 public struct UserAppAccessData : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
   public init()
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public class DeepLinkRequest {
   public init(url: Swift.String)
@@ -1452,24 +1452,24 @@ public class DeepLinkRequest {
   @objc deinit
 }
 public struct CommunityDetails : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CommunityData : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct AllMember : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Admins : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CommunityFeedMetaData : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 extension UIKit.UIFont {
   public static func loadFont(fontsNames: [Swift.String] = [])
@@ -1477,8 +1477,8 @@ extension UIKit.UIFont {
 public struct DeepLinkResponse : Swift.Codable {
   public let success: Swift.Bool
   public let errorMessage: Swift.String?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc public protocol ABVideoRangeSliderDelegate {
   @objc func didChangeValue(videoRangeSlider: LikeMindsChat.ABVideoRangeSlider, startTime: Swift.Float64, endTime: Swift.Float64)
@@ -1487,7 +1487,7 @@ public struct DeepLinkResponse : Swift.Codable {
   @objc optional func sliderGesturesEnded()
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ABVideoRangeSlider : UIKit.UIView, UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any LikeMindsChat.ABVideoRangeSliderDelegate)?
+  @_Concurrency.MainActor(unsafe) weak public var delegate: LikeMindsChat.ABVideoRangeSliderDelegate?
   @_Concurrency.MainActor(unsafe) public var startTimeView: LikeMindsChat.ABTimeView
   @_Concurrency.MainActor(unsafe) public var endTimeView: LikeMindsChat.ABTimeView
   @_Concurrency.MainActor(unsafe) public var minSpace: Swift.Float
@@ -1524,12 +1524,12 @@ public struct DeepLinkResponse : Swift.Codable {
   @objc deinit
 }
 public struct UpdateCommunityRightsModal : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct UpdateCommunitySettingsModal : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc public enum CommunityScreen : Swift.Int {
   case join = 0
@@ -1549,7 +1549,7 @@ public struct UpdateCommunitySettingsModal : Swift.Codable {
   @_Concurrency.MainActor(unsafe) override public func showError()
   @_Concurrency.MainActor(unsafe) override public func hidesError()
   @_Concurrency.MainActor(unsafe) override public func contentSize() -> CoreFoundation.CGSize
-  @_Concurrency.MainActor(unsafe) override public func defaultPreviewActions() -> [any UIKit.UIPreviewActionItem]
+  @_Concurrency.MainActor(unsafe) override public func defaultPreviewActions() -> [UIKit.UIPreviewActionItem]
   @_Concurrency.MainActor(unsafe) override public func defaultLongPressActions() -> [UIKit.UIAlertAction]
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -1562,24 +1562,24 @@ public struct UpdateCommunitySettingsModal : Swift.Codable {
   @objc deinit
 }
 public struct LoginData : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct generateOTPResponse : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct User : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Mobiles : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Emails : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public typealias JSONArray = [[Swift.String : Any]]
 public typealias JSONDictionary = [Swift.String : Any]
@@ -1594,9 +1594,9 @@ extension UIKit.UITableView {
   @_Concurrency.MainActor(unsafe) final public func dequeueReusableHeaderFooterView<T>(_ viewType: T.Type = T.self) -> T? where T : UIKit.UITableViewHeaderFooterView, T : LikeMindsChat.Reusable
 }
 public struct ogTags : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
   public init()
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc public enum ChatRoomInputSource : Swift.Int {
   case homeFeed
@@ -1622,8 +1622,8 @@ public struct UserData : Swift.Codable {
   public let id: Swift.Int
   public let imageUrl: Swift.String?, name: Swift.String?, organisationName: Swift.String?, userUniqueId: Swift.String?
   public let isGuest: Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct GroupChatResponse {
   public let user: LikeMindsChat.UserData?
@@ -1635,8 +1635,8 @@ public struct Community : Swift.Codable {
   public var imageURL: Swift.String?
   public var createdBy: Swift.String?
   public var promotersCount: Swift.Int?, MembersCount: Swift.Int?, MemberState: Swift.Int?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoContentAnimationView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -1666,7 +1666,7 @@ public struct Community : Swift.Codable {
   @_Concurrency.MainActor(unsafe) override open func prepareForReuse()
   @_Concurrency.MainActor(unsafe) override open func createContentView() -> UIKit.UIView
   @_Concurrency.MainActor(unsafe) override open func contentSize() -> CoreFoundation.CGSize
-  @_Concurrency.MainActor(unsafe) override open func fetchContent(withProgressBlock progressBlock: @escaping ((Swift.Float) -> Swift.Void), completeBlock: @escaping ((Any?, (any Swift.Error)?) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) override open func fetchContent(withProgressBlock progressBlock: @escaping ((Swift.Float) -> Swift.Void), completeBlock: @escaping ((Any?, Swift.Error?) -> Swift.Void))
   @_Concurrency.MainActor(unsafe) override open func updateContentView(with content: Any)
   @_Concurrency.MainActor(unsafe) override open func enableZoom() -> Swift.Bool
   @_Concurrency.MainActor(unsafe) override public func enableIndicatorView() -> Swift.Bool
@@ -1724,8 +1724,8 @@ extension LikeMindsChat.DefaultPreviewView : LikeMindsChat.ColorSliderPreviewing
   @_Concurrency.MainActor(unsafe) public func transition(to state: LikeMindsChat.PreviewState)
 }
 public struct UpdateMemberRightsModal : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var closeBarButtonItem: UIKit.UIBarButtonItem {
@@ -1759,11 +1759,11 @@ extension UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public func logoutAction()
 }
 public struct LastConversationMember : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class RecordView : UIKit.UIView, QuartzCore.CAAnimationDelegate {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any LikeMindsChat.RecordViewDelegate)?
+  @_Concurrency.MainActor(unsafe) weak public var delegate: LikeMindsChat.RecordViewDelegate?
   @_Concurrency.MainActor(unsafe) public var offsetX: CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) public var offsetY: CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) public var isSoundEnabled: Swift.Bool
@@ -1793,10 +1793,10 @@ public struct LastConversationMember : Swift.Codable {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class DKPhotoGalleryTransitionController : UIKit.UIPresentationController, UIKit.UIViewControllerTransitioningDelegate {
   @_Concurrency.MainActor(unsafe) open var gallery: LikeMindsChat.DKPhotoGallery!
-  @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForPresentation(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForPresentation(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
   @objc deinit
 }
 public enum DKPhotoPreviewType {
@@ -1813,13 +1813,13 @@ public protocol DKPhotoBasePreviewDataSource : ObjectiveC.NSObjectProtocol {
   func createContentView() -> UIKit.UIView
   func updateContentView(with content: Any)
   func contentSize() -> CoreFoundation.CGSize
-  func fetchContent(withProgressBlock progressBlock: @escaping ((_ progress: Swift.Float) -> Swift.Void), completeBlock: @escaping ((_ data: Any?, _ error: (any Swift.Error)?) -> Swift.Void))
+  func fetchContent(withProgressBlock progressBlock: @escaping ((_ progress: Swift.Float) -> Swift.Void), completeBlock: @escaping ((_ data: Any?, _ error: Swift.Error?) -> Swift.Void))
   func snapshotImage() -> UIKit.UIImage?
   func showError()
   func hidesError()
   func enableZoom() -> Swift.Bool
   func enableIndicatorView() -> Swift.Bool
-  func defaultPreviewActions() -> [any UIKit.UIPreviewActionItem]
+  func defaultPreviewActions() -> [UIKit.UIPreviewActionItem]
   func defaultLongPressActions() -> [UIKit.UIAlertAction]
   var previewType: LikeMindsChat.DKPhotoPreviewType { get }
 }
@@ -1842,7 +1842,7 @@ public protocol DKPhotoBasePreviewDataSource : ObjectiveC.NSObjectProtocol {
   @_Concurrency.MainActor(unsafe) open func showTips(_ message: Swift.String)
   @_Concurrency.MainActor(unsafe) open func setNeedsUpdateContent()
   @_Concurrency.MainActor(unsafe) open func prepareForReuse()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var previewActionItems: [any UIKit.UIPreviewActionItem] {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var previewActionItems: [UIKit.UIPreviewActionItem] {
     @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
@@ -1862,13 +1862,13 @@ public protocol DKPhotoBasePreviewDataSource : ObjectiveC.NSObjectProtocol {
   @_Concurrency.MainActor(unsafe) public func createContentView() -> UIKit.UIView
   @_Concurrency.MainActor(unsafe) public func updateContentView(with content: Any)
   @_Concurrency.MainActor(unsafe) public func contentSize() -> CoreFoundation.CGSize
-  @_Concurrency.MainActor(unsafe) public func fetchContent(withProgressBlock progressBlock: @escaping ((_ progress: Swift.Float) -> Swift.Void), completeBlock: @escaping ((_ data: Any?, _ error: (any Swift.Error)?) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) public func fetchContent(withProgressBlock progressBlock: @escaping ((_ progress: Swift.Float) -> Swift.Void), completeBlock: @escaping ((_ data: Any?, _ error: Swift.Error?) -> Swift.Void))
   @_Concurrency.MainActor(unsafe) public func snapshotImage() -> UIKit.UIImage?
   @_Concurrency.MainActor(unsafe) public func showError()
   @_Concurrency.MainActor(unsafe) public func hidesError()
   @_Concurrency.MainActor(unsafe) public func enableZoom() -> Swift.Bool
   @_Concurrency.MainActor(unsafe) public func enableIndicatorView() -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func defaultPreviewActions() -> [any UIKit.UIPreviewActionItem]
+  @_Concurrency.MainActor(unsafe) public func defaultPreviewActions() -> [UIKit.UIPreviewActionItem]
   @_Concurrency.MainActor(unsafe) public func defaultLongPressActions() -> [UIKit.UIAlertAction]
   @_Concurrency.MainActor(unsafe) public var previewType: LikeMindsChat.DKPhotoPreviewType {
     get
@@ -1904,9 +1904,9 @@ public struct FactoryRegistrar {
   @objc func configure(with assetGroup: LikeMindsChat.DKAssetGroup, tag: Swift.Int, dataManager: LikeMindsChat.DKImageGroupDataManager, imageRequestOptions: Photos.PHImageRequestOptions)
 }
 public struct UserChatroom : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
   public init()
-  public func encode(to encoder: any Swift.Encoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 extension CoreFoundation.CGSize {
   public func toPixel() -> CoreFoundation.CGSize
@@ -1955,9 +1955,9 @@ public enum CAError : Swift.Error {
   case none
   case parsingFailure(message: Swift.String, request: Swift.String)
   case noData(message: Swift.String, request: Swift.String)
-  case serverFailure(any Swift.Error)
+  case serverFailure(Swift.Error)
   case serverRefused(message: Swift.String)
-  case other(childError: any Swift.Error)
+  case other(childError: Swift.Error)
 }
 extension LikeMindsChat.CAError : Swift.CustomStringConvertible {
   public var description: Swift.String {
@@ -1980,8 +1980,8 @@ public struct CollabcardAnswer1 : Swift.Codable {
   public let og_tags: LikeMindsChat.OgTags1?
   public let last_seen: Swift.Bool?
   public let answer_bubble: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CollabcardImages1 : Swift.Codable {
   public let image_url: Swift.String?
@@ -1990,30 +1990,30 @@ public struct CollabcardImages1 : Swift.Codable {
   public let width: Swift.Int?
   public let index: Swift.Int?
   public let type: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CollabcardVideo1 : Swift.Codable {
   public let video_url: Swift.String?
   public let type: Swift.String?
   public let index: Swift.Int?
   public let thumbnail_url: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CollabcardPDFs1 : Swift.Codable {
   public let pdfFileUrl: Swift.String?
   public let pdfFile: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct OgTags1 : Swift.Codable {
   public let title: Swift.String?
   public let image: Swift.String?
   public let description: Swift.String?
   public let url: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct PollOption1 : Swift.Codable {
   public let id: Swift.Int?
@@ -2025,14 +2025,14 @@ public struct PollOption1 : Swift.Codable {
   public let sub_text: Swift.String?
   public let no_votes: Swift.Int?
   public let member: LikeMindsChat.Member1?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct SuccessFailureResponse : Swift.Codable {
   public let success: Swift.Bool
   public let errorMessage: Swift.String?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @available(iOS 12.0, *)
 @objc public class NotificationCategoriesManager : ObjectiveC.NSObject {
@@ -2041,8 +2041,8 @@ public struct SuccessFailureResponse : Swift.Codable {
   @objc deinit
 }
 public struct Tag : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum MemberDirectoryMode {
   case memberDirectory
@@ -2179,7 +2179,7 @@ public protocol AddParticipantsDelegate : AnyObject {
   @objc func imagePickerControllerCollectionImageCell() -> LikeMindsChat.DKAssetGroupDetailBaseCell.Type
   @objc func imagePickerControllerCollectionCameraCell() -> LikeMindsChat.DKAssetGroupDetailBaseCell.Type
   @objc func imagePickerControllerCollectionVideoCell() -> LikeMindsChat.DKAssetGroupDetailBaseCell.Type
-  @objc func imagePickerControllerGroupCell() -> any LikeMindsChat.DKAssetGroupCellType.Type
+  @objc func imagePickerControllerGroupCell() -> LikeMindsChat.DKAssetGroupCellType.Type
   @objc func imagePickerControllerSelectGroupButton(_ imagePickerController: LikeMindsChat.DKImagePickerController, selectedGroup: LikeMindsChat.DKAssetGroup) -> UIKit.UIButton
   @objc func imagePickerControllerGroupListPresentationStyle() -> LikeMindsChat.DKImagePickerGroupListPresentationStyle
   @objc func imagePickerControllerPrepareGroupListViewController(_ listViewController: UIKit.UITableViewController)
@@ -2207,7 +2207,7 @@ public protocol AddParticipantsDelegate : AnyObject {
   @objc open func imagePickerControllerCollectionImageCell() -> LikeMindsChat.DKAssetGroupDetailBaseCell.Type
   @objc open func imagePickerControllerCollectionCameraCell() -> LikeMindsChat.DKAssetGroupDetailBaseCell.Type
   @objc open func imagePickerControllerCollectionVideoCell() -> LikeMindsChat.DKAssetGroupDetailBaseCell.Type
-  @objc open func imagePickerControllerGroupCell() -> any LikeMindsChat.DKAssetGroupCellType.Type
+  @objc open func imagePickerControllerGroupCell() -> LikeMindsChat.DKAssetGroupCellType.Type
   @objc open func imagePickerControllerSelectGroupButton(_ imagePickerController: LikeMindsChat.DKImagePickerController, selectedGroup: LikeMindsChat.DKAssetGroup) -> UIKit.UIButton
   @objc open func imagePickerControllerGroupListPresentationStyle() -> LikeMindsChat.DKImagePickerGroupListPresentationStyle
   @objc open func imagePickerControllerPrepareGroupListViewController(_ listViewController: UIKit.UITableViewController)
@@ -2278,18 +2278,18 @@ public let DKImageAssetExportResultCancelledKey: Swift.String
 }
 @_hasMissingDesignatedInitializers public class CommunityShareURL : Swift.Codable {
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public class SharePreviewData : Swift.Codable {
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public class ChatRoomShareURL : Swift.Codable {
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class JLStickerImageView : UIKit.UIImageView, UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor(unsafe) public var currentlyEditingLabel: LikeMindsChat.JLStickerLabelView!
