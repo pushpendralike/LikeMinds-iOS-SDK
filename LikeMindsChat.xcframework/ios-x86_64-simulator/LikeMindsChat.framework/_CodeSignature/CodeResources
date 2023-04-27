@@ -22,7 +22,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		GK8maZvsTUKdZz88ndts+Z3Y0eU=
+		FNXxUQUpPipvaxAv2SibJHcuw3c=
 		</data>
 		<key>AudioCellContainerView.nib</key>
 		<data>
@@ -99,10 +99,6 @@
 		<key>ChatRoomIntroPreviewUserTableViewCell.nib</key>
 		<data>
 		TaT8smfKO+oEm4dNPIBHIReN5LU=
-		</data>
-		<key>ChatRoomMember.CommunityDetailswift</key>
-		<data>
-		Jskd6Eo22OeOPTKm73nCmFP6C9Y=
 		</data>
 		<key>ChatroomHeaderView.nib</key>
 		<data>
@@ -456,45 +452,9 @@
 		<data>
 		lJSRFanWolRYdxo0SXQy5RDNm7U=
 		</data>
-		<key>EventAttachments.storyboardc/EventAttachmentsViewController.nib</key>
-		<data>
-		dYNR+BQgoajuaB3CT+sRs1HHK/U=
-		</data>
-		<key>EventAttachments.storyboardc/Info.plist</key>
-		<data>
-		kKYtULa4Rugg1pSMZ9SoKRAkTrM=
-		</data>
-		<key>EventAttachments.storyboardc/Kjj-TY-J7a-view-3qu-SI-DGz.nib</key>
-		<data>
-		zoa6ZEjwYdfjHclQ6PsvA2Ymalg=
-		</data>
-		<key>EventBannerContainer.nib</key>
-		<data>
-		oM21uYPSfuOF0g5IQdSAT5Gf3eM=
-		</data>
-		<key>EventChatroomMessageCell.nib/objects-14.0+.nib</key>
-		<data>
-		iZXDv3NucfM+veP3P1EhjEDp4/g=
-		</data>
-		<key>EventChatroomMessageCell.nib/runtime.nib</key>
-		<data>
-		0M2G3htKTjM955QXAtoc8CY/tiY=
-		</data>
 		<key>EventChatroomSharePreview.nib</key>
 		<data>
 		Dgy3/yPAG76LEsTBaJE7XLnIIP8=
-		</data>
-		<key>EventMessageContainerView.nib</key>
-		<data>
-		U2k3JofXrwLpCrbYtkbAEChodc8=
-		</data>
-		<key>EventRoomPreviewCell.nib/objects-14.0+.nib</key>
-		<data>
-		DCdwnAq+OpdGawbGEPzkhYkCbNA=
-		</data>
-		<key>EventRoomPreviewCell.nib/runtime.nib</key>
-		<data>
-		iH53BpDBBYtkdqLUdhCneeBa16w=
 		</data>
 		<key>ExternalShared.storyboardc/ExternalSharedViewController.nib/objects-12.3+.nib</key>
 		<data>
@@ -1055,7 +1015,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2WqhzccnVaCv12eyctsCOrq3nHQ=
+		ESMlQ1WaddU3pYuokDe2Jdeba5s=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1123,7 +1083,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		LP6SaLFCnBDF/doqKyiLX0WCkb4=
+		5aHpTo16ohACUx8omZ6pqMsRdDg=
 		</data>
 		<key>LMDropdownViewCell.nib/objects-14.0+.nib</key>
 		<data>
@@ -1327,11 +1287,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		yXU0CpVO6w0H/uLriLPjwkrV9wM=
+		EWEiez9+TOWj+z+EZypiUfUO3ek=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		4hpiv/Amp6/D2uvekgM0KLxcgrc=
+		g3FDgqYgT3mts8ek4OMsWdfdf7o=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -1339,11 +1299,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		4hpiv/Amp6/D2uvekgM0KLxcgrc=
+		g3FDgqYgT3mts8ek4OMsWdfdf7o=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JVi6+fimbPWhUFxHn3k6JX22kQY=
+		GICMk4KQIiwTLpkQSsmiZOPfyEQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1411,11 +1371,11 @@
 		</data>
 		<key>NewHomeFeed.storyboardc/ZdD-y7-Gyh-view-MhK-sS-dy4.nib/objects-14.0+.nib</key>
 		<data>
-		G0EeiOuy+SYy60fPVvicv1FEha0=
+		52OGvHA77VWFhrHPvgGT+UiXsFY=
 		</data>
 		<key>NewHomeFeed.storyboardc/ZdD-y7-Gyh-view-MhK-sS-dy4.nib/runtime.nib</key>
 		<data>
-		6zosnLJAhWklKtZyTtQBBHMirUg=
+		sR3Bl54haPn8keNtwmiNuaWSNgM=
 		</data>
 		<key>NewHomeFeedChatRoomTableViewCell.nib</key>
 		<data>
@@ -1476,10 +1436,6 @@
 		<key>OnboardService.storyboardc/OnboardServiceViewController.nib/runtime.nib</key>
 		<data>
 		VG38R53QrDb0aGbIJbeh8S1KGEw=
-		</data>
-		<key>OtpAlertView.nib</key>
-		<data>
-		dsJRVqYhiV23yAoQMuAnMBXzKxk=
 		</data>
 		<key>PDFCellView.nib</key>
 		<data>
@@ -1564,10 +1520,6 @@
 		<key>PollVoteLabelView.nib</key>
 		<data>
 		zqfoPaHP6zs4JTPMllAxru1joSU=
-		</data>
-		<key>ProductBannerView.nib</key>
-		<data>
-		FvUuJYt6jKunS53ije3EokzsU4w=
 		</data>
 		<key>ProfileTableViewCell.nib</key>
 		<data>
@@ -1987,10 +1939,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>ka-ching.mp3</key>
-		<data>
-		YxuzexFwpnZuoxAcfhVxmBZjL2E=
-		</data>
 		<key>ko.lproj/DKImagePickerController.strings</key>
 		<dict>
 			<key>hash</key>
@@ -2157,7 +2105,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jMqUeYUO9Mimjg0qsBpvxpzAbO7ZjHH6i9LDQ0OWJrA=
+			WEbbU3hiQHeoecXu0G5MXcKUVTSvBarbDTDqpbbOSM8=
 			</data>
 		</dict>
 		<key>AudioCellContainerView.nib</key>
@@ -2291,13 +2239,6 @@
 			<key>hash2</key>
 			<data>
 			q3746meroOjN1YUftZfK/oZ+PQlD4pDScsQ3g04NmQ8=
-			</data>
-		</dict>
-		<key>ChatRoomMember.CommunityDetailswift</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SURsuQH13N+3rjFl38YVkbFFspHKWRjiiLWKHmnzVhM=
 			</data>
 		</dict>
 		<key>ChatroomHeaderView.nib</key>
@@ -2781,74 +2722,11 @@
 			pM7/PixyQJIChW6xigrY/7PE+iKB8vL1x1jvtfKuTeM=
 			</data>
 		</dict>
-		<key>EventAttachments.storyboardc/EventAttachmentsViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CXUcARPqLwErdg+2A5zJqW7zcLpCMPlP5y36NG5IYt8=
-			</data>
-		</dict>
-		<key>EventAttachments.storyboardc/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			LYyYoOqYAv9wVKhG17f4Zrp2jh5d7ahu1KkcWx9sa+o=
-			</data>
-		</dict>
-		<key>EventAttachments.storyboardc/Kjj-TY-J7a-view-3qu-SI-DGz.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			MLFZtS7aQh01VdbbAlxIkQEISqZrMnDeyKc0n+hYNjs=
-			</data>
-		</dict>
-		<key>EventBannerContainer.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XsRBH3Bclj2WOy1P3qqMYI5gG0XrbtXPDHryxlguxuQ=
-			</data>
-		</dict>
-		<key>EventChatroomMessageCell.nib/objects-14.0+.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xFGfffjePC2sz+/CXLkJLZpktkYicVxXMc6VIpuehp0=
-			</data>
-		</dict>
-		<key>EventChatroomMessageCell.nib/runtime.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fvMekNRMO1kK+ExiywkqYTfZGDWTws4HIzdCknm8Fvw=
-			</data>
-		</dict>
 		<key>EventChatroomSharePreview.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			yseGA0uGLpGbTo3o5I0CeDFukTTWu5RvfcJoui1ckXg=
-			</data>
-		</dict>
-		<key>EventMessageContainerView.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8ATakf0L5eQn+0cIAPGwZmu3oIRq7DHbeAW/7Md1vpk=
-			</data>
-		</dict>
-		<key>EventRoomPreviewCell.nib/objects-14.0+.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			LHaqKD7iGwlRjILc6WbIsXW2nz6a5fGdZv0bR6X6UxQ=
-			</data>
-		</dict>
-		<key>EventRoomPreviewCell.nib/runtime.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KBhPCeuDqoO/d5znV4eY+gViohPtM62ITECYHv+cp4I=
 			</data>
 		</dict>
 		<key>ExternalShared.storyboardc/ExternalSharedViewController.nib/objects-12.3+.nib</key>
@@ -3611,7 +3489,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7WxaC7X24FzEhjgq0fTnzIRJYnqhF6/gSlVH/wyd0Ng=
+			aYjkJCwQDc3v8aVO11lvABgYzL03zmyy7QQ2WxpnBVw=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib/objects-14.0+.nib</key>
@@ -3968,14 +3846,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			byLzvrwuRICxTLI48Sfbruoqr7u6LxUVMMHxIpQ8Nm0=
+			47lwMH//qgiWNQUo6B/6tfdlJL7R4L7TuW51/HSsTAU=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xYgrSGvWimM1nM959+OzSJEUqBO7Hc+t4Gwo0XKs1OI=
+			rIq+xcRVdU95vFucjs6vxBNcM7qP7dLeInbd/GkiCxA=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -3989,14 +3867,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xYgrSGvWimM1nM959+OzSJEUqBO7Hc+t4Gwo0XKs1OI=
+			rIq+xcRVdU95vFucjs6vxBNcM7qP7dLeInbd/GkiCxA=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L9lvGTRNOxuoNBwHLocnfYcDKc9pV31YX6NfOtRpkj0=
+			bmb3okWzQWi4eeohs6XSHMQQJUCAV21IXxTvrmmWt/s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -4115,14 +3993,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lRykspYVO+nzJ4d+JRWVsPsotAnDsZHyytaubcbRjdA=
+			T2adh5Ek69az/wd0tXLO7BcXwXYe1GC6q6uWT0SrypE=
 			</data>
 		</dict>
 		<key>NewHomeFeed.storyboardc/ZdD-y7-Gyh-view-MhK-sS-dy4.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kiQSLvBK2acRlf4UdGaMu+k/OiOjSz+qzRdZdKOFb1Y=
+			iGrGPEf6D4JZCxLzPbEXS9NioVZ938UvdOdH/3c+oA8=
 			</data>
 		</dict>
 		<key>NewHomeFeedChatRoomTableViewCell.nib</key>
@@ -4228,13 +4106,6 @@
 			<key>hash2</key>
 			<data>
 			oaYbwLcIsAx8G132x+cIn8riiGtRrJMfQHm+eGLTrM4=
-			</data>
-		</dict>
-		<key>OtpAlertView.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SgV4W+AXZL7FCKALeGCfMeUxdTjnAMvisfzk5WNxql0=
 			</data>
 		</dict>
 		<key>PDFCellView.nib</key>
@@ -4382,13 +4253,6 @@
 			<key>hash2</key>
 			<data>
 			owirnSv37NsMcNLy4wz3WzAfePwn+aQQqPD30VQTuJM=
-			</data>
-		</dict>
-		<key>ProductBannerView.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			51L+EPWy40YqPdQHcpJmKgr/YxegKlHdS0ZghIJPIVk=
 			</data>
 		</dict>
 		<key>ProfileTableViewCell.nib</key>
@@ -5054,13 +4918,6 @@
 			</data>
 			<key>optional</key>
 			<true/>
-		</dict>
-		<key>ka-ching.mp3</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			pp2tLPdSXr+DYVEiBKPPNRVRKvBhNVjOCsRFiHOFWLM=
-			</data>
 		</dict>
 		<key>ko.lproj/DKImagePickerController.strings</key>
 		<dict>

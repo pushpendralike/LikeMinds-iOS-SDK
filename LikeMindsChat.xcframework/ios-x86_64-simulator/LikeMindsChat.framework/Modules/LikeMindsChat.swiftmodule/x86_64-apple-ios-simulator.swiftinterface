@@ -1082,12 +1082,6 @@ public class Fonts {
 extension Foundation.DateFormatter {
   public class func getDateFormat(_ date: Foundation.Date, _ format: Swift.String) -> Swift.String
 }
-public struct ProductBanner : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct Banner : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
-}
 @objc @_inheritsConvenienceInitializers public class KeychainService : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
