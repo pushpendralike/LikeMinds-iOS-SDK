@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.7.13"
+  spec.version      = "1.8.0"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.

@@ -641,6 +641,7 @@ public class InitiateLikeMindsExtra {
   public func fonts(_ fonts: LikeMindsChat.Fonts) -> LikeMindsChat.InitiateLikeMindsExtra
   public func filterConversationStates(_ states: [LikeMindsChat.ConversationState]) -> LikeMindsChat.InitiateLikeMindsExtra
   public func hideMembersCount(_ hide: Swift.Bool) -> LikeMindsChat.InitiateLikeMindsExtra
+  public func hideSecretChatroomLockIcon(_ hideSecretChatroomLockIcon: Swift.Bool) -> LikeMindsChat.InitiateLikeMindsExtra
   public func getApiKey() -> Swift.String
   public func getDomainUrl() -> Swift.String?
   public func getFonts() -> LikeMindsChat.Fonts?
