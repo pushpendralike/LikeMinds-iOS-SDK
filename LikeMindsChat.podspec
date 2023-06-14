@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.8.0"
+  spec.version      = "1.8.1"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/pushpendralike/LikeMinds-iOS-SDK"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   spec.license = { :type => 'Copyright', :text => <<-LICENSE
-                   Copyright 2022
+                   Copyright 2023
                    Permission is granted to...
                   LICENSE
                 }
