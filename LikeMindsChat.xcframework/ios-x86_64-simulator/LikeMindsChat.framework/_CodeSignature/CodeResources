@@ -995,7 +995,7 @@
 		</dict>
 		<key>Headers/LikeMindsChat-Swift.h</key>
 		<data>
-		8FF6pi6Qd0w7rrpI1HfSw6twbwM=
+		MWod81LnnPNEdNS9ucN3h81zc2U=
 		</data>
 		<key>Headers/LikeMindsChat.h</key>
 		<data>
@@ -1015,7 +1015,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RGxXOXOcbejcqX5PEVddBxZlycw=
+		eiyuV34lyZqCIsYEh4Sqkb9YaeU=
 		</data>
 		<key>IntroExampleView.nib</key>
 		<data>
@@ -1083,7 +1083,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		DSHgYSkYhL9OZN29rqL/gasr/8M=
+		9h0sfqwFYuNT/lFywE9ZfhsDv0g=
 		</data>
 		<key>LMDropdownViewCell.nib/objects-14.0+.nib</key>
 		<data>
@@ -1111,7 +1111,7 @@
 		</data>
 		<key>LinkViewBottom.nib</key>
 		<data>
-		TIg6zMEpx8cbzyP9eOvp/gNV6T4=
+		Fkb5oHHSGdC4SESW7Uk4AAubt/M=
 		</data>
 		<key>LoadingCell.nib</key>
 		<data>
@@ -1287,11 +1287,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		hAWJgwhAa5oosoMuwe+AClG2NBM=
+		RGSh1rIKe6OjscbIUVZ9c6xBsR8=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		l4JLGBE4UuvDp/9scGBU+o+/pS0=
+		sgk+16ssPwkBlqVpB3+3/mxGqVQ=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -1299,11 +1299,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		l4JLGBE4UuvDp/9scGBU+o+/pS0=
+		sgk+16ssPwkBlqVpB3+3/mxGqVQ=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JVe3gIp8YkgshahzLxWYG5dG/Yc=
+		PiBWIhgSvd676Df+jqG2X4OOc6o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1335,7 +1335,7 @@
 		</data>
 		<key>NavigationBackView.nib</key>
 		<data>
-		1xnoPFWFeFZYreevDoj+jvbhbi4=
+		9an+F0a1oiZMJoTluO1UbR1U+tE=
 		</data>
 		<key>NavigationBarButtonWithDotView.nib</key>
 		<data>
@@ -3342,7 +3342,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zWXkWSCjFspRDnrIU95SlSq2gY3mvhWChSYByXTGmNM=
+			B1Yb+ck2PEISh6BO375gBGvDP6edIxXiSvDUy8lqIYE=
 			</data>
 		</dict>
 		<key>Headers/LikeMindsChat.h</key>
@@ -3489,7 +3489,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ALTbweSRUGOF9hvh7hrxk9hm8roKL6ncqjW0SKGzalY=
+			xASa3N4SOU4UH1UGRTsr3jzXAbOBQ7CctRYiPQrRxqQ=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib/objects-14.0+.nib</key>
@@ -3538,7 +3538,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bnhkApRogf5jFLeufhSoIdER5d/D6oeTfG2sNvolHz4=
+			sNH/BMCq99tarHB8qEiKqckisNC6mnu9HaliuXx/1VM=
 			</data>
 		</dict>
 		<key>LoadingCell.nib</key>
@@ -3846,14 +3846,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LuzlCn6+bBVj9q1CeXSIRyUfR2J+hgoU+F4fWNQ7D8U=
+			M//L4nDwf4OP/n5lICQDf4euDYR/mEsVyauOWqjtT9s=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6TXsa4e54c6tdn8XDlpedvTwBAJ+ektRMwhr/UQl8pQ=
+			yVAgXQu5PtcCsuU27Lajq6yTgmNtNanbgBGnlrxWqcg=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -3867,14 +3867,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6TXsa4e54c6tdn8XDlpedvTwBAJ+ektRMwhr/UQl8pQ=
+			yVAgXQu5PtcCsuU27Lajq6yTgmNtNanbgBGnlrxWqcg=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8hYAFs3a5F/JyKwHIE1ZZuHO6rRUU0Lz0NRid1jKyMw=
+			lDBxkrJnIBCpIz5lyHEXvjK3Ax1aXbDhqDHo0+SFNdc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -3930,7 +3930,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/zTPHBfAjFmgcg3q6QujMU49BH/DDso0u/PMBWW6Caw=
+			LbKpo++O9vMxoPVYR1fQSJ3kaTzNopBppEUydinu+IQ=
 			</data>
 		</dict>
 		<key>NavigationBarButtonWithDotView.nib</key>

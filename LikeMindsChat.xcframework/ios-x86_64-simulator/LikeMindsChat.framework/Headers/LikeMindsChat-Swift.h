@@ -408,11 +408,11 @@ SWIFT_CLASS("_TtC13LikeMindsChat11ColorSlider")
 @end
 
 
+
 @interface ColorSlider (SWIFT_EXTENSION(LikeMindsChat))
 /// Increase the tappable area of <code>ColorSlider</code> to a minimum of 44 points on either edge.
 - (UIView * _Nullable)hitTest:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 @interface ColorSlider (SWIFT_EXTENSION(LikeMindsChat))
@@ -1464,6 +1464,17 @@ SWIFT_CLASS("_TtC13LikeMindsChat12SharePreview")
 SWIFT_CLASS("_TtC13LikeMindsChat19SharingPreviewModel")
 @interface SharingPreviewModel : NSObject
 @end
+
+
+SWIFT_CLASS("_TtC13LikeMindsChat11TaggingView")
+@interface TaggingView : UIView
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 
 
 

@@ -433,6 +433,41 @@ public struct ManagementTool : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+@objc @_Concurrency.MainActor(unsafe) open class TaggingView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var cornerRadius: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var borderWidth: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var borderColor: CoreGraphics.CGColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var textInset: UIKit.UIEdgeInsets {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var symbol: Swift.String
+  @_Concurrency.MainActor(unsafe) open var defaultAttributes: [Foundation.NSAttributedString.Key : Any]
+  @_Concurrency.MainActor(unsafe) open var symbolAttributes: [Foundation.NSAttributedString.Key : Any]
+  @_Concurrency.MainActor(unsafe) open var taggedAttributes: [Foundation.NSAttributedString.Key : Any]
+  @_Concurrency.MainActor(unsafe) weak public var textView: UIKit.UITextView!
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension LikeMindsChat.TaggingView {
+  @_Concurrency.MainActor(unsafe) public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) public func textViewDidChangeSelection(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String)
+}
 public class CollabCard1 : Swift.Codable {
   final public let id: Swift.Int?
   final public let title: Swift.String?
