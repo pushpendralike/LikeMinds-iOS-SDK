@@ -1652,6 +1652,13 @@ public struct UserData : Swift.Codable {
   public let id: Swift.Int
   public let imageUrl: Swift.String?, name: Swift.String?, organisationName: Swift.String?, userUniqueId: Swift.String?
   public let isGuest: Swift.Bool
+  public let sdkClientInfo: LikeMindsChat.SDKClientInfo?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SDKClientInfo : Swift.Codable {
+  public let community: Swift.Int?, user: Swift.Int?
+  public let userUniqueID: Swift.String?, uuid: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
