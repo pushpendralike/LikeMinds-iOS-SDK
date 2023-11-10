@@ -45,7 +45,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'MBProgressHUD', '1.1.0'
   spec.dependency 'SDWebImage', '~> 5.1'
   spec.dependency 'SDWebImageFLPlugin'
-  spec.dependency 'iCarousel', '1.8.3'
   spec.dependency 'Toast', '4.0.0'
   spec.dependency 'Firebase/Messaging'
   spec.dependency 'Firebase/Database'
