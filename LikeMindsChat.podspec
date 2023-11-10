@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "LikeMindsChat"
-  spec.version      = "1.10.0"
+  spec.version      = "1.11.0"
   spec.summary      = "LikeMindsChat"
   spec.description  = <<-DESC
                       LikeMinds Chat description.
@@ -32,7 +32,7 @@ Pod::Spec.new do |spec|
 
   spec.source = { :git => "https://github.com/pushpendralike/LikeMinds-iOS-SDK.git", :tag => "#{spec.version}" }
   spec.vendored_frameworks = "LikeMindsChat.xcframework"
-  spec.swift_version = "4.2"
+  spec.swift_version = "5.0"
 
   spec.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
@@ -49,7 +49,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'Toast', '4.0.0'
   spec.dependency 'Firebase/Messaging'
   spec.dependency 'Firebase/Database'
-  spec.dependency 'Firebase/Storage'
   spec.dependency 'UITextView+Placeholder'
   spec.dependency 'IQKeyboardManagerSwift'
   spec.dependency 'SwiftyJSON', '~> 4.0'
