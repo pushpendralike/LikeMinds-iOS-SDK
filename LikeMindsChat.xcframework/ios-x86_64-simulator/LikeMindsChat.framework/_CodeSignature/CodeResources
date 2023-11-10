@@ -22,7 +22,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		cHq0u2sg+kScml5o1U8phs3GE+Q=
+		05OmP15oGRuAZlXWVmjyCWJTqik=
 		</data>
 		<key>AudioCellContainerView.nib</key>
 		<data>
@@ -1083,7 +1083,7 @@
 		</data>
 		<key>LMDateCell.nib/runtime.nib</key>
 		<data>
-		XRDu8QQAJOvgmvJRW2+JMQ4T56A=
+		/YQHPWRpSrfrLcfCv9WtEBdu9Cg=
 		</data>
 		<key>LMDropdownViewCell.nib/objects-14.0+.nib</key>
 		<data>
@@ -1287,11 +1287,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		+bjAy3HT3drOClGz77yeSPrdDbE=
+		uKJqFrcarMpkxYcPZTlIupInq18=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		SLerKJabXqAOesEhNa8dMUDKG3I=
+		bUc2D9zzHQSdSItCf2Y0YskTZDg=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -1299,11 +1299,11 @@
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		SLerKJabXqAOesEhNa8dMUDKG3I=
+		bUc2D9zzHQSdSItCf2Y0YskTZDg=
 		</data>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZkBMu2F32skbCL/nh2EEfSedlZg=
+		ZaxdKyHFYlJgwVnKA58f4zqIiz8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2105,7 +2105,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v9FyhIM5JT+2Ys4uEuCgxF4xMdLfTi5Bb3ikxP7D+0c=
+			4tx1FwIY+UVYQ+TqNqm4GGnFIxV1cTyG2UCWjx9PTFY=
 			</data>
 		</dict>
 		<key>AudioCellContainerView.nib</key>
@@ -3489,7 +3489,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			avNWd/FTXb2MxbYZ56yiZKooJ39Lp4dX9h1sdQhmGfU=
+			PthoTpnPbdAQ5if98yhD7GHuseTbz/YR92CgRUwI+KE=
 			</data>
 		</dict>
 		<key>LMDropdownViewCell.nib/objects-14.0+.nib</key>
@@ -3846,14 +3846,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oZDXNmGsYXwGtux5mmR7ISXo85AywdlZENfAt+XvfRA=
+			E+Fq9SyyJaop0JP/0AbxuMUfGiqOWGvpTVH6KtgWiVs=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GTz5qLpEO+i+y6cxqN5L0LuLYd8kiCVnt/aEXzfUKq4=
+			RjlURjybTYCojW951ca3mEq2j1B7XCFSG+emHm9suts=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -3867,14 +3867,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GTz5qLpEO+i+y6cxqN5L0LuLYd8kiCVnt/aEXzfUKq4=
+			RjlURjybTYCojW951ca3mEq2j1B7XCFSG+emHm9suts=
 			</data>
 		</dict>
 		<key>Modules/LikeMindsChat.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8PzdvC5ZiadrDm0DlDArT0MkCnhYcc2ndu7CK9cw3d4=
+			JxfE34wHMM80yc2Lxxku8h7AVLhz/xL4UB/MtbVgp00=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -46,7 +46,6 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-import iCarousel
 @_hasMissingDesignatedInitializers public class DKImageExtensionContext {
   weak public var imagePickerController: LikeMindsChat.DKImagePickerController! {
     get
