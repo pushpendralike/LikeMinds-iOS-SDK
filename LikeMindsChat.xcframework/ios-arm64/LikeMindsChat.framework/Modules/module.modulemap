@@ -1,7 +1,7 @@
 framework module LikeMindsChat {
   umbrella header "LikeMindsChat.h"
-
   export *
+
   module * { export * }
 }
 
