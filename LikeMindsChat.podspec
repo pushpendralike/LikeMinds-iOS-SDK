@@ -48,7 +48,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'Toast', '4.0.0'
   spec.dependency 'Firebase/Messaging'
   spec.dependency 'Firebase/Database'
-  spec.dependency 'UITextView+Placeholder'
   spec.dependency 'IQKeyboardManagerSwift'
   spec.dependency 'SwiftyJSON', '~> 4.0'
   spec.dependency 'Kingfisher', '~> 7.0'
