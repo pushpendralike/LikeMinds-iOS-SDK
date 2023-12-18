@@ -43,6 +43,8 @@ jobs:
       
           unzip -qo '*.zip'
 
+          rm -f artifact_info.json run_info.json xcframework-build.zip
+
       - name: Push artifacts to master
         run: |
           # Configure Git
@@ -67,9 +69,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to cocoapods
-        run: |
-          pod install
-          pod trunk push LikeMindsChat.podspec --verbose
+        run: pod trunk push LikeMindsChat.podspec --verbose
   
   create-github-release:
     name: Create GitHub Release
