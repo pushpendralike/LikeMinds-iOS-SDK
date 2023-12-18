@@ -1,0 +1,87 @@
+name: Publish to Cocoapods
+
+on:
+  repository_dispatch:
+    types:
+      - cocoapods-deploy
+
+permissions: write-all
+
+jobs:
+  publish:
+    name: Download build files and publish to cocoapods
+    runs-on: macos-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+        with:
+            fetch-depth: 0
+            token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download and unzip artifacts
+        run: |
+          # Get the latest workflow run
+          curl -s -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ secrets.PAT }}" \
+            https://api.github.com/repos/LikeMindsCommunity/LikeMinds-iOS-SDK/actions/runs > run_info.json
+      
+          # Extract the run ID
+          export RUN_ID=$(cat run_info.json | jq -r '.workflow_runs[0].id')
+      
+          # Get information about the artifacts in the latest run
+          curl -s -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ secrets.PAT }}" \
+            https://api.github.com/repos/LikeMindsCommunity/LikeMinds-iOS-SDK/actions/runs/${RUN_ID}/artifacts > artifact_info.json
+      
+          # Get the URL for the artifact archive
+          export ARTIFACT_URL=$(cat artifact_info.json | jq -r '.artifacts[0].archive_download_url')
+      
+          # Download and extract the artifact
+          curl -LJO -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ secrets.PAT }}" \
+            $ARTIFACT_URL
+      
+          unzip -qo '*.zip'
+
+          rm -f artifact_info.json run_info.json xcframework-build.zip
+
+      - name: Push artifacts to master
+        run: |
+          # Configure Git
+          git config --global user.name "$(git log -n 1 --pretty=format:%an)"
+          git config --global user.email "$(git log -n 1 --pretty=format:%ae)"
+
+          # Add, commit, and push changes
+          git add LikeMindsChat.podspec LikeMindsChat.xcframework
+          git commit -m "Update artifacts from GitHub Actions"
+          git push origin master
+        env:
+          PAT: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Push Git Tag
+        run: |
+          # Push a Git tag with the new version
+          export current_version=$(grep 'spec.version' LikeMindsChat.podspec | awk -F '"' '/spec.version/{print $2}' | tr -d '\n' | sed 's/[^0-9.]//g; s/\..$//')
+          git tag -a "v$current_version" -m "Version $current_version"
+          git push origin "v$current_version"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to cocoapods
+        run: pod trunk push LikeMindsChat.podspec --verbose
+  
+  create-github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: publish
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create Release
+        run: gh release create "$(git describe --tags --abbrev=0)" --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
